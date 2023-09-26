@@ -21,6 +21,8 @@ import axios from 'axios';
 import { useAccount } from 'wagmi';
 import { getLoarem } from '../Redux/GetNFTs';
 import { getTranding } from '../Redux/tranding_NFTs';
+import io from 'socket.io-client';
+const socket = io('https://sanjhavehra.womenempowerment.online/');
 
 SwiperCore.use([Navigation]);
 
@@ -35,27 +37,12 @@ function Home({ topSellers }) {
     const {
         ShowData, Spinner
     } = useWeb3();
-    // console.log("ShowData",ShowData);
-    // const show_Tranding_Nft = async () => {
-    //     try {
-    //         let res = await axios.get("https://sanjhavehra.womenempowerment.online/get_trending_NFTs")
-    //         if (res.data.success == false) {
-
-    //         } else {
-
-    //             res = res?.data?.data
-             
-    //             setShow_Tranding(res)
-    //         }
-
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    
     useEffect(() => {
-        // show_Tranding_Nft()
+        socket.on("TrandingListiner", (uNFT) => {
+            dispatch(getTranding())
+        }) 
         dispatch(getTranding())
-
         document.title = 'MintSea | Best NFT Marketplace';
       
     }, []);

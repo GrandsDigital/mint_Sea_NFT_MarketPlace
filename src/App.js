@@ -1,12 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useToasts } from 'react-toast-notifications';
-import web3 from './connection/web3';
-import Web3Context from './store/web3-context';
-import CollectionContext from './store/collection-context';
 import MarketplaceContext from './store/marketplace-context';
-import NFTCollection from './contracts/NFTCollection.json';
-import NFTMarketplace from './contracts/NFTMarketplace.json';
 
 // COMPONENTS
 import Header from './components/general/Header';
@@ -46,49 +40,36 @@ import './App.css';
 import Search from './components/Search';
 import ItemSingle from './components/ItemSingle';
 import Category from './components/Category';
-import { Web3ContextProvider } from './components/Components/web3Context';
 import useWeb3 from './components/Components/useWeb3';
 import toast, { Toaster } from 'react-hot-toast';
 import User_Registration from './Auth/User_Registration';
 import Edit_User_Profile from './Auth/Edit_User_Profile';
-import { nftMarketContractAddress, nftMarketContractAddress_Abi } from './Utils/Contract';
+import { Contract_Addresss, nftMarketContractAddress, nftMarketContractAddress_Abi } from './Utils/Contract';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoadOffers, get_UserProfile } from './Redux/Load_offers';
-import { API } from './API';
-import { useAccount } from 'wagmi';
-import { useAddress } from "@thirdweb-dev/react";
+import { useAccount, useChainId } from 'wagmi';
 import axios from 'axios';
 import Favorite from './components/Components/Favorite/Favorite';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { bscTestnet, polygonMumbai, sepolia } from 'wagmi/chains';
-import { InjectedConnector } from '@wagmi/core/connectors/injected'
-import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
-import { useChainId } from "wagmi";
-import { useQuery } from 'react-query';
 import { getLoarem } from './Redux/GetNFTs';
 import { getTranding } from './Redux/tranding_NFTs';
+import io from 'socket.io-client';
+import { Contract, ethers } from 'ethers';
+const socket = io('https://sanjhavehra.womenempowerment.online/');
 
 
 function App() {
     const [noMetaMask, setNoMetaMask] = useState(false);
     const [noContract, setNoContract] = useState(false);
-    const web3Ctx = useContext(Web3Context);
-    const collectionCtx = useContext(CollectionContext);
     const marketplaceCtx = useContext(MarketplaceContext);
     const [networkType, setNetworkType] = useState(null);
     const [topSellers, setTopSellers] = useState([]);
-    const { addToast } = useToasts();
-    const { setFilter_ShowData, web3, walletAddress, setSpinner, setShowData, ShowData, Spinner } = useWeb3();
+    const { setFilter_ShowData,web3,walletAddress,setSpinner,setShowData } = useWeb3();
     let Category_All = useSelector((state) => state.Offers.Category)
-    // const address = useAddress();
     const { address } = useAccount();
-    const dispatch = useDispatch()
     const chainId = useChainId();
+    const dispatch = useDispatch()
+    const [userFunds_ClaimAble, setUserFunds_ClaimAble] = useState(0)
 
-
-
-
-    // let formatedSellers = [];
 
     useEffect(() => {
         if (marketplaceCtx.sellers) {
@@ -125,15 +106,7 @@ function App() {
     }, [marketplaceCtx.sellers]);
 
     useEffect(() => {
-        // Check if the user has Metamask active
-        // if (!web3) {
-        //     setNoMetaMask(true);
-        //     document.body.style.overflow = 'hidden';
-        //     return;
-        // }
         const getCahinId = async () => {
-
-
             if (walletAddress) {
                 if (window.ethereum) {
                     window.web3 = new Web3(window.ethereum);
@@ -150,9 +123,7 @@ function App() {
                 }
             }
         }
-
         getCahinId()
-
         const loadBlockchainData = async () => {
             try {
 
@@ -176,132 +147,21 @@ function App() {
 
         }
         loadBlockchainData()
-
-
-
-
-        // Function to fetch all the blockchain data
-        // const loadBlockchainData = async () => {
-        //     // Request accounts acccess if needed
-        //     try {
-        //         await window.ethereum.request({ method: 'eth_requestAccounts' });
-        //     } catch (error) {
-        //         console.error(error);
-        //     }
-
-        //     // Load account
-        //     const account = await web3.loadAccount(web3);
-        //     console.log("account",account);
-
-        //     // Load Network ID
-        //     const networkId = await web3Ctx.loadNetworkId(web3);
-
-        //     // Load Contracts
-        //     const nftDeployedNetwork = NFTCollection.networks[networkId];
-        //     const nftContract = collectionCtx.loadContract(web3, NFTCollection, nftDeployedNetwork);
-
-        //     const mktDeployedNetwork = NFTMarketplace.networks[networkId];
-        //     const mktContract = marketplaceCtx.loadContract(web3, NFTMarketplace, mktDeployedNetwork);
-
-        //     if (nftContract) {
-        //         // Load total Supply
-        //         const totalSupply = await collectionCtx.loadTotalSupply(nftContract);
-
-        //         // Load Collection
-        //         collectionCtx.loadCollection(nftContract, totalSupply);
-
-        //         // Event subscription
-        //         nftContract.events
-        //             .Transfer()
-        //             .on('data', (event) => {
-        //                 collectionCtx.updateCollection(nftContract, event.returnValues.tokenId, event.returnValues.to);
-        //                 collectionCtx.setNftIsLoading(false);
-        //             })
-        //             .on('error', (error) => {
-        //                 console.log(error);
-        //             });
-        //     } else {
-        //         setNoContract(true);
-        //     }
-
-        //     if (mktContract) {
-        //         // Load offer count
-        //         const offerCount = await marketplaceCtx.loadOfferCount(mktContract);
-
-        //         // Load offers
-        //         marketplaceCtx.loadOffers(mktContract, offerCount);
-
-        //         marketplaceCtx.loadSellers(mktContract);
-
-        //         // Load User Funds
-        //         account && marketplaceCtx.loadUserFunds(mktContract, account);
-
-        //         // Event OfferFilled subscription
-        //         mktContract.events
-        //             .OfferFilled()
-        //             .on('data', (event) => {
-        //                 marketplaceCtx.updateOffer(event.returnValues.offerId);
-        //                 collectionCtx.updateOwner(event.returnValues.id, event.returnValues.newOwner);
-        //                 marketplaceCtx.setMktIsLoading(false);
-        //             })
-        //             .on('error', (error) => {
-        //                 console.log(error);
-        //             });
-
-        //         // Event Offer subscription
-        //         mktContract.events
-        //             .Offer()
-        //             .on('data', (event) => {
-        //                 marketplaceCtx.addOffer(event.returnValues);
-        //                 marketplaceCtx.setMktIsLoading(false);
-        //             })
-        //             .on('error', (error) => {
-        //                 console.log(error);
-        //             });
-
-        //         // Event offerCancelled subscription
-        //         mktContract.events
-        //             .OfferCancelled()
-        //             .on('data', (event) => {
-        //                 marketplaceCtx.updateOffer(event.returnValues.offerId);
-        //                 collectionCtx.updateOwner(event.returnValues.id, event.returnValues.owner);
-        //                 marketplaceCtx.setMktIsLoading(false);
-        //             })
-        //             .on('error', (error) => {
-        //                 console.log(error);
-        //             });
-        //     } else {
-        //         setNoContract(true);
-        //     }
-
-        //     collectionCtx.setNftIsLoading(false);
-        //     marketplaceCtx.setMktIsLoading(false);
-
-        //     // Metamask Event Subscription - Account changed
-        //     window.ethereum.on('accountsChanged', (accounts) => {
-        //         web3Ctx.loadAccount(web3);
-        //         accounts[0] && marketplaceCtx.loadUserFunds(mktContract, accounts[0]);
-        //         addToast('Account Changed!', {
-        //             appearance: 'success',
-        //         });
-        //     });
-
-        //     // Metamask Event Subscription - Network changed
-        //     window.ethereum.on('chainChanged', (chainId) => {
-        //         window.location.reload();
-        //     });
-
-        //     await web3.eth.net
-        //         .getNetworkType()
-        //         .then((res) => setNetworkType(res))
-        //         .catch((err) => console.log(err));
-        // };
-
-        // loadBlockchainData();
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [walletAddress]);
+    const fetchData = async () => {
+        if (address) {
+            let res = await axios.get(
+                `https://sanjhavehra.womenempowerment.online/get_user_profile?address=${address?.toUpperCase()}`
+            );
 
+            if (res?.data.success == false) {
+                // history("/Create_User_profile");
+            } else {
+                // console.log("get_user_profile", res);
+                dispatch(get_UserProfile(res?.data?.data))
+            }
+        }
+    };
     useEffect(() => {
         const getAllNFts = async () => {
             try {
@@ -320,27 +180,13 @@ function App() {
 
             }
         }
-        const fetchData = async () => {
-            if (address) {
-                let res = await axios.get(
-                    `https://sanjhavehra.womenempowerment.online/get_user_profile?address=${address?.toUpperCase()}`
-                );
-
-                if (res?.data.success == false) {
-                    // history("/Create_User_profile");
-                } else {
-                    // console.log("get_user_profile", res);
-                    dispatch(get_UserProfile(res?.data?.data))
-                }
-            }
-        };
-
-
+       
         getAllNFts()
         fetchData()
         dispatch(getLoarem("All"))
-
+        dispatch(getTranding())
     }, [address])
+
 
     useEffect(() => {
         const getAllNFts = async () => {
@@ -362,27 +208,72 @@ function App() {
         }
         getAllNFts()
     }, [Category_All])
-    // useEffect(() => {
-    //     let intveral = setInterval(() => {
-    //         dispatch(getLoarem("All"))
-    //     }, 5000);
-     
-    //     return clearInterval(intveral)
-    // })
-    
-    let intveral = setInterval(() => {
-        // dispatch(getLoarem("All"))
+    useEffect(() => {
+        socket.on("updateNFT", (uNFT) => {
+            dispatch(getLoarem("All"))
+        })
+        socket.on("TrandingListiner", (uNFT) => {
+            dispatch(getTranding())
+        }) 
+         socket.on("ProfileListiner", (uNFT) => {
+            fetchData()
+        })
+        fetchData()
 
-    }, 5000);
-    
+    },[address])
+
+    useEffect(() => {
+        const claim_Able = async () => {
+            try {
+                let provider = new ethers.providers.Web3Provider(window.ethereum);
+                let signer = provider.getSigner()
+                let contract = null
+                if (chainId == 97) {
+                    contract = new Contract(Contract_Addresss[0].nftMarketContractAddress, Contract_Addresss[0].nftMarketContractAddress_Abi, signer);
+                } else if (chainId == 11155111) {
+                    contract = new Contract(Contract_Addresss[1].nftMarketContractAddress, Contract_Addresss[1].nftMarketContractAddress_Abi, signer);
+                } else {
+                    contract = new Contract(Contract_Addresss[2].nftMarketContractAddress, Contract_Addresss[2].nftMarketContractAddress_Abi, signer);
+                }
+                const tx = await contract.userFunds(address)
+                let Claim_Amount = parseInt(tx).toString()
+                // Claim_Amount = webSupply.utils.fromWei(Claim_Amount.toString())
+                Claim_Amount = Claim_Amount / 1000000000000000000
+                // console.log("claim_Able", Claim_Amount);
+                setUserFunds_ClaimAble(Claim_Amount)
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        if (address) {
+            socket.on("updateNFT", (uNFT) => {
+                claim_Able()
+                console.log("updateNFT");
+            })
+            socket.on("TrandingListiner", (uNFT) => {
+                claim_Able()
+                console.log("TrandingListiner");
+
+            })
+            socket.on("ProfileListiner", (uNFT) => {
+                claim_Able()
+                console.log("ProfileListiner");
+
+            })
+
+            claim_Able()
+            // return clearInterval(intveral)
+        }
+
+    },[]);
+
     return (
         <div>
-           
             <BrowserRouter>
-
                 <Toaster />
                 {noMetaMask && <NoMetaMaskAlert />}
-                {!noContract && <Header />}
+                {!noContract && <Header userFunds_ClaimAble={userFunds_ClaimAble} setUserFunds_ClaimAble={setUserFunds_ClaimAble} />}
                 {noContract ? <NoContractAlert network={networkType} /> : null}
                 <ScrollToTop>
                     <Switch>
@@ -477,10 +368,7 @@ function App() {
                     </Switch>
                 </ScrollToTop>
                 <Footer />
-
             </BrowserRouter>
-
-            {/* </Web3ContextProvider> */}
         </div>
     );
 }

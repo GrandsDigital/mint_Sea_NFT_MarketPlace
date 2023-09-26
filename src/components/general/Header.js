@@ -13,15 +13,18 @@ import { Contract_Addresss } from '../../Utils/Contract';
 import '../../App.css'
 import { AiTwotoneHeart } from 'react-icons/ai'
 import { MdOutlineCollections } from 'react-icons/md';
+import io from 'socket.io-client';
+const socket = io('https://sanjhavehra.womenempowerment.online/');
 
 
-function Header() {
+
+function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
     const [fundsLoading, setFundsLoading] = useState(false);
     const [darkMode, setDarkMode] = useState((localStorage.getItem("mode") === null || localStorage.getItem("mode") === "light") ? (false) : (true));
     const { addToast } = useToasts();
     const { address } = useAccount();
     const chainId = useChainId();
-    const [userFunds_ClaimAble, setUserFunds_ClaimAble] = useState(0)
+    // const [userFunds_ClaimAble, setUserFunds_ClaimAble] = useState(0)
     const user_Profile = useSelector((state) => state.Offers.user_Profile);
 
 
@@ -45,10 +48,8 @@ function Header() {
 
 
     const claimFundsHandler = async () => {
-
         try {
             setFundsLoading(true);
-
             let provider = new ethers.providers.Web3Provider(window.ethereum);
             let signer = provider.getSigner()
             let contract = null
@@ -67,45 +68,56 @@ function Header() {
             console.log(error);
             setFundsLoading(false);
         }
-
     };
 
     // Event ClaimFunds subscription
 
-    const webSupply = new Web3("https://bsc-mainnet.public.blastapi.io");
-    useEffect(() => {
-        const claim_Able = async () => {
-            try {
-                let provider = new ethers.providers.Web3Provider(window.ethereum);
-                let signer = provider.getSigner()
-                let contract = null
-                if (chainId == 97) {
-                    contract = new Contract(Contract_Addresss[0].nftMarketContractAddress, Contract_Addresss[0].nftMarketContractAddress_Abi, signer);
-                } else if (chainId == 11155111) {
-                    contract = new Contract(Contract_Addresss[1].nftMarketContractAddress, Contract_Addresss[1].nftMarketContractAddress_Abi, signer);
-                } else {
-                    contract = new Contract(Contract_Addresss[2].nftMarketContractAddress, Contract_Addresss[2].nftMarketContractAddress_Abi, signer);
-                }
-                const tx = await contract.userFunds(address)
-                let Claim_Amount = parseInt(tx).toString()
-                Claim_Amount = webSupply.utils.fromWei(Claim_Amount.toString())
-                // console.log("claim_Able", Claim_Amount);
-                setUserFunds_ClaimAble(Claim_Amount)
+    // const webSupply = new Web3("https://bsc-mainnet.public.blastapi.io");
+    // useEffect(() => {
+    //     const claim_Able = async () => {
+    //         try {
+    //             let provider = new ethers.providers.Web3Provider(window.ethereum);
+    //             let signer = provider.getSigner()
+    //             let contract = null
+    //             if (chainId == 97) {
+    //                 contract = new Contract(Contract_Addresss[0].nftMarketContractAddress, Contract_Addresss[0].nftMarketContractAddress_Abi, signer);
+    //             } else if (chainId == 11155111) {
+    //                 contract = new Contract(Contract_Addresss[1].nftMarketContractAddress, Contract_Addresss[1].nftMarketContractAddress_Abi, signer);
+    //             } else {
+    //                 contract = new Contract(Contract_Addresss[2].nftMarketContractAddress, Contract_Addresss[2].nftMarketContractAddress_Abi, signer);
+    //             }
+    //             const tx = await contract.userFunds(address)
+    //             let Claim_Amount = parseInt(tx).toString()
+    //             // Claim_Amount = webSupply.utils.fromWei(Claim_Amount.toString())
+    //             Claim_Amount = Claim_Amount / 1000000000000000000
+    //             // console.log("claim_Able", Claim_Amount);
+    //             setUserFunds_ClaimAble(Claim_Amount)
 
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        if (address) {
-            let intveral = setInterval(() => {
-                claim_Able()
-            }, 5000);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    //     if (address) {
+    //         socket.on("updateNFT", (uNFT) => {
+    //             claim_Able()
+    //             console.log("updateNFT");
+    //         })
+    //         socket.on("TrandingListiner", (uNFT) => {
+    //             claim_Able()
+    //             console.log("TrandingListiner");
 
-            return clearInterval(intveral)
+    //         })
+    //         socket.on("ProfileListiner", (uNFT) => {
+    //             claim_Able()
+    //             console.log("ProfileListiner");
 
-        }
+    //         })
 
-    });
+    //         claim_Able()
+    //         // return clearInterval(intveral)
+    //     }
+
+    // },[]);
 
     useEffect(() => {
         // //document.querySelector('#root').classList.contains('light')
@@ -148,7 +160,7 @@ function Header() {
         <nav className='navbar navbar-expand-lg navbar-dark fixed-top' id='navbar'>
             <div className='container'>
                 <Link className='navbar-brand' to='/'>
-                    <img className='img-fluid' src='/images/logo.svg' alt='MintSea' width='140' />
+                    <img className='img-fluid' src='/images/Logo-2.png' alt='MintSea' width='140'   />
                 </Link>
 
                 <button

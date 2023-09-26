@@ -248,8 +248,8 @@ export default function User_Registration() {
           // const tx = await contract.setApprovalForAll(MarketPlace_Address, true);
           // await tx.wait();
 
-          let value = webSupply.utils.toWei(getOfferPrice.toString());
-
+          // let value = webSupply.utils.toWei(getOfferPrice.toString());
+          let value = getOfferPrice * 1000000000000000000;
           setTimeout(() => {
             const makeOffer = async () => {
               try {
@@ -433,8 +433,7 @@ export default function User_Registration() {
   useEffect(() => {
     const get_user_NFt_Balance = async () => {
       try {
-        // let provider = new ethers.providers.Web3Provider(webSupply_BNB);
-        // let signer = provider.getSigner()
+       
         let contract = null;
         contract = new webSupply_BNB.eth.Contract(
           Contract_Addresss[0].CreateNFT_ABI,
@@ -452,13 +451,13 @@ export default function User_Registration() {
         );
 
         const tx = await contract.methods.balanceOf(address).call();
-        // let Claim_Amount = parseInt(tx).toString();
+        let Claim_Amount = parseInt(tx).toString();
         setBNB(parseInt(tx));
 
         let Ethereum_value = await contract_Ether.methods
           .balanceOf(address)
           .call();
-        //  Ethereum_value = parseInt(Ethereum_value).toString();
+         Ethereum_value = parseInt(Ethereum_value).toString();
         setethereumchain(parseInt(Ethereum_value));
 
         let polygon_value = await contract_Polygon.methods

@@ -57,18 +57,19 @@ function ContactInfo(props) {
                                         <a
                                             className='text-decoration-none text-sm text-muted mb-1'
                                             rel='noreferrer'
-                                            href='mailto:info@mintsea.io'
+                                            href='mailto:info@mint-sea.com'
                                         >
-                                            info@mintsea.io
+                                            info@mint-sea.com
+                                            
                                         </a>
                                     </li>
                                     <li>
                                         <a
                                             className='text-decoration-none text-sm text-muted mb-1'
                                             rel='noreferrer'
-                                            href='mailto:contact@mintsea.io'
+                                            href='mailto:contact@mint-sea.com'
                                         >
-                                            contact@mintsea.io
+                                          contact@mint-sea.com
                                         </a>
                                     </li>
                                 </ul>
@@ -87,7 +88,7 @@ function ContactInfo(props) {
                             </a>
                         </li>
                         <li className='list-inline-item'>
-                            <a className='social-link bg-hover-primary' rel='noreferrer' href='https://www.pinterest.com/mintseaio/'>
+                            <a className='social-link bg-hover-primary' rel='noreferrer' href='https://www.pinterest.com/mintseacom/'>
                                 <i className='lab la-pinterest'></i>
                             </a>
                         </li>
@@ -97,7 +98,7 @@ function ContactInfo(props) {
                             </a>
                         </li>
                         <li className='list-inline-item'>
-                            <a className='social-link bg-hover-primary' rel='noreferrer' href=' https://www.instagram.com/mintsea.io/'>
+                            <a className='social-link bg-hover-primary' rel='noreferrer' href='https://www.instagram.com/mintseacom/'>
                                 <i className='las la-link'></i>
                             </a>
                         </li>

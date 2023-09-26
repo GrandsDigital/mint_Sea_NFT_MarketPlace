@@ -49,6 +49,7 @@
         "react-tsparticles": "^2.12.2",
         "redux-persist": "^6.0.0",
         "reduxjs-toolkit-persist": "^7.2.1",
+        "socket.io-client": "^4.7.2",
         "sqlite3": "^5.1.6",
         "swiper": "^6.0.2",
         "tsparticles": "^2.12.0",

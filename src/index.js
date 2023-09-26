@@ -42,12 +42,6 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     [alchemyProvider({ apiKey: "gbnhSoSy4pQ2eiWkI2KQoAxiFgAQWVf9" }),
         publicProvider()]
 );
-// const { connectors } = getDefaultWallets({
-//   appName: 'RainbowKit demo',
-//   projectId: 'ae64d2d938316ce3350fea4c10f6cc79',
-//   chains,
-// });
-
 const connectors = connectorsForWallets([
     {
         groupName: 'Recommended',
@@ -94,7 +88,7 @@ root.render(
                                     </RainbowKitProvider>
                                 </WagmiConfig>
                                 </QueryClientProvider>
-
+        
                             </ToastProvider>
 
                         </Web3ContextProvider>

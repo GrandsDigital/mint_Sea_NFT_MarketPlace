@@ -5,12 +5,14 @@ import { useAddress } from "@thirdweb-dev/react";
 import { useAccount, useChainId } from "wagmi";
 import NftItem from "../../general/NftItem";
 import Loader from "../../general/Loader";
+import io from "socket.io-client";
+
+const socket = io("https://sanjhavehra.womenempowerment.online/");
 
 export default function Favorite() {
   const [show_Favorite, setshow_Favorite] = useState([]);
   const [Spinner, setSpinner] = useState(false);
   const { address } = useAccount();
-  console.log("useAccount", address);
 
   const Get_Favorite = async () => {
     let new_Array = [];
@@ -29,8 +31,10 @@ export default function Favorite() {
     }
   };
 
-  // console.log("new_Array",show_Favorite);
   useEffect(() => {
+    socket.on("FavoriteListiner", (uNFT) => {
+      Get_Favorite();
+    });
     Get_Favorite();
   }, []);
 
@@ -56,7 +60,6 @@ export default function Favorite() {
                       index={index}
                       price={NFT.price}
                       nftKey={key}
-                      
                     />
                   </div>
                 );

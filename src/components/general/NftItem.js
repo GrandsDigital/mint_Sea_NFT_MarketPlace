@@ -174,7 +174,7 @@ function NftItem({
   useEffect(() => {
     let intveral = setInterval(() => {
       detect_Offer_card()
-    }, 1000);
+    }, 10000);
 
     return () => clearInterval(intveral)
   })
@@ -429,11 +429,9 @@ function NftItem({
     }
   }
   useEffect(() => {
-    get_Favorite()
-    // let intveral = setInterval(() => {
 
-    // }, 1000);
-    // return () => clearInterval(intveral);
+    get_Favorite()
+   
 
   }, [favrouteName])
 
