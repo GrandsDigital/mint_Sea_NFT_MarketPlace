@@ -3268,7 +3268,7 @@ input[type=search]::-webkit-search-results-decoration {
     color: rgba(19, 23, 64, var(--tw-text-opacity))
 }
 
-.nav-link.active:after {
+/* .nav-link.active:after {
     --tw-bg-opacity: 1;
     background-color: rgba(131, 88, 255, var(--tw-bg-opacity));
     bottom: -1px;
@@ -3279,7 +3279,7 @@ input[type=search]::-webkit-search-results-decoration {
     position: absolute;
     right: 0;
     width: 100%
-}
+} */
 
 .dark .nav-link.active,
 .dark .nav-link.active:hover {
@@ -5527,3 +5527,77 @@ summary::-webkit-details-marker { display: none; }
   }
 }
 
+.background::before {    
+    content: "";
+    background-image: url('/images/bg.png');
+    background-size: cover;
+    position: absolute;
+    top: -100px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+}
+
+.btn-blue {
+    background-color: #4659CF!important;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 25px;
+    min-width: 130px;
+    font-size: 1rem;
+}
+.btn-blue:hover {
+    color: white;
+    /* border: 2px solid #4659CF77; */
+    box-shadow: 0px 0px 1px 3px #4659CF77;
+}
+
+.btn-white {
+    background-color: #ffffff!important;
+    border: none;
+    color: #4659CF;
+    font-weight: bold;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    border-radius: 25px;
+    min-width: 130px;
+    font-size: 1rem;
+}
+.btn-white:hover {
+    color: #4659CF;
+    /* border: 2px solid #D9D9D9; */
+    box-shadow: 0px 0px 1px 3px #D9D9D9;
+}
+
+
+.btn-transparent {
+    border: none!important;
+    color: #ffffff!important;
+    /* font-weight: bold!important; */
+    padding: 5px 10px!important;
+    text-align: center!important;
+    text-decoration: none!important;
+    display: inline-block!important;
+    /* margin: 4px 2px; */
+    cursor: pointer!important;
+    border: 1px solid white!important;
+    border-radius: 25px!important;
+    min-width: 130px!important;
+    font-size: 1rem!important;
+}
+
+.btn-transparent:hover {
+    background-color: #ffffff!important;
+    color: #4659CF!important;
+}

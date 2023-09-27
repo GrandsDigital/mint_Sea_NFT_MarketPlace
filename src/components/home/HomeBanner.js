@@ -1,28 +1,28 @@
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+// import { useCallback } from "react";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
 import { Link } from 'react-router-dom';
 
-import { particlesOptions } from '../../helpers/constants';
-import { useDispatch } from 'react-redux';
+// import { particlesOptions } from '../../helpers/constants';
+// import { useDispatch } from 'react-redux';
 
 function HomeBanner() {
-    const particlesInit = useCallback(async engine => {
-        // console.log(engine);
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(engine);
-    }, []);
+    // const particlesInit = useCallback(async engine => {
+    //     // console.log(engine);
+    //     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    //     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    //     // starting from v2 you can add only the features you need reducing the bundle size
+    //     await loadFull(engine);
+    // }, []);
 
-    const particlesLoaded = useCallback(async container => {
-        // await console.log(container);
-    }, []);
+    // const particlesLoaded = useCallback(async container => {
+    //     // await console.log(container);
+    // }, []);
   
     return (
-        <section className='hero bg-dark py-5'>
-            <Particles  init={particlesInit}
-            loaded={particlesLoaded} options={particlesOptions} style={{zIndex:"-1"}} />
+        <section className='hero bg-dark pb-5 background'>
+            {/* <Particles  init={particlesInit}
+            loaded={particlesLoaded} options={particlesOptions} style={{zIndex:"-1"}} /> */}
             {/* <Particles
             id="tsparticles"
             init={particlesInit}
@@ -102,42 +102,55 @@ function HomeBanner() {
         /> */}
             <div className='container py-5 z-index-10 position-relative mt-5'>
                 <div className='row align-items-center mt-5'>
-                    <div className='col-lg-5'>
+                    <div className='col-lg-6 ms-auto d-none d-lg-block'>
+                        {/* <img className='img-fluid mx-auto' src=' images/illu-3.png' alt='..' /> */}
+                        <img className='img-fluid mx-auto' src="/images/hero.png" alt="hero"></img>
+                    </div>
+
+                    <div className='col-lg-6'>
                         
-                        <h2>Begin Your NFT Collection Today with Us.</h2>
-                        <p className='text-muted'>
+                        <h1 className="text-white" style={{fontSize: "4.5rem"}}>Begin Your NFT Collection Today with Us.</h1>
+                        <p className='text-white mb-5' style={{fontSize: "1.32rem"}}>
                             Whether you are a beginner, expert, or anything in between, MintSea is the right place for you.
                         </p>
                         <ul className='list-inline'>
                             <li className='list-inline-item'>
-                                <Link className='btn btn-gradient-primary' to='/mint'>
+                                <Link className='btn-blue me-2' to='/mint'>
                                     Mint NFT
                                 </Link>
                             </li>
                             <li className='list-inline-item'>
-                                <Link className='btn btn-light' to='/explore'>
+                                <Link className='btn-white ms-2' to='/explore'>
                                     Explore
                                 </Link>
                             </li>
                         </ul>
-                        <div className='d-flex align-items-center pt-5'>
-                            <div className='me-4 text-center'>
-                                <p className='h1 mb-0'>942</p>
-                                <span className='text-muted'>Collectibles</span>
+                        <div className='w-75 d-flex align-items-center justify-content-between pt-4'>
+                            <div className='d-flex align-items-center'>
+                                <img className='mx-2 align-self-end mb-1' src="/images/side_icon.png" alt="side icon" style={{height:"4.3rem"}}/>
+                                <div className='me-4'>
+                                    <p className='h1 mb-0' style={{color: "#9CAAFF"}}>942+</p>
+                                    <span className="fw-bold" style={{color: "#49E6FB"}}>Collectibles</span>
+                                </div>
                             </div>
-                            <div className='me-4 text-center'>
-                                <p className='h1 mb-0'>27k</p>
-                                <span className='text-muted'>Auctions</span>
-                            </div>
-                            <div className='me-4 text-center'>
-                                <p className='h1 mb-0'>4k</p>
-                                <span className='text-muted'>NFT</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className='col-lg-6 ms-auto d-none d-lg-block'>
-                        <img className='img-fluid mx-auto' src=' images/illu-3.png' alt='..' />
+                            <div className='d-flex align-items-center '>
+                                <img className='mx-2 align-self-end mb-1' src="/images/side_icon.png" alt="side icon" style={{height:"4.3rem"}}/>
+                                <div className='me-4'>
+                                    <p className='h1 mb-0' style={{color: "#9CAAFF"}}>27k</p>
+                                    <span className="fw-bold" style={{color: "#49E6FB"}}>Auctions</span>
+                                </div>
+                            </div>
+
+                            <div className='d-flex align-items-center '>
+                                <img className='mx-2 align-self-end mb-1' src="/images/side_icon.png" alt="side icon" style={{height:"4.3rem"}}/>
+                                <div className='me-4'>
+                                    <p className='h1 mb-0' style={{color: "#9CAAFF"}}>4k</p>
+                                    <span className="fw-bold" style={{color: "#49E6FB"}}>NFT</span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

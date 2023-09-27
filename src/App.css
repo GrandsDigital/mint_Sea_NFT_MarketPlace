@@ -67,7 +67,8 @@
 
 body {
     margin: 0;
-    font-family: var(--bs-font-sans-serif);
+    /* font-family: var(--bs-font-sans-serif); */
+    font-family: 'Outfit', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -4986,14 +4987,14 @@ fieldset:disabled .btn {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #acb5bf;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover,
+/* .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
     color: #2ca0c4;
-}
+} */
 
 .navbar-dark .navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, 0.25);
@@ -5001,7 +5002,7 @@ fieldset:disabled .btn {
 
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #2ca0c4;
+    color: #fff;
 }
 
 .navbar-dark .navbar-toggler {

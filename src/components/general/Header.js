@@ -20,7 +20,8 @@ const socket = io('https://sanjhavehra.womenempowerment.online/');
 
 function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
     const [fundsLoading, setFundsLoading] = useState(false);
-    const [darkMode, setDarkMode] = useState((localStorage.getItem("mode") === null || localStorage.getItem("mode") === "light") ? (false) : (true));
+    //const [darkMode, setDarkMode] = useState((localStorage.getItem("mode") === null || localStorage.getItem("mode") === "light") ? (false) : (true));
+    const [darkMode, setDarkMode] = useState(true);
     const { addToast } = useToasts();
     const { address } = useAccount();
     const chainId = useChainId();
@@ -28,6 +29,20 @@ function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
     const user_Profile = useSelector((state) => state.Offers.user_Profile);
 
 
+    useEffect(()=>{
+        var connectButtonClass = ["iekbcc0", "iekbcc9", "ju367v73", "ju367v7o", "ju367v9c", "ju367vn", "ju367vec", "ju367vex", "ju367v11", "ju367v1c", "ju367v2b", "ju367v8o", "_12cbo8i3", "ju367v8m", "_12cbo8i4", "_12cbo8i6"];
+
+        var connectWalletButton = document.querySelector("#navbarSupportedContent > ul:nth-child(2) > li.nav-item.nav-item.ms-lg-2 > div > button");
+        console.log(connectWalletButton)
+
+        if(connectWalletButton){
+            for(var i=0; i < connectButtonClass.length; i++){
+                connectWalletButton.classList.remove(connectButtonClass[i]);
+            }
+
+            connectWalletButton.classList.add("btn-transparent");
+        }
+    },[])
 
     useEffect(() => {
         navbarChangeStyle();
@@ -136,10 +151,10 @@ function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
         }
     }, [darkMode])
 
-    const handleLightDarkMode = () => {
+    // const handleLightDarkMode = () => {
 
-        setDarkMode(!darkMode);
-    }
+    //     setDarkMode(!darkMode);
+    // }
 
     window.addEventListener('storage', () => {
         if (localStorage.getItem("mode") === "light") {
@@ -158,7 +173,7 @@ function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
 
     return (
         <nav className='navbar navbar-expand-lg navbar-dark fixed-top' id='navbar'>
-            <div className='container'>
+            <div className='container py-2'>
                 <Link className='navbar-brand' to='/'>
                     <img className='img-fluid' src='/images/Logo-2.png' alt='MintSea' width='140'   />
                 </Link>
@@ -178,56 +193,64 @@ function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
                 <div className='collapse navbar-collapse' id='navbarSupportedContent'>
                     <ul className='navbar-nav ms-auto mb-2 mb-lg-0 flex-lg-row align-items-lg-center'>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='/' exact>
+                            <NavLink className='nav-link px-4' to='/' exact>
                                 Home
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='/explore'>
+                            <NavLink className='nav-link px-4' to='/explore'>
                                 Explore
                             </NavLink>
                         </li>
                         {/* <li className='nav-item'>
-                            <NavLink className='nav-link' to='/my-assets'>
+                            <NavLink className='nav-link px-4' to='/my-assets'>
                                 My Assets
                             </NavLink>
                         </li> */}
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='/authors'>
+                            <NavLink className='nav-link px-4' to='/authors'>
                                 Authors
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='/contact'>
+                            <NavLink className='nav-link px-4' to='/contact'>
                                 Contact
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='*'>
+                            <NavLink className='nav-link px-4' to='*'>
                                 Blog
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='/mint'>
+                            <NavLink className='nav-link px-4' to='/mint'>
                                 Mint NFT
                             </NavLink>
                         </li>
-                        <li className='nav-item' style={{ display: 'flex', justifyContent: "space-between", alignItems: 'center' }}>
+                        {/* <li className='nav-item' style={{ display: 'flex', justifyContent: "space-between", alignItems: 'center' }}>
                             <i className="las la-moon me-2 text-primary pb-1"></i>
                             <div className="form-check form-switch">
                                 <input className="form-check-input me-2" type="checkbox" checked={darkMode} onChange={handleLightDarkMode} style={{ backgroundColor: "#ccc", height: "1.5rem", width: "2.5rem" }} />
                                 <label className="form-check-label pt-1" htmlFor="flexSwitchCheckDefault">Night</label>
                             </div>
-                        </li>
+                        </li> */}
+                        
+
+
+
+                    </ul>
+
+                    <ul className='navbar-nav ms-auto mb-2 mb-lg-0 flex-lg-row align-items-lg-center'>
                         <li className='nav-item'>
                             <NavLink className='nav-link' to='/search'>
-                                <i className='las la-search' style={{ marginTop: '0.125rem' }}></i>
+                                {/* <i className='las la-search' style={{ marginTop: '0.125rem' }}></i> */}
+                                <img src="/images/icon_search.png" alt="search button" style={{height: "20px"}}/>
                             </NavLink>
                         </li>
 
                         <li className='nav-item nav-item ms-lg-2'>
 
-                            <ConnectButton chainStatus="icon" showBalance={{ smallScreen: false, largeScreen: true }} className='btn btn-gradient-primary btn-sm px-3 d-lg-flex align-items-center' />
+                            <ConnectButton chainStatus="icon" showBalance={{ smallScreen: false, largeScreen: true }} className='btn-transparent px-3 d-lg-flex align-items-center' />
                             {/* <ConnectWallet
                                 theme={"light"}
                                 modalTitle={"MintSea"}
@@ -360,9 +383,6 @@ function Header({userFunds_ClaimAble,setUserFunds_ClaimAble}) {
                         )
 
                         }
-
-
-
                     </ul>
                 </div>
             </div>
