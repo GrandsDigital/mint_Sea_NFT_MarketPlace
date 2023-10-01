@@ -91,7 +91,7 @@ function MyAssets() {
                     </header>
 
                     {marketplaceCtx.offers.length === 0 && !marketplaceCtx.loading ? (
-                        <div className='col-9'>
+                        <div className='col-12'>
                             <NoDataAlert
                                 heading="There're no Open For Sale assets at the moment."
                                 subheading='Once someone has listed his asset for sale, you should find it here.'

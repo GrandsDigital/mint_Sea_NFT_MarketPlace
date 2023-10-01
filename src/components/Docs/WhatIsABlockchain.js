@@ -60,7 +60,7 @@ const particlesLoaded = useCallback(async container => {
                       </div>
                       <div className="ms-2">
                         {/* <h6>Company Address</h6> */}
-                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mintsea">How to create an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mint-sea">How to create an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -68,7 +68,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mintsea">How to list an NFT for sale using MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mint-sea">How to list an NFT for sale using Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -76,7 +76,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mintsea">How to buy an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mint-sea">How to buy an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -84,7 +84,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mintsea">How to claim funds on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mint-sea">How to claim funds on Mint-Sea?</NavLink>
                       </div>
                     </li>
                   </ul>
@@ -158,7 +158,7 @@ const particlesLoaded = useCallback(async container => {
                   <div className='mb-4'>
                     {/* <p class="text-md text-muted mb-3 fw-bold">2. Use of Your Data.</p> */}
 
-                    <p class="text-md text-muted mb-3">A blockchain is a decentralised network that stores transactions and information in a digitally distributed ledger. There are various sorts of blockchains. MintSea is compatible with the blockchains Ethereum, Polygon, Klaytn, Arbitrum, Optimism, Avalanche, and BNB Chain.</p>
+                    <p class="text-md text-muted mb-3">A blockchain is a decentralised network that stores transactions and information in a digitally distributed ledger. There are various sorts of blockchains. Mint-Sea is compatible with the blockchains Ethereum, Polygon and BNB Chain.</p>
                     <p class="text-md text-muted mb-3">A blockchain is a decentralized record that derives its name from the manner in which it saves data. When a collection of transaction data reaches a given size, it is referred to as a "block." Every transaction on a blockchain is validated and then permanently recorded here. A blockchain's "chain" is a series of consecutive blocks linked together to form an immutable ledger.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">What distinguishes a blockchain from a typical database?</p>
@@ -202,7 +202,7 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3 ms-4">Proof-of-Work blockchains use extreme computational output and consensus to verify transactions. When a new transaction is added to the blockchain, miners race to solve a complex math equation and verify that their answer is correct. If everyone agrees that the fastest miner's output is correct, the transaction will be recorded and the miner will be awarded a fee for the energy used to complete the computation. This method is complex, time-consuming, and ensures the security of the blockchain, so gas fees are awarded to the operators.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">Gas fees</p>
-                    <p class="text-md text-muted mb-3">The "gas fee" is the payment needed to execute transactions on the blockchain, which compensates the node operators who keep the blockchain functioning. Each blockchain compatible with MintSea has different gas fees depending on how it validates transactions.</p>
+                    <p class="text-md text-muted mb-3">The "gas fee" is the payment needed to execute transactions on the blockchain, which compensates the node operators who keep the blockchain functioning. Each blockchain compatible with Mint-Sea has different gas fees depending on how it validates transactions.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">How is the blockchain regularly used? </p>
                     <p class="text-md text-muted mb-3">Transferring money, purchasing stuff, storing items, and tracking items as they move from point A to point B are four typical use cases for blockchains. </p>
@@ -215,7 +215,7 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3 ms-4">Decentralised Finance, sometimes abbreviated as "DeFi," refers to financial services and exchanges that employ blockchain technology. Earning interest, borrowing, lending, and trading are all common services. DeFi enables transactions that are trustless, permissionless, and quick.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold ms-4">C. Smart contracts</p>
-                    <p class="text-md text-muted mb-3 ms-4">Smart contracts are computer programmes that enforce their pre-programmed restrictions. Smart contracts power NFTs and dApps by utilising "if this, then that" logic. Using MintSea to buy and sell NFTs is powered by the Seaport smart contract protocol.</p>
+                    <p class="text-md text-muted mb-3 ms-4">Smart contracts are computer programmes that enforce their pre-programmed restrictions. Smart contracts power NFTs and dApps by utilising "if this, then that" logic. Using Mint-Sea to buy and sell NFTs is powered by the different smart contracts protocol.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold ms-4">D. NFTs</p>
                     <p class="text-md text-muted mb-3 ms-4">Non-fungible tokens (NFTs) are one-of-a-kind digital assets with blockchain ownership. They are purchased and sold using cryptocurrency. Digital art, collectibles, virtual reality goods, crypto domain names, ownership records for actual items, and other items are examples of NFTs. </p>

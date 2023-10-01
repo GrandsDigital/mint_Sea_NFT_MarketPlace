@@ -9,7 +9,8 @@ function Footer() {
   let dispatch = useDispatch();
 
   return (
-    <footer className="footer bg-map bg-dark bg-gray">
+    <footer className="footer">
+        {/* style={{backgroundImage: "url('/images/bg-top.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "left center"}} */}
       <div className="container py-5 z-index-20">
         <div className="row pt-5">
           <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">

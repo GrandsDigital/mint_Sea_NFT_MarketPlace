@@ -4,17 +4,17 @@ import { formatCategory } from '../../helpers/utils';
 
 function Category({ category }) {
     return (
-        <p className='text-sm text-muted fw-normal mb-2 d-flex align-items-center'>
-            <span className='icon bg-primary text-white me-2'>
-                <i className='las la-icons fa-fw'></i>
+        <p className='mb-0 d-flex align-items-center'>
+            <span className='pt-1 nft-icons-mini'>
+                <i className='las la-icons'></i>
             </span>
-            <span>category: </span>
+            {/* <span>category: </span> */}
             {category ? (
                 <Link className='text-reset' to={`/categories/${category}`}>
-                    <span className='text-primary ms-2'>{formatCategory(category)}</span>
+                    <span className='text-white ms-1 nft-text-mini'>{formatCategory(category)}</span>
                 </Link>
             ) : (
-                <span className='text-white ms-2'>No Cateogry</span>
+                <span className='text-white ms-1 nft-text-mini'>No Cateogry</span>
             )}
         </p>
     );

@@ -59,7 +59,7 @@ const particlesLoaded = useCallback(async container => {
                       </div>
                       <div className="ms-2">
                         {/* <h6>Company Address</h6> */}
-                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mintsea">How to create an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mint-sea">How to create an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -67,7 +67,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mintsea">How to list an NFT for sale using MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mint-sea">How to list an NFT for sale using Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -75,7 +75,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mintsea">How to buy an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mint-sea">How to buy an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -83,7 +83,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mintsea">How to claim funds on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mint-sea">How to claim funds on Mint-Sea?</NavLink>
                       </div>
                     </li>
                   </ul>
@@ -197,7 +197,7 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3 ms-4">The blockchain is enabling new use cases such as identity verification, intellectual property, and storage solutions such as Courtyard, which allows for the safe storage, sale, and claim of physical assets.</p>
                     
                     <p class="text-md text-muted mb-3 fw-bold ms-4">How NFTs are bought and sold?</p>
-                    <p class="text-md text-muted mb-3 ms-4">MintSea is the largest and most diverse NFT marketplace, supporting various blockchains and hosting millions of NFTs. It caters to the growing need to buy and sell NFTs.</p>
+                    <p class="text-md text-muted mb-3 ms-4">Mint-Sea is the largest and most diverse NFT marketplace, supporting various blockchains and hosting millions of NFTs. It caters to the growing need to buy and sell NFTs.</p>
 
                     <h3 class="h5 my-4">FAQs</h3>
 
@@ -208,7 +208,7 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3">Ethereum switched to a proof-of-stake method in September 2022, reducing power consumption by 99% over its previous proof-of-work process. Solana transactions consume less energy than Google searches, and Ethereum switched to a proof-of-stake method in September 2022.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">Is it necessary to have technical or coding expertise to construct NFTs?</p>
-                    <p class="text-md text-muted mb-3">Nope! There are numerous tools available to help you generate your own NFTs, including the ability to do it directly on MintSea. While you can get as technical as you want, even down to coding your own smart contracts, no coding or other technical skills are required to create an NFT.</p>
+                    <p class="text-md text-muted mb-3">Nope! There are numerous tools available to help you generate your own NFTs, including the ability to do it directly on Mint-Sea. While you can get as technical as you want, even down to coding your own smart contracts, no coding or other technical skills are required to create an NFT.</p>
 
                   </div>
                 </div>

@@ -59,7 +59,7 @@ const particlesLoaded = useCallback(async container => {
                       </div>
                       <div className="ms-2">
                         {/* <h6>Company Address</h6> */}
-                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mintsea">How to create an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mint-sea">How to create an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -67,7 +67,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mintsea">How to list an NFT for sale using MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mint-sea">How to list an NFT for sale using Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -75,7 +75,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mintsea">How to buy an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mint-sea">How to buy an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -83,7 +83,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mintsea">How to claim funds on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mint-sea">How to claim funds on Mint-Sea?</NavLink>
                       </div>
                     </li>
                   </ul>

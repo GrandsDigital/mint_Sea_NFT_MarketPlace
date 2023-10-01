@@ -50,7 +50,7 @@ const About = () => {
                         <div className='mb-4'>
                             <h4 className='mb-4 text-center'>Opening a New Realm in the Digital Economy</h4>
 
-                            <p className="text-md text-muted mb-3">We are a digital marketplace for buying and selling NFTs. Our platform allows users to store, show, and sell their NFTs to other users in exchange for cryptocurrencies or fiat.</p>
+                            <p className="text-md text-muted mb-3">We are a digital marketplace for buying and selling NFTs. Our platform allows users to store, show, and sell their NFTs to other users in exchange for cryptocurrencies.</p>
                             <p className="text-md text-muted mb-3">The distinctiveness, tradability, demonstrable scarcity, and adaptability to many applications are exciting novel aspects of NFTs. As opposed to tangible things, they can be programmed just the way digital items could be. For instance, like tangible goods, you can do whatever you want with them! You could give them to someone, keep them with you, or sell them in a market. Yet opposed to tangible things, they can be programmed just the way digital items could be.</p>
                             <p className="text-md text-muted mb-3">Our concept is fundamentally based on the idea that dynamic new economies will be made possible by open protocols like Ethereum and compatible standards like ERC-721. We're creating technologies that let users freely exchange their goods, producers publish new digital creations, and developers create robust, integrated marketplaces for their digital goods.</p>
                             <p className="text-md text-muted mb-3">We take great pride in being known as one of the prominent NFT marketplaces. </p>
@@ -59,9 +59,8 @@ const About = () => {
                         <div className='mb-4'>
                             <h4 className='mb-2 text-center'>Our Story</h4>
                             <h6 className='mb-4 text-center'>We are fully utilizing the vast opportunities in the NFT landscape!</h6>
-
-                            <p className="text-md text-muted mb-3">Between 2016 to 2017, the first decentralized application powered by blockchains was geared toward a mass market. With this onset of cryptocurrencies and digital asset markets, non-fungible tokens (NFTs) have become quite a thing today. Our journey in this sphere began with the growing popularity of cryptocurrencies and NFTs. Today, the potential of the NFT market has skyrocketed, and we are proud to be among the largest NFT marketplaces.</p>
-                            <p className="text-md text-muted mb-3">Amidst all these emerging NFT trends, our CEO, Alamgir Rajab, made a wise decision to be a part of this game. His decision proved to be a great one as today, we have a huge market for a variety of NFTs.</p>
+                            <p className="text-md text-muted mb-3">The first decentralized application powered by blockchains was geared toward a mass market. With this onset of cryptocurrencies and digital asset markets, non-fungible tokens (NFTs) have become quite a thing today. Our journey in this sphere began with the growing popularity of cryptocurrencies and NFTs. Today, the potential of the NFT market has skyrocketed, and we are proud to be among the largest NFT marketplaces.</p>
+                            <p className="text-md text-muted mb-3">Amidst all these emerging NFT trends, our CEO, Alamgir Rajab, made a wise decision to be a part of this Mint-sea Project. His decision proved to be a great one as today, we have a huge market for a variety of NFTs.</p>
                             <p className="text-md text-muted mb-3">Despite so much growth and changes in the NFT market from where we began, we're pleased to say that we've maintained our position as the largest general user-owned digital item marketplace, supporting a variety of blockchains, with a wide range of categories and the most affordable pricing for the newly emerging digital item classes.</p>
                             <p className="text-md text-muted mb-3">We are thrilled to be at the forefront of this expanding sector, and we'll keep investing in our fundamental framework as we create the most user-friendly marketplace for NFT consumers, sellers, and creators.</p>
 
@@ -73,7 +72,7 @@ const About = () => {
                             <h4 className='mb-4 text-center'>Security Reports</h4>
 
                             <p className="text-md text-muted mb-3">In order to be a dependable and secure marketplace for NFTs, we work diligently. Identifying and eliminating present vulnerabilities is of paramount significance. We make sure that every report is examined by security professionals and treated appropriately.</p>
-                            <p className="text-md text-muted mb-3">To receive updates on our newest feature releases,  hints and tips for using MintSea, subscribe to our mailing list.</p>
+                            <p className="text-md text-muted mb-3">To receive updates on our newest feature releases,  hints and tips for using Mint-Sea, subscribe to our mailing list.</p>
                         </div>
                     </div>
                 </div>

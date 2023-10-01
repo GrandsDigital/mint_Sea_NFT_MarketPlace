@@ -44,7 +44,12 @@ function Home({ topSellers }) {
         }) 
         dispatch(getTranding())
         document.title = 'MintSea | Best NFT Marketplace';
+
+        document.getElementById("root").classList.add("bg-complete");
       
+        return () => {
+            document.getElementById("root").classList.remove("bg-complete");
+        };
     }, []);
 
    
@@ -56,20 +61,35 @@ function Home({ topSellers }) {
 
             {/* MARKETPLACE FEATURED ITEMS */}
             <section className='py-5'>
-                <div className='container py-5'>
-                    <header className='mb-5'>
-                        <div className='row'>
-                            <div className='col-lg-6'>
+                <div className='container pt-5'>
+                    <header className='mb-5 pb-5'>
+                        <div className='row position-relative heading-col'>
+                            {/* <div className='col-lg-6'>
                                 <h2>Marketplace's Choice</h2>
                                 <p className='text-muted text-sm mb-0'>
                                     MintSea is the most secure and user-friendly cryptocurrency buying, selling, and storing platform. Our industry-leading security systems will keep your NFTs protected.
                                 </p>
+                            </div> */}
+
+                            {/* <div className="container-xl">
+                                <div className="row mt-5 position-relative heading-col"> */}
+                            <div className="col-7 text-white heading-left-part">
+                                <h3 className="text-white mb-0">Marketplace's Choice</h3>
+                                <p className="text-white text-sm mb-0">
+                                    MintSea is the most secure and user-friendly cryptocurrency buying, selling, and storing platform. <br/>Our industry-leading security systems will keep your NFTs protected.
+                                </p>
                             </div>
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
+                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            </div>
+                                {/* </div>
+                            </div> */}
+
                         </div>
                     </header>
 
                     {TrandingsNFTS.data.length < 0 ? (
-                        <div className='col-9'>
+                        <div className='col-12'>
                             <NoDataAlert
                                 heading="There're no NFTs at the moment."
                                 subheading='Try to mint some assets to see how are we rendering them.'
@@ -80,7 +100,7 @@ function Home({ topSellers }) {
                     {Spinner ? <Loader /> : null}
 
                     <Swiper
-                        spaceBetween={10}
+                        spaceBetween={30}
                         breakpoints={{
                             400: { slidesPerView: 1 },
                             900: { slidesPerView: 2 },
@@ -109,16 +129,31 @@ function Home({ topSellers }) {
             </section>
 
             {/* BROWSE BY CATEGORY */}
-            <section className='py-5 bg-dark bg-gray'>
+            <section className='pt-5'>
                 <div className='container py-4'>
-                    <header className='mb-5'>
-                        <div className='row'>
-                            <div className='col-lg-6'>
+                    <header className='mb-5 pb-5'>
+                        <div className='row position-relative heading-col'>
+                            {/* <div className='col-lg-6'>
                                 <h2>Browse by category</h2>
                                 <p className='text-muted text-sm mb-0'>
                                     You can choose an NFT from a variety of categories. Everyone will find something to their liking:
                                 </p>
+                            </div> */}
+
+                            {/* <div className="container-xl">
+                                <div className="row mt-5 position-relative heading-col"> */}
+                            <div className="col-7 text-white heading-left-part">
+                                <h3 className="text-white mb-0">Browse by category</h3>
+                                <p className="text-white text-sm mb-0">
+                                    You can choose an NFT from a variety of categories. Everyone will find something to their liking:
+                                </p>
                             </div>
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
+                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            </div>
+                                {/* </div>
+                            </div> */}
+
                         </div>
                     </header>
 
@@ -147,20 +182,35 @@ function Home({ topSellers }) {
             {/* NFT ITEMS */}
             <section className='py-5'>
                 <div className='container pt-5'>
-                    <header className='mb-5'>
-                        <div className='row'>
-                            <div className='col-lg-6'>
+                    <header className='mb-5 pb-5'>
+                        <div className='row position-relative heading-col'>
+                            {/* <div className='col-lg-6'>
                                 <h2>New Items</h2>
                                 <p className='text-muted text-sm mb-0'>
                                     Explore the fascinating new collection of NFTs every day.
                                 </p>
+                            </div> */}
+
+                            {/* <div className="container-xl">
+                                <div className="row mt-5 position-relative heading-col"> */}
+                            <div className="col-7 text-white heading-left-part">
+                                <h3 className="text-white mb-0">New Items</h3>
+                                <p className="text-white text-sm mb-0">
+                                    Explore the fascinating new collection of NFTs every day.
+                                </p>
                             </div>
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
+                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            </div>
+                                {/* </div>
+                            </div> */}
+
                         </div>
                     </header>
 
 
                     {AllNFTS.data.length == 0 ? (
-                        <div className='col-9'>
+                        <div className='col-12'>
                             <NoDataAlert
                                 heading="There're no NFTs at the moment."
                                 subheading='Try to mint some assets to see how are we rendering them.'
@@ -170,7 +220,7 @@ function Home({ topSellers }) {
                         <>
 
                             <Swiper
-                                spaceBetween={10}
+                                spaceBetween={30}
                                 breakpoints={{
                                     400: { slidesPerView: 1 },
                                     900: { slidesPerView: 2 },
@@ -213,29 +263,30 @@ function Home({ topSellers }) {
                 description='Here are MintSea’s top sellers with the highest number of NFTs sold:'
             />
 
-            <section className='py-5 bg-dark bg-gray'>
-                <div className='container py-5'>
+            <section className='pt-5'>
+                <div className='container'>
                     <header className='mb-5'>
-                        <div className='row'>
+                        <div className='row heading-col py-5'>
                             <div className='col-lg-6 text-center mx-auto'>
-                                <h2>How it works</h2>
-                                <p className='text-muted text-sm mb-0'>
+                                <h3 className='text-white mb-0'>How it works</h3>
+                                <p className='text-white text-sm mb-0'>
                                     MintSea marketplace offers fixed-price NFT tokens, requiring a crypto wallet for storage, exchange, and artwork creation.
                                 </p>
                             </div>
                         </div>
                     </header>
 
-                    <div className='row gy-4'>
+                    <div className='row px-4 mx-2 g-5'>
                         <div className='col-lg-4'>
-                            <div className='card card-hover-minimal shadow bg-body htw-card h-100'>
-                                <div className='card-body p-lg-5 d-flex align-items-center'>
-                                    <div className='icon-animated mx-auto flex-shrink-0'>
-                                        <i className='las la-wallet'></i>
+                            <div className='card h-i-w-Card h-100 border-0'>
+                                <div className='card-body py-lg-5 align-items-center position-relative'>
+                                    <div className='mx-auto flex-shrink-0 position-absolute d-flex justify-content-end top-0 end-0'>
+                                        {/* <i className='fs-2 las la-wallet'></i> */}
+                                        <img src="/images/h-i-w-icon.png" alt="icons" className='w-75'/>
                                     </div>
-                                    <div className='ms-3'>
-                                        <h5>Connect your wallet</h5>
-                                        <p className='text-muted text-sm mb-0'>
+                                    <div className='px-2 pt-4'>
+                                        <h5 className='mb-3'>Connect your wallet</h5>
+                                        <p className='text-white text-sm mb-0'>
                                             The first step in harnessing the potential of the MintSea platform is to create a wallet from which to proceed with your purchases, sells, or exchanges.
                                         </p>
                                     </div>
@@ -244,14 +295,15 @@ function Home({ topSellers }) {
                         </div>
 
                         <div className='col-lg-4'>
-                            <div className='card card-hover-minimal shadow bg-body htw-card h-100'>
-                                <div className='card-body p-lg-5 d-flex align-items-center'>
-                                    <div className='icon-animated mx-auto flex-shrink-0'>
-                                        <i className='las la-rocket'></i>
+                            <div className='card h-i-w-Card h-100 border-0'>
+                                <div className='card-body py-lg-5 align-items-center position-relative'>
+                                    <div className='mx-auto flex-shrink-0 position-absolute d-flex justify-content-end top-0 end-0'>
+                                        {/* <i className='fs-2 las la-rocket'></i> */}
+                                        <img src="/images/h-i-w-icon.png" alt="icons" className='w-75'/>
                                     </div>
-                                    <div className='ms-3'>
-                                        <h5>Mint & Buy and Sell NFTs</h5>
-                                        <p className='text-muted text-sm mb-0'>
+                                    <div className='px-2 pt-4'>
+                                        <h5 className='mb-3'>Mint & Buy and Sell NFTs</h5>
+                                        <p className='text-white text-sm mb-0'>
                                             You may now purchase, sell, exchange, and manage NFTs with your wallet connected to the MintSea marketplace.
                                         </p>
                                     </div>
@@ -260,14 +312,15 @@ function Home({ topSellers }) {
                         </div>
 
                         <div className='col-lg-4'>
-                            <div className='card card-hover-minimal shadow bg-body htw-card h-100'>
-                                <div className='card-body p-lg-5 d-flex align-items-center'>
-                                    <div className='icon-animated mx-auto flex-shrink-0'>
-                                        <i className='lab la-ethereum'></i>
+                            <div className='card h-i-w-Card h-100 border-0'>
+                                <div className='card-body py-lg-5 align-items-center position-relative'>
+                                    <div className='mx-auto flex-shrink-0 position-absolute d-flex justify-content-end top-0 end-0'>
+                                        {/* <i className='lab la-ethereum'></i> */}
+                                        <img src="/images/h-i-w-icon.png" alt="icons" className='w-75'/>
                                     </div>
-                                    <div className='ms-3'>
-                                        <h5>Collect your funds</h5>
-                                        <p className='text-muted text-sm mb-0'>
+                                    <div className='px-2 pt-4'>
+                                        <h5 className='mb-3'>Collect your funds</h5>
+                                        <p className='text-white text-sm mb-0'>
                                             To release your funds from MintSea account, you need to transfer the amount to your wallet first, then you can claim funds.
                                         </p>
                                     </div>
@@ -279,21 +332,36 @@ function Home({ topSellers }) {
             </section>
 
             {/* NFT ITEMS */}
-            <section className='py-5'>
-                <div className='container py-5'>
-                    <header className='mb-5'>
-                        <div className='row'>
-                            <div className='col-lg-6'>
+            <section className='pt-5'>
+                <div className='container pt-5'>
+                    <header className='mb-5 pb-5'>
+                        <div className='row position-relative heading-col'>
+                            {/* <div className='col-lg-6'>
                                 <h2>Open for sale NFTs</h2>
                                 <p className='text-muted text-sm mb-0'>
                                     These are the listed NFTs, open for sale:
                                 </p>
+                            </div> */}
+
+                            {/* <div className="container-xl">
+                                <div className="row mt-5 position-relative heading-col"> */}
+                            <div className="col-7 text-white heading-left-part">
+                                <h3 className="text-white mb-0">Open for sale NFTs</h3>
+                                <p className="text-white text-sm mb-0">
+                                    These are the listed NFTs, open for sale:
+                                </p>
                             </div>
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
+                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            </div>
+                                {/* </div>
+                            </div> */}
+
                         </div>
                     </header>
 
                     {AllNFTS.data.length == 0 ? (
-                        <div className='col-9'>
+                        <div className='col-12'>
                             <NoDataAlert
                                 heading="There're no Open For Sale assets at the moment."
                                 subheading='Once someone has listed his asset for sale, you should find it here.'
@@ -303,7 +371,7 @@ function Home({ topSellers }) {
 
                         <>
                             <Swiper
-                                spaceBetween={10}
+                                spaceBetween={30}
                                 breakpoints={{
                                     400: { slidesPerView: 1 },
                                     900: { slidesPerView: 2 },

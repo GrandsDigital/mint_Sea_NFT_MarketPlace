@@ -20,7 +20,8 @@ function HomeBanner() {
     // }, []);
   
     return (
-        <section className='hero bg-dark pb-5 background'>
+        <section className='hero'>
+            {/* bg-dark pb-5 background-top */}
             {/* <Particles  init={particlesInit}
             loaded={particlesLoaded} options={particlesOptions} style={{zIndex:"-1"}} /> */}
             {/* <Particles

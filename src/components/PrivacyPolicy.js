@@ -50,14 +50,14 @@ const PrivacyPolicy = () => {
                         <div className='mb-4'>
                             <h4 className='mb-4 text-center'>Privacy Policy</h4>
 
-                            <p className="text-md text-muted mb-3">Your privacy is something that MintSea takes seriously. To let you know how we collect, use, and disclose your information in connection with the MintSea websites, mobile apps, and other services we offer you, we have created this privacy policy.</p>
-                            <p className="text-md text-muted mb-3"><b>1. The kinds of data we gather.</b> As stated below, we gather data that may be personally identifiable, fictitious, or anonymous (including aggregated and de-identified data) about our users.</p>
+                            <p className="text-md text-muted mb-3">Your privacy is something that Mint-Sea takes seriously. To let you know how we collect, use, and disclose your information in connection with the Mint-Sea websites, mobile apps, and other services we offer you, we have created this privacy policy.</p>
+                            <p className="text-md text-muted mb-3"><b>1. The kinds of data we gather.</b> As stated below, we gather data that may be personally identifiable, fictitious, or about our users.</p>
                             <p className="text-md text-muted mb-3 ms-3 fst-italic"><b>A.</b> Information That You Give Us.</p>
-                            <p className="text-md text-muted mb-3 ms-5"><b>I.</b> Account Specifics. You can add information to your account when using our service. We gather information and other data you add to your account, including your username, email address, Bio, wallet address and Profile Picture watchlist collections, and other details you submit. Other than your email address, your account information will be available to the public. Please keep in mind that even after you remove public content from your MintSea account, it will not more available in our Mintsea site.</p>
+                            <p className="text-md text-muted mb-3 ms-5"><b>I.</b> Account Specifics. You can add information to your account when using our service. We gather information and other data you add to your account, including your username, email address, Bio, wallet address and Profile Picture. Other than your email address, your account information will be available to the public. Please keep in mind that even after you remove public content from your Mint-Sea account, it will not more available in our Mint-sea site.</p>
                             <p className="text-md text-muted mb-3 ms-5"><b>II.</b> Preferences. Using our service, you can save preferences for things like notification settings, how your information is displayed, and favorite websites. These decisions can be connected to your account, browser, or mobile device.</p>
                             <p className="text-md text-muted mb-3 ms-5"><b>III.</b> Feedback. We may obtain your name, contact information (such as an email address), and any other information contained in or connected with the message you provide if you give us feedback or contact us.</p>
 
-                            <p className="text-md text-muted mb-3">Your blockchain wallet address also serves as your identity on MintSea, similar to much of web3. As a result, to use specific features of the Service, A blockchain wallet address alone is not regarded by us as personal information about you. However, when you use our Service, a blockchain wallet address might be connected to you or the data you give us.</p>
+                            <p className="text-md text-muted mb-3">Your blockchain wallet address also serves as your identity on Mint-Sea, similar to much of web3. As a result, to use specific features of the Service, A blockchain wallet address alone is not regarded by us as personal information about you. However, when you use our Service, a blockchain wallet address might be connected to you or the data you give us.</p>
                             <p className="text-md text-muted mb-3 fst-italic"><b>B.</b> Public Information.</p>
                             <p className="text-md text-muted mb-3">We gather information from transactions and data that are openly accessible and/or visible on public blockchains or other sources. This might include things like blockchain wallet addresses and details on NFT purchases, sales,Marketplace's Choice,Browse by category ,New Items, Top Sellers NFT,Open for sale NFTs or transfers, which could then be connected to other information you've given us.</p>
 
@@ -71,14 +71,14 @@ const PrivacyPolicy = () => {
                             <p className="text-md text-muted mb-3 ms-3"><b>IV.</b> Analyze, enhance, and tailor your usage of the service, including by providing suggestions to you;</p>
                             <p className="text-md text-muted mb-3 ms-3"><b>V.</b> To speak with you;</p>
                             <p className="text-md text-muted mb-3 ms-3"><b>VI.</b> Investigate, address, and stop behavior that may be harmful or illegal or that may be In violation of our terms of service;</p>
-                            <p className="text-md text-muted mb-3 ms-3"><b>VII.</b> Send you newsletters, flyers, and other communications about our service or the products and services of third parties;</p>
+                            <p className="text-md text-muted mb-3 ms-3"><b>VII.</b> Send you newsletters,and other communications about our service or the products and services of third parties;</p>
                             <p className="text-md text-muted mb-3 ms-3"><b>VIII.</b> Obey all applicable laws, assist in the investigation of alleged legal infractions by law enforcement or other authorities, and/or defend the legal rights of us and our affiliates.</p>
                         </div>
 
                         <div className='mb-4'>
                             <p className="text-md text-muted mb-3"><b>3. Disclosure of Your Information.</b> As outlined below, we disclose information about you.</p>
                             <p className="text-md text-muted mb-3 ms-3"><b>A.</b> Affiliates. Any subsidiaries, joint ventures, or other businesses or goods that are under our common control (collectively, "Affiliates") may receive some or all of your information and information about you, in which case we will require our Affiliates to abide by this Privacy Policy.</p>
-                            <p className="text-md text-muted mb-3 ms-3"><b>B.</b> Normative Rights. Regardless of any decisions you make regarding your information (as described below), MintSea may disclose your information and information about you if MintSea has a good faith belief that such disclosure is required: (a) in connection with any legal investigation; (b) to comply with applicable laws or to respond to subpoenas, warrants, or other legal process served on MintSea; (c) to protect or defend the rights or property of MintSea or users of the Service.</p>
+                            <p className="text-md text-muted mb-3 ms-3"><b>B.</b> Normative Rights. Regardless of any decisions you make regarding your information (as described below), Mint-Sea may disclose your information and information about you if Mint-Sea has a good faith belief that such disclosure is required: (a) in connection with any legal investigation; (b) to comply with applicable laws or to respond to subpoenas, warrants, or other legal process served on Mint-Sea; (c) to protect or defend the rights or property of Mint-Sea or users of the Service.</p>
                             <p className="text-md text-muted mb-3 ms-3"><b>C.</b> Additional Disclosures. To fulfill the reason for which you provide it, such as to give you access to our Service and new features, for any other purpose indicated by us when you provide it, or with your consent. We may also disclose your information and information about you.</p>
                         </div>
 
@@ -92,7 +92,7 @@ const PrivacyPolicy = () => {
                         </div>
 
                         <div className='mb-4'>
-                            <p className="text-md text-muted mb-3"><b>6. Data management and access.</b> Through your Settings page, you can view, access, edit, or delete your information and information about you for specific aspects of the Service. You may be able to assert certain rights in relation to your information and information about you, depending on the applicable law where you live. In the event that your operating entity or jurisdiction does not grant such rights, MintSea will do so at its sole discretion.</p>
+                            <p className="text-md text-muted mb-3"><b>6. Data management and access.</b> Through your Settings page, you can view, access, edit, or delete your information and information about you for specific aspects of the Service. You may be able to assert certain rights in relation to your information and information about you, depending on the applicable law where you live. In the event that your operating entity or jurisdiction does not grant such rights, Mint-Sea will do so at its sole discretion.</p>
                             <p className="text-md text-muted mb-3">We encourage you to get in touch with us first if you think your rights have been violated so we can attempt an informal resolution.</p>
                         </div>
 
@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
                         </div>
 
                         <div className='mb-4'>
-                            <p className="text-md text-muted mb-3"><b>8. Minors.</b> All users  can be visite  our Mintsea Platform No restriction for the Child or overage. according to our Terms of Service. <NavLink to='/contact'>contact us</NavLink>. </p>
+                            <p className="text-md text-muted mb-3"><b>8. Minors.</b> All users  can be visite  our Mint-sea Platform No restriction for the Child or overage. according to our Terms of Service. <NavLink to='/contact'>contact us</NavLink>. </p>
                         </div>
 
                         <div className='mb-4'>
