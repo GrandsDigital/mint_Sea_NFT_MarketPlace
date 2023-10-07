@@ -269,7 +269,7 @@ function App() {
     },[]);
 
     return (
-        <div>
+        <div className='container-xxl'>
             <BrowserRouter>
                 <Toaster />
                 {noMetaMask && <NoMetaMaskAlert />}

@@ -110,7 +110,7 @@ function HomeBanner() {
 
                     <div className='col-lg-6'>
                         
-                        <h1 className="text-white" style={{fontSize: "4.5rem"}}>Begin Your NFT Collection Today with Us.</h1>
+                        <h1 className="text-white h-b-t-fs">Begin Your NFT Collection Today with Us.</h1>
                         <p className='text-white mb-5' style={{fontSize: "1.32rem"}}>
                             Whether you are a beginner, expert, or anything in between, MintSea is the right place for you.
                         </p>
