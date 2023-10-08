@@ -428,7 +428,7 @@ export default function User_Registration() {
   const webSupply_Eth = new Web3(
     "https://endpoints.omniatech.io/v1/eth/sepolia/public"
   );
-  const webSupply_Polygon = new Web3("https://rpc.ankr.com/polygon_mumbai");
+  const webSupply_Polygon = new Web3("https://rpc-mumbai.maticvigil.com");
 
   useEffect(() => {
     const get_user_NFt_Balance = async () => {
