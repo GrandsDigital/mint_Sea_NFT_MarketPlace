@@ -59,7 +59,7 @@ const particlesLoaded = useCallback(async container => {
                       </div>
                       <div className="ms-2">
                         {/* <h6>Company Address</h6> */}
-                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mintsea">How to create an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_create_an_nft_on_mint-sea">How to create an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -67,7 +67,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mintsea">How to list an NFT for sale using MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_list_an_nft_for_sale_using_mint-sea">How to list an NFT for sale using Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -75,7 +75,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mintsea">How to buy an NFT on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_buy_an_nft_on_mint-sea">How to buy an NFT on Mint-Sea?</NavLink>
                       </div>
                     </li>
                     <li className="d-flex mb-3">
@@ -83,7 +83,7 @@ const particlesLoaded = useCallback(async container => {
                         <i className="las la-question"></i>
                       </div>
                       <div className="ms-2">
-                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mintsea">How to claim funds on MintSea?</NavLink>
+                        <NavLink className="text-md text-reset" to="/docs/how_to_claim_funds_on_mint-sea">How to claim funds on Mint-Sea?</NavLink>
                       </div>
                     </li>
                   </ul>
@@ -167,10 +167,10 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3 ms-4">Software and hardware wallets are examples of non-custodial wallets. </p>
                     <p class="text-md text-muted mb-3 ms-4">A software wallet is a program that runs on your computer or web browser. This makes software wallets an excellent choice for rapidly and easily purchasing, trading, and transferring NFTs and Bitcoin. </p>
                     <p class="text-md text-muted mb-3 ms-4">A hardware wallet is a physical device that you can use by plugging it into your computer. Because it isn't always connected to your computer or browser, it's ideal for long-term secure storage but less convenient for quick or frequent transactions.</p>
-                    <p class="text-md text-muted mb-3 ms-4">Different wallets support different blockchains, and not all wallets support NFTs. Here are some wallets compatible with MintSea:</p>
+                    <p class="text-md text-muted mb-3 ms-4">Different wallets support different blockchains, and not all wallets support NFTs. Here are some wallets compatible with Mint-Sea:</p>
                     <ul className="text-md text-muted ms-5">
-                      <li className='mb-2'>Metamask (Ethereum, Polygon, Klaytn)</li>
-                      <li className='mb-2'>Coinbase Wallet (Ethereum, Polygon, Klaytn)</li>
+                      <li className='mb-2'>Metamask (Ethereum, Polygon, BNB)</li>
+                      <li className='mb-2'>Coinbase Wallet (Ethereum, Polygon, BNB)</li>
                     </ul>
 
                     <p class="text-md text-muted mb-3 fw-bold">How to set up a crypto wallet?</p>
@@ -185,11 +185,11 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3 fw-bold">3. Create and save your seed phrase in a safe place.</p>
                     <p class="text-md text-muted mb-3">You'll be given your seed phrase throughout the setup procedure. Keep your wallet safe by adhering to recommended practises. Keep your seed phrase in a secure location that no one else can access. Never reveal your seed phrase to anyone.</p>
 
-                    <p class="text-md text-muted mb-3 fw-bold">4. Link your cryptocurrency wallet to MintSea.</p>
-                    <p class="text-md text-muted mb-3">Once your wallet is configured, you can connect it to MintSea!</p>
+                    <p class="text-md text-muted mb-3 fw-bold">4. Link your cryptocurrency wallet to Mint-Sea.</p>
+                    <p class="text-md text-muted mb-3">Once your wallet is configured, you can connect it to Mint-Sea!</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">How to fund your crypto wallet?</p>
-                    <p class="text-md text-muted mb-3">Now that your wallet is ready, you can purchase NFTs! Although you can purchase some NFTs with a credit or debit card through MintSea, you may need cryptocurrency in your wallet in cases where that is not an option. </p>
+                    <p class="text-md text-muted mb-3">Now that your wallet is ready, you can purchase NFTs!you may need cryptocurrency in your wallet in cases where that is not an option. </p>
                     <p class="text-md text-muted mb-3">Each wallet is unique, but there are two major ways to fund your cryptocurrency wallet:</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">1. Adding money to your wallet immediately</p>
@@ -209,9 +209,9 @@ const particlesLoaded = useCallback(async container => {
                       <li className='mb-2'>Don't click links you don't recognize!</li>
                     </ul>
 
-                    <p class="text-md text-muted mb-3 fw-bold">Connecting your crypto wallet to MintSea</p>
-                    <p class="text-md text-muted mb-3">Connecting a crypto wallet to MintSea is easy;</p>
-                    <p class="text-md text-muted mb-3">Click the wallet icon in the top right corner of the MintSea site and fill out the rest of your profile. Any time you try to take an action that gets recorded on the blockchain, you must connect your wallet and authorize the action.</p>
+                    <p class="text-md text-muted mb-3 fw-bold">Connecting your crypto wallet to Mint-Sea</p>
+                    <p class="text-md text-muted mb-3">Connecting a crypto wallet to Mint-Sea is easy;</p>
+                    <p class="text-md text-muted mb-3">Click the wallet icon in the top right corner of the Mint-Sea site and fill out the rest of your profile. Any time you try to take an action that gets recorded on the blockchain, you must connect your wallet and authorize the action.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold"></p>
                     <p class="text-md text-muted mb-3"></p>
@@ -221,8 +221,8 @@ const particlesLoaded = useCallback(async container => {
                     <p class="text-md text-muted mb-3 fw-bold">Are all crypto wallets NFT-compatible?</p>
                     <p class="text-md text-muted mb-3">No. Some cryptocurrency wallets exclusively accept cryptocurrencies. If you're configuring a wallet to use with NFTs, double-check that it supports NFTs.</p>
 
-                    <p class="text-md text-muted mb-3 fw-bold">MintSea accepts which cryptocurrency wallets?</p>
-                    <p class="text-md text-muted mb-3">MintSea supports a wide range of crypto wallets across several chains. Check out the full list of crypto wallets that MintSea now supports.</p>
+                    <p class="text-md text-muted mb-3 fw-bold">Mint-Sea accepts which cryptocurrency wallets?</p>
+                    <p class="text-md text-muted mb-3">Mint-Sea Support a wide range of crypto wallets across our 3 main chain Ethereum,Polygon and Binance smart chain.</p>
 
                     <p class="text-md text-muted mb-3 fw-bold">Can I have more than one cryptocurrency wallet?</p>
                     <p class="text-md text-muted mb-3">Yes! Many people, in fact. You may require separate wallets for different blockchains, for as a Metamask wallet for Ethereum NFTs and a Phantom wallet for Solana NFTs. You should also have both a software and a hardware wallet for easy transactions and secure long-term storage.</p>

@@ -67,7 +67,8 @@
 
 body {
     margin: 0;
-    font-family: var(--bs-font-sans-serif);
+    /* font-family: var(--bs-font-sans-serif); */
+    font-family: 'Outfit', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -4986,14 +4987,14 @@ fieldset:disabled .btn {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #acb5bf;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover,
+/* .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
     color: #2ca0c4;
-}
+} */
 
 .navbar-dark .navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, 0.25);
@@ -5001,7 +5002,7 @@ fieldset:disabled .btn {
 
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #2ca0c4;
+    color: #fff;
 }
 
 .navbar-dark .navbar-toggler {
@@ -11563,8 +11564,9 @@ a {
 
 @media (max-width: 991.98px) {
     .navbar {
-        background: #131722;
+        /* background: #131722; */
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(0deg, #010135, #232386)!important;
     }
 }
 
@@ -12935,9 +12937,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .social-link:hover,
 .social-link:focus {
-    background: #2ca0c4;
+    /* background: #2ca0c4; */
     color: #fff;
-    box-shadow: 0 3px 5px rgba(44, 160, 196, 0.2);
+    /* box-shadow: 0 3px 5px rgba(44, 160, 196, 0.2); */
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
 }
@@ -13023,11 +13025,11 @@ input[type='date']::-webkit-calendar-picker-indicator {
     align-items: center;
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .hero {
         min-height: 100vh;
     }
-}
+} */
 
 .bg-map {
     position: relative;
@@ -14104,21 +14106,31 @@ input-icon .form-select {
 }
 
 .favroute{
-    position: absolute;
+    position: relative;
 
-    top: 25px;
-    right: 25px;
+    /* top: 25px;
+    right: 25px; */
+    /* top: 80px;
+    right: 20px; */
+    top: 50px;
+    right: 10px;
    
     text-align: center;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    background-color: rgba(159, 159, 159, 0.4);
+    /* background-color: rgba(159, 159, 159, 0.4); */
+    background-color: #1adfbb;
     backdrop-filter: blur(10px);
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
+    /* height: 32px;
+    width: 32px; */
+    height: 2rem;
+    width: 2rem;
+    /* border-radius: 50%; */
+    /* clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%); */
+    -webkit-clip-path: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%);
+    clip-path: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%);
     display: flex;
     justify-content: center;
     align-items: center;

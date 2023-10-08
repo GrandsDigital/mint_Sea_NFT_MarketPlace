@@ -59,44 +59,44 @@ function TopSellers({ title, description, topSellers }) {
         // console.log("seller",seller);
       
             return (
-                <div className='col-xl-3 col-lg-4 col-md-6' key={index}>
-                    <div className='card bd-3 card-hover-minimal position-relative'>
-                        <div className='card-body'>
+                <div className='col-xl-3 col-lg-3 col-md-6 mb-4' key={index}>
+                    <div className='card top-saller-Card position-relative'>
+                        <div className='card-body p-1'>
                             <a
-                                className='d-flex align-items-center text-reset text-decoration-none stretched-link'
+                                className='text-reset text-decoration-none stretched-link'
                                 // href={configEtherScanUrl(web3Ctx.networkId, seller.address)}
                                 rel='noreferrer noopener'
                                 target='_blank'
                             >
-                                <p className='fw-bold text-primary mb-0'>{index+1}.</p>
-                                <div className='position-relative'>
-                                    <div className='ms-3' >
-                                        {/* {seller?.image ? <>  <Avatar alt=""  size="large" src={`${seller.image}`} /> </>:<><Jazzicon address="0x4113ccD05D440f9580d55B2B34C92d6cC82eAB3c" /> </>} */}
-                                        <Avatar alt=""  size="large" src={`${seller.image}`} /> 
+                                {/* <p className='fw-bold text-primary mb-0'>{index+1}.</p> */}
+                                <div className='h-i-w-Card py-5'>
+                                    <div className='d-flex flex-column align-items-center text-white'>
+                                        <h3 className='h6 mb-3 text-capitalize'>
+                                        {/* <span className='seller-badge ms-2'>{seller?.name}</span> */}
+                                        {seller?.name || "Name"}
+                                        </h3>
+                                        <p className='m-0' style={{fontSize:"14px",fontWeight:"200"}}>  <span>{ seller?.Eth_const==undefined ? 0 :parseFloat(seller?.Eth_const).toFixed(5) || 0 } </span>  ETH</p>
+                                        <p className='m-0' style={{fontSize:"14px",fontWeight:"200"}}> <span>{ seller?.Metic_Cost==undefined ? 0 : parseFloat(seller?.Metic_Cost ).toFixed(5) ||0 } </span> MATIC</p>
+                                        <p className='m-0' style={{fontSize:"14px",fontWeight:"200"}}>  <span>{seller?.BNB_Cost==undefined ? 0: parseFloat(seller?.BNB_Cost).toFixed(5) ||0 } </span>  BNB</p>
+                                            { address?.toUpperCase() === seller?.address?.toUpperCase() ? (
+                                                <span className='seller-badge ms-2'>You</span>
+                                            ) : null} 
+                                        {/* <p className='text-sm text-primary mb-0'>
+                                            {formatPrice(seller.value).toFixed(2)} <span className='text-muted'>ETH</span>
+                                        </p> */}
                                     </div>
-                                    <div className='author-img-badge bg-primary text-white'>
-                                        <i className='las la-check-double la-xs'></i>
+                                    <div className='position-relative mt-3'>
+                                        <div className='d-flex justify-content-center'>
+                                            {/* {seller?.image ? <>  <Avatar alt=""  size="large" src={`${seller.image}`} /> </>:<><Jazzicon address="0x4113ccD05D440f9580d55B2B34C92d6cC82eAB3c" /> </>} */}
+                                            <Avatar alt=""  size="large" src={`${seller.image}`} /> 
+                                        </div>
+                                        {/* <div className='author-img-badge bg-primary text-white'>
+                                            <i className='las la-check-double la-xs'></i>
+                                        </div> */}
                                     </div>
                                 </div>
-                                <div className='ms-3'>
-                                    <h3 className='h6 mb-1 text-capitalize'>
-                                    {/* <span className='seller-badge ms-2'>{seller?.name}</span> */}
-                                    {seller?.name || "Name"}
-                
-                                    <p className='mt-1' style={{fontSize:"14px",fontWeight:"200"}}>  <span style={{color:"#2ca0c4"}}>{ seller?.Eth_const==undefined ? 0 :parseFloat(seller?.Eth_const).toFixed(5) || 0 } </span>  ETH</p>
-                                    <p className='pt-0' style={{fontSize:"14px",fontWeight:"200",paddingTop:"0px",marginTop:"-10px"}}> <span style={{color:"#2ca0c4"}}>{ seller?.Metic_Cost==undefined ? 0 : parseFloat(seller?.Metic_Cost ).toFixed(5) ||0 } </span> MATIC</p>
-                                    <p className='pt-0' style={{fontSize:"14px",fontWeight:"200",paddingTop:"0px",marginTop:"-10px"}}>  <span style={{color:"#2ca0c4"}}>{seller?.BNB_Cost==undefined ? 0: parseFloat(seller?.BNB_Cost).toFixed(5) ||0 } </span>  BNB</p>
 
-                            
-                                    
-                                        { address?.toUpperCase() === seller?.address?.toUpperCase() ? (
-                                            <span className='seller-badge ms-2'>You</span>
-                                        ) : null} 
-                                    </h3>
-                                    {/* <p className='text-sm text-primary mb-0'>
-                                        {formatPrice(seller.value).toFixed(2)} <span className='text-muted'>ETH</span>
-                                    </p> */}
-                                </div>
+                                <p className='fw-bold text-white mb-0 py-2 d-flex justify-content-center mx-3 mt-4' style={{borderRadius: "0.4rem", backgroundColor: "#0F1953", boxShadow: "0px 0px 20px 5px #4659CF"}}>{index+1}</p>
                             </a>
                         </div>
                     </div>
@@ -109,14 +109,28 @@ function TopSellers({ title, description, topSellers }) {
 
 
     return (
-        <section className='py-5'>
-            <div className='container pb-5'>
-                <header className='mb-5'>
-                    <div className='row'>
-                        <div className='col-lg-6'>
+        <section className='pt-5'>
+            <div className='container pb-4'>
+                <header className='mb-5 pb-5'>
+                    <div className='row position-relative heading-col'>
+                        {/* <div className='col-lg-6'>
                             <h2>{title}</h2>
                             <p className='text-muted text-sm mb-0'>{description}</p>
+                        </div> */}
+
+                        {/* <div className="container-xl">
+                            <div className="row mt-5 position-relative heading-col"> */}
+                        <div className="col-7 text-white heading-left-part">
+                            <h3 className="text-white mb-0">{title}</h3>
+                            <p className="text-white text-sm mb-0">
+                                {description}
+                            </p>
                         </div>
+                        <div className="col-5 h-100 position-div rounded-pill heading-right-part">
+                            <img className="some-css" src="/images/pngwing.png" alt="" />
+                        </div>
+                            {/* </div>
+                        </div> */}
                     </div>
                 </header>
 
@@ -124,7 +138,7 @@ function TopSellers({ title, description, topSellers }) {
                     {topSeller_data.length >0 ? (
                         renderTopSellers
                     ) : (
-                        <div className='col-lg-9'>
+                        <div className='col-lg-12'>
                             <NoDataAlert
                                 heading="There're no Sellers at the moment."
                                 subheading='Once someone has successfully sell or buy an asset, sellers calculations will take place.'
