@@ -1,12 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from '@formspree/react';
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCategory } from '../../Redux/Load_offers';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 function Footer() {
-    const [state, handleSubmit] = useForm('xlezgplp');
+    // const [state, handleSubmit] = useForm('xlezgplp');
+    const [getNewsletter, setgetNewsletter] = useState("")
+    const [spinner, setSpinner] = useState(false)
+
+
     let dispatch = useDispatch()
+
+    const handleSubmit = async () => {
+        try {
+            if (getNewsletter == "") {
+                toast.error("Please Enter Email Address!")
+            } else {
+
+                setSpinner(true)
+                let res = await axios.post('https://sanjhavehra.womenempowerment.online/Newsletter_mail', {
+                    email: getNewsletter
+                })
+                console.log("ResNewsLetter", res.data);
+                if(res.data.success==true){
+
+                    setgetNewsletter(res.data.success)
+                    setSpinner(false)
+                }else{
+                    toast.error("This email is already exist")
+                    setSpinner(false)
+
+                }
+            }
+        } catch (error) {
+            console.log(error);
+            setSpinner(false)
+
+        }
+    }
+
+
 
     return (
         <footer className='footer bg-map bg-dark bg-gray'>
@@ -82,7 +118,7 @@ function Footer() {
                             </li>
                             <li className='mb-1'>
                                 <NavLink className='text-sm text-reset' to='/Favorite'>
-                                Favourites
+                                    Favourites
                                 </NavLink>
                             </li>
                             <li className='mb-1'>
@@ -129,9 +165,9 @@ function Footer() {
                     <div className='col-lg-3 col-md-6 mb-4'>
                         <h6>Newsletter</h6>
                         <p className='text-sm text-muted'>
-                        Subscribe to our newsletter to get updates regarding all NFTs and the marketplace.
+                            Subscribe to our newsletter to get updates regarding all NFTs and the marketplace.
                         </p>
-                        <form onSubmit={handleSubmit}>
+                        <div >
                             <div className='input-group shadow-sm bg-body rounded-sm'>
                                 <input
                                     className='form-control border-0 bg-none shadow-0'
@@ -139,15 +175,28 @@ function Footer() {
                                     name='email'
                                     autoComplete='off'
                                     placeholder='Enter your email address...'
+                                    onChange={(e) => setgetNewsletter(e.target.value)}
                                 />
-                                <button className='btn btn-primary btn-sm' type='submit'>
-                                    <i className='las la-paper-plane'></i>
+                                <button className='btn btn-primary btn-sm' type='submit' onClick={handleSubmit}>
+                                    {
+                                        spinner ?
+                                            <>
+                                                <div class="spinner-border" role="status">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                            </>
+                                            :
+                                            <i className='las la-paper-plane'></i>
+                                    }
+
                                 </button>
                             </div>
-                        </form>
-                        {state.succeeded ? (
+                        </div>
+                        {getNewsletter == true ? (
                             <p className='bg-primary text-white mt-1 px-3 py-1  rounded-sm'>Thanks!</p>
-                        ) : null}
+                        ) : null
+
+                        }
                     </div>
                 </div>
             </div>

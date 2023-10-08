@@ -5,7 +5,7 @@ import Web3 from "web3";
 import useWeb3 from "../useWeb3";
 
 
-export default function Header({setnavOpen,setgetAddress}) {
+export default function Header({setnavOpen}) {
   return (
     <div>
       {/* <div className="flex flex-col flex-1 w-full"> */}
@@ -54,7 +54,7 @@ export default function Header({setnavOpen,setgetAddress}) {
                   placeholder="Paste your address here"
                   aria-label="Search"
                   defaultValue=""
-                  onChange={(e)=>setgetAddress(e.target.value)}
+                
                 />
               </div>
             </div>

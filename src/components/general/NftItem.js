@@ -155,6 +155,7 @@ function NftItem({
             Blockchain: NFT.Blockchain
           }
         )
+        console.log("detect_Offer_Market", DeleteItems);
         let TrandingItems = await axios.post(
           "https://sanjhavehra.womenempowerment.online/update_Tranding",
           {
@@ -162,6 +163,8 @@ function NftItem({
             Blockchain: NFT.Blockchain
           }
         )
+        console.log("detect_Offer_TrandingItems", TrandingItems);
+
       }
 
 
@@ -172,12 +175,13 @@ function NftItem({
 
 
   useEffect(() => {
-    let intveral = setInterval(() => {
-      detect_Offer_card()
-    }, 10000);
+    // detect_Offer_card()
 
-    return () => clearInterval(intveral)
-  })
+    // let intveral = setInterval(() => {
+    // }, 10000);
+
+    // return () => clearInterval(intveral)
+  }, [])
 
 
   const webSupply = new Web3("https://bsc-mainnet.public.blastapi.io");
@@ -431,7 +435,7 @@ function NftItem({
   useEffect(() => {
 
     get_Favorite()
-   
+
 
   }, [favrouteName])
 
@@ -545,157 +549,157 @@ function NftItem({
                 </>
               ) : NFT?.sold == "true" ? (
                 <>
-                <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
+                  <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
 
-                  <img
-                    className="img-fluid rounded w-100"
-                    style={{ height: "300px", width: "100%" }}
-                    src={NFT.url}
-                    alt={title}
-                  // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
-                  />
-                </Link>
+                    <img
+                      className="img-fluid rounded w-100"
+                      style={{ height: "300px", width: "100%" }}
+                      src={NFT.url}
+                      alt={title}
+                    // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
+                    />
+                  </Link>
 
                 </>
-            )
-            : NFT?.sold?.startsWith("audio") ?
-            <>
-              {/* <audio controls={true} loop muted={true}
+              )
+                : NFT?.sold?.startsWith("audio") ?
+                  <>
+                    {/* <audio controls={true} loop muted={true}
                       autoPlay={true} className="audio-element" src={NFT.url} /> */}
-              <div ref={vidButtonRef} class="c-mm">
-                <details>
-                  <summary
-                    class="c-mm__play"
-                    onClick={handleToggleVideo}
-                  >
-                    <span data-css-icon="play">
-                      <i></i>
-                    </span>
-                  </summary>
-                  <span hidden></span>
-                </details>
-                <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
+                    <div ref={vidButtonRef} class="c-mm">
+                      <details>
+                        <summary
+                          class="c-mm__play"
+                          onClick={handleToggleVideo}
+                        >
+                          <span data-css-icon="play">
+                            <i></i>
+                          </span>
+                        </summary>
+                        <span hidden></span>
+                      </details>
+                      <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
 
-                  <div
-                    class="c-mm__inner"
-                    style={{ position: "relative" }}
-                  // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
-                  >
-                    <img
-                      src="https://deliverysources.web.app/IstanbulMUN/images/redenx-min.jpg"
-                      width="100%"
-                      style={{
-                        width: "30rem",
-                        height: "13rem",
-                      }}
-                      alt=""
-                    />
-                    <figure
-                      data-filter="grainy text"
-                      class="c-mm__frame"
-                    ></figure>
-                  </div>
-                </Link>
-                <audio
-                  src={NFT.url}
-                  ref={vidRef}
-                  loop
-                ></audio>
-              </div>
-            </>
-            :
-            <>
-              <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
-                <img
-                  className="img-fluid rounded w-100"
-                  style={{ height: "300px", width: "100%" }}
-                  src={NFT.url}
-                  alt={title}
-                // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
-                />
-              </Link>
-            </>
+                        <div
+                          class="c-mm__inner"
+                          style={{ position: "relative" }}
+                        // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
+                        >
+                          <img
+                            src="https://deliverysources.web.app/IstanbulMUN/images/redenx-min.jpg"
+                            width="100%"
+                            style={{
+                              width: "30rem",
+                              height: "13rem",
+                            }}
+                            alt=""
+                          />
+                          <figure
+                            data-filter="grainy text"
+                            class="c-mm__frame"
+                          ></figure>
+                        </div>
+                      </Link>
+                      <audio
+                        src={NFT.url}
+                        ref={vidRef}
+                        loop
+                      ></audio>
+                    </div>
+                  </>
+                  :
+                  <>
+                    <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
+                      <img
+                        className="img-fluid rounded w-100"
+                        style={{ height: "300px", width: "100%" }}
+                        src={NFT.url}
+                        alt={title}
+                      // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
+                      />
+                    </Link>
+                  </>
 
               }
+            </div>
           </div>
-        </div>
-        <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
-          <p
-            className="fw-bold mb-3 cursor-pointer text-muted"
-          // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
-          >
+          <Link className='text-reset' to={`/assets/${NFT.name}/${NFT.Blockchain}`} >
+            <p
+              className="fw-bold mb-3 cursor-pointer text-muted"
+            // onClick={() => (history.push(`/assets/${NFT.name}/${NFT.Blockchain}`, { state: NFT }))}
+            >
 
-            {NFT.name}
+              {NFT.name}
 
+            </p>
+          </Link>
+          <p className="text-sm text-muted fw-normal mb-2 d-flex align-items-center mt-2">
+            {
+              NFT.price !== "01000000000000000" && (
+                <>
+                  <span className="icon bg-primary text-white me-2">
+                    <i className="lab la-ethereum fa-fw"></i>
+                  </span>
+                  <span>Price: </span>
+                  <span className="text-primary ms-2">{NFT.price}</span>
+                  <span className="ms-2">
+                    {NFT.Blockchain == "Binance"
+                      ? "BNB"
+                      : NFT.Blockchain === "Ethereum"
+                        ? "ETH"
+                        : "MATIC"}
+                  </span>
+                </>
+              )
+            }
           </p>
-        </Link>
-        <p className="text-sm text-muted fw-normal mb-2 d-flex align-items-center mt-2">
+
+          <NftCategory category={NFT.category} />
           {
-            NFT.price !== "01000000000000000" && (
+
+            NFT.price == "01000000000000000" ?
               <>
-                <span className="icon bg-primary text-white me-2">
-                  <i className="lab la-ethereum fa-fw"></i>
-                </span>
-                <span>Price: </span>
-                <span className="text-primary ms-2">{NFT.price}</span>
-                <span className="ms-2">
-                  {NFT.Blockchain == "Binance"
-                    ? "BNB"
-                    : NFT.Blockchain === "Ethereum"
-                      ? "ETH"
-                      : "MATIC"}
-                </span>
+                <p className="" style={{ backgroundColor: "black", fontSize: "13px", padding: "19px 16px" }}>Item owner hasn't put an offer yet</p>
+
               </>
-            )
+              :
+              <>
+                {NFT.owner?.toUpperCase() == address?.toUpperCase() ? (
+                  <>
+                    <button
+                      type="button"
+                      value={nftKey}
+                      className="btn btn-danger w-100"
+                      onClick={(e) => cancelHandler(e, NFT.Blockchain)}
+                    >
+                      Cancel
+                    </button>
+                  </>
+                ) : (
+                  <>
+
+                    <button
+                      type="button"
+                      value={nftKey}
+                      className="btn btn-primary w-100"
+                      onClick={(e) => buyHandler(e, NFT.tokenId, NFT.Blockchain)}
+                    >
+                      Buy NFT
+                    </button>
+
+                  </>
+                )}
+              </>
           }
-        </p>
+          <div className="my-3 pt-1 bg-body rounded-pill"></div>
+          <p className="text-muted fw-normal mb-0 text-sm d-flex align-items-center">
+            <i className="la-sm text-primary las la-clock mx-1 mt-1 text-primary"></i>
+            Created
+            <span className="text-primary mx-2">{formatDate(NFT.edate)}</span> ago
+          </p>
+        </div>
 
-        <NftCategory category={NFT.category} />
-        {
-
-          NFT.price == "01000000000000000" ?
-            <>
-              <p className="" style={{ backgroundColor: "black", fontSize: "13px", padding: "19px 16px" }}>Item owner hasn't put an offer yet</p>
-
-            </>
-            :
-            <>
-              {NFT.owner?.toUpperCase() == address?.toUpperCase() ? (
-                <>
-                  <button
-                    type="button"
-                    value={nftKey}
-                    className="btn btn-danger w-100"
-                    onClick={(e) => cancelHandler(e, NFT.Blockchain)}
-                  >
-                    Cancel
-                  </button>
-                </>
-              ) : (
-                <>
-
-                  <button
-                    type="button"
-                    value={nftKey}
-                    className="btn btn-primary w-100"
-                    onClick={(e) => buyHandler(e, NFT.tokenId, NFT.Blockchain)}
-                  >
-                    Buy NFT
-                  </button>
-
-                </>
-              )}
-            </>
-        }
-        <div className="my-3 pt-1 bg-body rounded-pill"></div>
-        <p className="text-muted fw-normal mb-0 text-sm d-flex align-items-center">
-          <i className="la-sm text-primary las la-clock mx-1 mt-1 text-primary"></i>
-          Created
-          <span className="text-primary mx-2">{formatDate(NFT.edate)}</span> ago
-        </p>
-      </div>
-
-    </div >
+      </div >
     </>
 
 
