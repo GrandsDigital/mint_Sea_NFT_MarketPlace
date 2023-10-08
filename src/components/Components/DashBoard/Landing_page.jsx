@@ -10,7 +10,7 @@ import { loadWeb3 } from '../apis/api';
 
   
 
-export default function Landing_page({getAddress}) {
+export default function Landing_page() {
     const [getAlldata, setgetAlldata] = useState({});
     const [IsLoading, setIsLoading] = useState(false)
     const [date_show, setdate_show] = useState(0)
@@ -46,9 +46,8 @@ export default function Landing_page({getAddress}) {
               Obama Inu Coin Earnings Manager
             </h1>
             <div className="hidden lg:block">
-              <span className={getAddress===""?"flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple":"flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple bg_box"}
-              
-              >
+            {/* {getAddress===""?"flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple":"flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple bg_box"} */}
+              <span className="">
                 <div className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +63,7 @@ export default function Landing_page({getAddress}) {
                       d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
                     />
                   </svg>
-                  <span>{getAddress==="" ? "Please enter your address above" :getAddress} </span>
+                  {/* <span>{getAddress==="" ? "Please enter your address above" :getAddress} </span> */}
                 </div>
                 <a
                   href="#"

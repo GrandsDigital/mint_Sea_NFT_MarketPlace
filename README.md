@@ -66,3 +66,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+ // "browserslist": {
+    //     "production": [
+    //         ">0.2%",
+    //         "not ie <= 99",
+    //         "not android <= 4.4.4",
+    //         "not dead",
+    //         "not op_mini all"
+    //     ],
+    //     "development": [
+    //         "last 2 chrome version",
+    //         "last 2 firefox version",
+    //         "last 2 safari version",
+    //         "last 2 edge version"
+    //     ]
+    // },
