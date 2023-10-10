@@ -5174,7 +5174,7 @@ input[type=search]::-webkit-search-results-decoration {
 .Blockchain{
     position: absolute;
 
-    top: 25px;
+    top: 45px !important;
     left: 25px;
    
     text-align: center;
@@ -5203,7 +5203,7 @@ input[type=search]::-webkit-search-results-decoration {
     right: 25px; */
     /* top: 80px;
     right: 20px; */
-    top: 28px;
+    top: 45px;
     right: 35px;
    
     text-align: center;
