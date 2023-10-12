@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 import Select from 'react-dropdown-select';
 import Web3Context from '../store/web3-context';
@@ -64,6 +64,15 @@ function CreateItem() {
     const vidRef = useRef(null);
     const vidButtonRef = useRef(null);
 
+    useEffect(() => {
+        document.getElementById("root").classList.add("bg-mint");
+        //document.getElementById("root").style.backgroundImage = "url('/images/bg-mint.jpg')";
+      
+        return () => {
+            document.getElementById("root").classList.remove("bg-mint");
+            //document.getElementById("root").style.backgroundImage = "none";
+        };
+    }, []);
 
     const handlePlay = () => {
         vidRef.current.play();
@@ -296,7 +305,7 @@ function CreateItem() {
         return (
             <SuccessMessage
                 heading="Great! You've successfully minted your NFT"
-                subheading="We're redirecting to homepage"
+                subheading="We're redirecting to your collection"
             />
         );
 
@@ -323,26 +332,81 @@ function CreateItem() {
     return (
         <>
             {mintLoading ? <FullScreenLoader heading='loading' /> : null}
-            <PageBanner heading='Mint an NFT' />
+            {/* <PageBanner heading='Mint an NFT' /> */}
+
+            {/* <section className='pt-5 header-section-2'>
+                <div className='container z-index-10 position-relative'>
+                    <div className='row align-items-center mt-5'>
+
+                        <div className='col-12 col-sm-8 mx-auto text-center'>
+                            <h1 className="text-white h-b-t-fs">Mint an NFT</h1>
+                            <ul className='list-inline'>
+                                <li className='list-inline-item' style={{borderRight: "1px solid white"}}>
+                                    <Link className='text-muted me-2 fs-5' to='/' style={{textDecoration: "none"}}>
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className='list-inline-item mb-0'>
+                                    <Link className='text-white fs-5' to='/mint' style={{textDecoration: "none"}}>
+                                        Mint an NFT
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+
+            <section className='py-5 position-relative'>
+                <div className='container z-index-10 position-relative'>
+                    <div className='row align-items-center mt-5'>
+
+                        <div className='col-lg-6'>                        
+                            <h1 className="text-white h-b-t-fs">Mint an NFT</h1>
+                            {/* <h2 className='text-white ms-5 ps-3 mb-5' >                            
+                                Our NFTs
+                            </h2> */}
+                            {/* style={{fontSize: "2.8rem", fontWeight: "500"}} */}
+                            <ul className='list-inline'>
+                                <li className='list-inline-item' style={{borderRight: "1px solid white"}}>
+                                    <Link className='text-muted me-2 fs-5' to='/' style={{textDecoration: "none"}}>
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className='list-inline-item'>
+                                    <Link className='text-white fs-5' to='/mint' style={{textDecoration: "none"}}>
+                                        Mint an NFT
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className='col-lg-6 ms-auto d-none d-lg-block'>
+                            <img className='img-fluid mx-auto w-50' src="/images/mint.png" alt="explore" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
             <section className='py-5'>
                 <div className='container py-5'>
                     <div className='row g-5'>
-                        <div className='col-lg-8 bg-gray p-4 rounded'>
+                        <div className='col-lg-8 rounded'>
                             {/* NFT INFORMATION */}
 
-                            <form className='' onSubmit={(e) => submissionHandler(e)}>
+                            <form className='p-5' onSubmit={(e) => submissionHandler(e)} style={{height: "100%", borderRadius: "8px", background: "#070630", boxShadow: "0 0 10px 5px #2c1cb5aa"}}>
                                 <div className='d-flex align-items-center mb-4'>
-                                    <div className='icon icon-md me-2 flex-shrink-0 bg-primary rounded-sm text-white'>
-                                        <i className='las la-image'></i>
+                                    <div className='d-block'>
+                                        <i className='las la-image text-white' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                        <label className='form-label text-white fs-5 fw-bold ms-2 mb-0'>Upload Assets</label>
                                     </div>
-                                    <h2 className='h5 mb-0'>Upload Assets</h2>
                                 </div>
 
                                 <div className='row mb-5'>
                                     <div className='col-lg-12'>
-                                        {/* <label className='form-label text-gray-400'>Image</label> */}
                                         <input
-                                            className={`form-control shadow-0 bd-dark-lighter bg-none custom-file-upload ${fileClass}`}
+                                            className={`form-control shadow-0 bg-transparent custom-file-upload ${fileClass}`}
                                             type='file'
                                             autoComplete='off'
                                             name='nft_image'
@@ -351,17 +415,18 @@ function CreateItem() {
                                             onChange={onSelectFile}
                                         />
                                         <label
-                                            className={`form-label text-gray-400 text-center bd-dark-lighter ${selectedFile ? 'p-3' : 'p-5'
+                                            className={`form-label text-gray-400 text-center ${selectedFile ? 'p-3' : 'p-5'
                                                 }`}
                                             htmlFor='nft_image'
+                                            style={{background: "#030B3C"}}
                                         >
                                             {!selectedFile ? (
-                                                <div className='my-5'>
-                                                    <i className='las la-image la-3x text-muted'></i>
-                                                    <h6 className='mb-0 fw-normal text-gray-500 myh6'>
+                                                <div className='my-5'>                                                    
+                                                    <i className='las la-plus mb-2' style={{ filter: "drop-shadow(0px 0px 15px #131DFF)", border: "1px dashed gray", borderRadius: "5px", padding: "5px 10px", color: "blue"}}></i>
+                                                    <h6 className='mb-0 fw-normal text-white myh6'>
                                                         Click here to upload
                                                     </h6>
-                                                    <p className='text-muted mb-0'>Waiting to catch your cool image</p>
+                                                    <p className='text-white mb-0'>Waiting to catch your cool image</p>
                                                 </div>
                                             ) : <>
                                                 {
@@ -420,25 +485,26 @@ function CreateItem() {
                                     </div>
                                 </div>
 
-                                <div className='d-flex align-items-center mb-4'>
-                                    <div className='icon icon-md me-2 flex-shrink-0 bg-primary rounded-sm text-white'>
-                                        <i className='las la-icons'></i>
+                                <div className='d-flex align-items-center'>
+                                    <div className='d-block'>
+                                        <i className='las la-icons text-white' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                        <label className='form-label text-white fs-5 fw-bold ms-2 mb-0'>Add Info</label>
                                     </div>
-                                    <h2 className='h5 mb-0'>Add Info</h2>
                                 </div>
 
-                                <div className='bg-dark p-4 p-lg-5'>
+                                <div className='p-4 p-lg-4'>
                                     <div className='row gy-3 has-field-icons'>
                                         <div className='col-lg-12'>
-                                            <label className='form-label text-gray-400' htmlFor='nft_title'>
+                                            <label className='form-label text-white' htmlFor='nft_title'>
                                                 Title
                                             </label>
                                             <div className='input-icon'>
                                                 <div className='input-icon-text bg-none'>
-                                                    <i className='text-primary las la-user-edit'></i>
+                                                    <i className='text-white las la-user-edit'></i>
                                                 </div>
                                                 <input
-                                                    className={`form-control bd-dark-lighter shadow-0 bg-none ${nameClass}`}
+                                                    className={`form-control ps-5 ${nameClass}`}
+                                                    style={{ borderRadius: "5px", border: "1px solid #49E6FB", background: "#030B3C"}}
                                                     type='text'
                                                     autoComplete='off'
                                                     name='nft_title'
@@ -450,16 +516,17 @@ function CreateItem() {
                                             </div>
                                         </div>
                                         <div className='col-lg-12'>
-                                            <label className='form-label text-gray-400' htmlFor='nft_description'>
+                                            <label className='form-label text-white' htmlFor='nft_description'>
                                                 Description
                                             </label>
                                             <div className='input-icon'>
                                                 <div className='input-icon-text bg-none'>
-                                                    <i className='las la-align-left text-primary'></i>
+                                                    <i className='las la-align-left text-white'></i>
                                                 </div>
                                                 <textarea
                                                     rows='6'
-                                                    className={`form-control shadow-0 bd-dark-lighter bg-none ${descriptionClass}`}
+                                                    className={`form-control ps-5 ${descriptionClass}`}
+                                                    style={{ borderRadius: "5px", border: "1px solid #49E6FB", background: "#030B3C"}}
                                                     name='nft_description'
                                                     id='nft_description'
                                                     placeholder='Provide some good description about your asset'
@@ -468,39 +535,41 @@ function CreateItem() {
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div className='col-lg-12'>
-                                            <label className='form-label text-gray-400' htmlFor='nft_category'>
+                                        <div className='col-lg-12 mb-2'>
+                                            <label className='form-label text-white' htmlFor='nft_category'>
                                                 Category
                                             </label>
-                                            <div className='input-icon flex-nowrap category-select'>
-                                                <div className='input-icon-text bg-none'>
-                                                    <i className='las la-icons text-primary'></i>
+                                            <div className='input-icon flex-nowrap category-select' style={{background: "#030B3C"}}>
+                                                <div className='input-icon-text bg-transparent'>
+                                                    <i className='las la-icons text-white'></i>
                                                 </div>
                                                 <Select
                                                     searchable={false}
                                                     options={categoryOptions}
-                                                    className='form-select shadow-0 bd-dark-lighter bg-none'
+                                                    className='form-select shadow-0 ps-5 bg-transparent'
                                                     value={enteredCategory}
+                                                    style={{ borderRadius: "5px", border: "1px solid #49E6FB"}}
                                                     onChange={(values) =>
                                                         setEnteredCategory(values.map((el) => el.value).toString())
                                                     }
                                                 />
                                             </div>
                                         </div>
-                                        <div className='col-lg-12'>
-                                            <label className='form-label text-gray-400' htmlFor='nft_category'>
+                                        <div className='col-lg-12 mb-3'>
+                                            <label className='form-label text-white' htmlFor='nft_category'>
                                                 Blockchain
                                             </label>
-                                            <div className='input-icon flex-nowrap category-select'>
-                                                <div className='input-icon-text bg-none'>
-                                                    {/* <i className='las la-icons text-primary'></i> */}
+                                            <div className='input-icon flex-nowrap category-select' style={{background: "#030B3C"}}>
+                                                <div className='input-icon-text bg-transparent'>
+                                                    <i className='lab la-ethereum text-white'></i>
                                                     {/* <img src="img/chains/ETH.png" alt="" width="10%" /> */}
                                                 </div>
                                                 <Select
                                                     searchable={false}
                                                     options={BlockChainOptions}
-                                                    className='form-select shadow-0 bd-dark-lighter bg-none'
+                                                    className='form-select shadow-0 ps-5 bg-transparent'
                                                     value={enteredBlockCahin}
+                                                    style={{ borderRadius: "5px", border: "1px solid #49E6FB"}}
                                                     getOptionLabel={BlockChainOptions}
                                                     onChange={(values) =>
                                                         SwitchNetwork(values.map((el) => el.value).toString())
@@ -520,8 +589,9 @@ function CreateItem() {
 
                                         {/* SUBMIT */}
                                         <div className='col-12'>
-                                            <button className='btn btn-primary' type='submit'>
-                                                <i className='lab la-ethereum me-2'></i>Mint NFT
+                                            <button className='btn-buynow' type='submit' style={{boxShadow: "0px 0px 10px 5px #4659CF77"}}>
+                                                {/* <i className='lab la-ethereum me-2'></i> */}
+                                                <img src="/images/ethereum.png" alt="ethereum symbol" className='d-inline me-2' style={{width: "30px", height: "30px"}}/>Mint NFT
                                             </button>
                                         </div>
                                     </div>
@@ -530,7 +600,7 @@ function CreateItem() {
                         </div>
 
                         {/* PREVIEW ITEM */}
-                        <div className='col-lg-4'>
+                        <div className='col-lg-4 px-4 pb-4 pt-5 mt-5'>
                             <ItemPreview
                                 heading='Preview Item'
                                 preview={preview}

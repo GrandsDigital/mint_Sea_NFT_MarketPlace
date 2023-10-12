@@ -23,13 +23,13 @@ function ItemPreview({ heading, preview, title, category, author, filename }) {
     return (
         <>
             <div className='d-flex align-items-center mb-4'>
-                <div className='icon icon-md me-2 flex-shrink-0 bg-primary rounded-sm text-white'>
-                    <i className='las la-eye'></i>
+                <div className='me-2 flex-shrink-0 bg-primary text-white' style={{borderRadius: "5px"}}>
+                    <i className='las la-eye' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
                 </div>
-                <h2 className='h5 mb-0'>{heading}</h2>
+                <h2 className='mb-0 fs-5 fw-bold ms-2'>{heading}</h2>
             </div>
 
-            <div className='card rounded shadow-sm'>
+            <div className='card' style={{borderRadius: "8px", border: "1px solid rgb(19, 29, 255)", background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", boxShadow: "0 0 10px 5px #2c1cb5aa"}}>
                 <div className='card-body p-3 position-relative'>
                     <div className='position-relative mb-4 shadow'>
                         <div className='author z-index-20'>
@@ -88,25 +88,26 @@ function ItemPreview({ heading, preview, title, category, author, filename }) {
                         </div>
                     </div>
                     <p className='text-reset fw-bold mb-3'>{title === '' ? 'Crypto Funk' : title}</p>
-                    <p className='text-sm text-muted fw-normal mb-2 d-flex align-items-center'>
+                    <p className='text-sm text-white fw-normal mb-2 d-flex align-items-center mx-2 mb-3'>
                         <span className='icon bg-primary text-white me-2'>
-                            <i className='lab la-ethereum fa-fw'></i>
+                            <i className='lab la-ethereum fa-fw' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px", fontSize: "15px"}}></i>
                         </span>
-                        <span>Price: </span>
-                        <span className='text-primary ms-2'>0.08 ETH</span>
+                        <span className='ms-2'>Price: </span>
+                        <span className='ms-2' style={{color: "#1ADFBB"}}>0.08 ETH</span>
                     </p>
-                    <p className='text-sm text-muted fw-normal d-flex align-items-center'>
+                    <p className='text-sm text-white fw-normal d-flex align-items-center mx-2'>
                         <span className='icon bg-primary text-white me-2'>
-                            <i className='las la-icons fa-fw'></i>
+                            <i className='las la-icons fa-fw' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px", fontSize: "15px"}}></i>
                         </span>
-                        <span>Category: </span>
-                        <span className='text-primary ms-2'>{formatCategory(category)}</span>
+                        <span className='ms-2'>Category: </span>
+                        <span className='ms-2' style={{color: "#1ADFBB"}}>{formatCategory(category)}</span>
                     </p>
-                    <div className='my-3 pt-1 bg-body rounded-pill'></div>
-                    <p className='text-muted fw-normal mb-0 text-sm d-flex align-items-center'>
-                        <i className='la-sm text-primary las la-clock mx-1 mt-1 text-primary'></i>
+                    {/* <div className='my-3 pt-1 bg-body rounded-pill'></div> */}
+                    <div classNames="pt-1 mb-2" style={{background: "#1adfbb", boxShadow: "rgba(70, 89, 207, 0.467) 0px 0px 30px 10px", height: "2px", margin: "20px 0px"}}></div>
+                    <p className='text-white fw-normal mb-0 text-sm d-flex align-items-center'>
+                        <i className='la-sm text-white las la-clock mx-1 mt-1 text-primary'></i>
                         Created
-                        <span className='text-primary mx-2'>12 hrs</span> ago
+                        <span className='mx-2' style={{color: "#1ADFBB"}}>12 hrs</span> ago
                     </p>
                 </div>
             </div>
@@ -117,7 +118,7 @@ function ItemPreview({ heading, preview, title, category, author, filename }) {
 ItemPreview.defaultProps = {
     title: 'Crypto Funk',
     category: 'music',
-    preview: 'images/items/item-1.jpg',
+    preview: 'images/nft-placeholder.png',
 };
 
 export default ItemPreview;

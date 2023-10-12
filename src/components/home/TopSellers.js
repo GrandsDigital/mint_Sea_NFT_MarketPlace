@@ -60,7 +60,7 @@ function TopSellers({ title, description, topSellers }) {
       
             return (
                 <div className='col-xl-3 col-lg-3 col-md-6 mb-4' key={index}>
-                    <div className='card top-saller-Card position-relative'>
+                    <div className='card top-saller-Card card-hover-minimal position-relative'>
                         <div className='card-body p-1'>
                             <a
                                 className='text-reset text-decoration-none stretched-link'

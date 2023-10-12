@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useForm } from '@formspree/react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+//import { useForm } from '@formspree/react';
+//import { Link } from 'react-router-dom';
 import { Button, Form, Input } from 'antd';
 import axios from 'axios';
 
@@ -65,14 +65,21 @@ function ContactForm({ gridWidth }) {
 
     return (
         <div className={gridWidth}>
-            <div className='card'>
-                <div className='card-body p-4 p-lg-5'>
-                    <div className='d-flex align-items-center mb-4'>
+            <div className='card bg-transparent' style={{height: "100%", background: "#070630", border: "1px solid #131DFF", boxShadow: "0 0 10px 5px #2c1cb5aa", borderRadius: "8px"}}>
+                <div className='card-body p-lg-5' style={{ borderRadius: "8px"}}>
+                    {/* <div className='d-flex align-items-center mb-4'>
                         <div className='icon icon-md me-2 flex-shrink-0 bg-primary rounded-sm text-white'>
                             <i className='las la-pen-alt'></i>
                         </div>
                         <h2 className='h5 mb-0'>Drop us your query</h2>
+                    </div> */}
+                    <div className='d-flex align-items-center mb-4'>
+                        <div className='d-block'>
+                            <i className='las la-pen-alt' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                            <label className='form-label text-white fs-5 fw-bold ms-2 mb-0'>Drop us your query</label>
+                        </div>
                     </div>
+
                     <Form
                         onFinish={onFinish}
                         onFinishFailed={onFinishFailed}
@@ -80,7 +87,7 @@ function ContactForm({ gridWidth }) {
                         className='contact-form needs-validation' >
                         <div className='row gy-3'>
                             <div className='col-lg-6'>
-                                <label className='form-label' htmlFor='fullname'>
+                                <label className='form-label text-white ms-2' htmlFor='fullname'>
                                     Full name
                                 </label>
 
@@ -94,16 +101,16 @@ function ContactForm({ gridWidth }) {
                                         },
                                     ]}
                                 >
-                                    <div className='input-icon'>
+                                    <div className='input-icon' style={{background: "#030B3C"}}>
 
                                         <div className='input-icon-text'>
-                                            <i className='text-primary las la-user'></i>
+                                            <i className='text-white las la-user'></i>
                                         </div>
-                                        <Input className='form-control shadow-0' placeholder='Enter your full name' id='fullname' />
+                                        <Input className='form-control shadow-0 bg-transparent ps-5' placeholder='Enter your full name' id='fullname' style={{border: "1px solid #49E6FB", borderRadius: "8px"}} />
                                     </div>
                                 </Form.Item>
                                 {/* <input
-                                        className='form-control shadow-0'
+                                        className='form-control shadow-0 bg-transparent'
                                         type='text'
                                         autoComplete='off'
                                         name='fullname'
@@ -117,7 +124,7 @@ function ContactForm({ gridWidth }) {
 
                             </div>
                             <div className='col-lg-6'>
-                                <label className='form-label' htmlFor='email'>
+                                <label className='form-label text-white ms-2' htmlFor='email'>
                                     Email address
                                 </label>
 
@@ -130,12 +137,12 @@ function ContactForm({ gridWidth }) {
                                         },
                                     ]}
                                 >
-                                    <div className='input-icon'>
+                                    <div className='input-icon' style={{background: "#030B3C"}}>
 
                                         <div className='input-icon-text'>
-                                            <i className='text-primary las la-envelope'></i>
+                                            <i className='text-white las la-envelope'></i>
                                         </div>
-                                        <Input className='form-control shadow-0' placeholder='Enter your email address' id='fullname' />
+                                        <Input className='form-control shadow-0 bg-transparent ps-5' placeholder='Enter your email address' id='emailaddress' style={{border: "1px solid #49E6FB", borderRadius: "8px"}} />
                                     </div>
                                 </Form.Item>
 
@@ -144,7 +151,7 @@ function ContactForm({ gridWidth }) {
                                         <i className='text-primary las la-envelope'></i>
                                     </div>
                                     <input
-                                        className='form-control shadow-0'
+                                        className='form-control shadow-0 bg-transparent'
                                         type='email'
                                         autoComplete='off'
                                         name='email'
@@ -158,7 +165,7 @@ function ContactForm({ gridWidth }) {
                                 </div> */}
                             </div>
                             <div className='col-lg-12'>
-                                <label className='form-label' htmlFor='subject'>
+                                <label className='form-label text-white ms-2' htmlFor='subject'>
                                     Subject
                                 </label>
                                 <Form.Item
@@ -170,12 +177,12 @@ function ContactForm({ gridWidth }) {
                                         },
                                     ]}
                                 >
-                                    <div className='input-icon'>
+                                    <div className='input-icon' style={{background: "#030B3C"}}>
 
                                         <div className='input-icon-text'>
-                                            <i className='text-primary las la-file-alt'></i>
+                                            <i className='text-white las la-file-alt'></i>
                                         </div>
-                                        <Input className='form-control shadow-0' placeholder='Enter your subject' id='fullname' />
+                                        <Input className='form-control shadow-0 bg-transparent ps-5' placeholder='Enter your subject' id='subject' style={{border: "1px solid #49E6FB", borderRadius: "8px"}} />
                                     </div>
                                 </Form.Item>
                                 {/* <div className='input-icon'>
@@ -183,7 +190,7 @@ function ContactForm({ gridWidth }) {
                                         <i className='text-primary las la-file-alt'></i>
                                     </div>
                                     <input
-                                        className='form-control shadow-0'
+                                        className='form-control shadow-0 bg-transparent'
                                         type='text'
                                         autoComplete='off'
                                         name='subject'
@@ -194,7 +201,7 @@ function ContactForm({ gridWidth }) {
                             </div>
 
                             <div className='col-lg-12'>
-                                <label className='form-label' htmlFor='message'>
+                                <label className='form-label text-white ms-2' htmlFor='message'>
                                     Message
                                 </label>
                                 <Form.Item
@@ -206,16 +213,16 @@ function ContactForm({ gridWidth }) {
                                         },
                                     ]}
                                 >
-                                    <div className='input-icon'>
+                                    <div className='input-icon' style={{background: "#030B3C"}}>
 
                                         {/* <div className='input-icon-text'>
                                             <i className='text-primary las la-file-alt'></i>
                                         </div> */}
-                                        <Input.TextArea className='form-control shadow-0' placeholder='How can we help you' id='fullname' />
+                                        <Input.TextArea className='form-control shadow-0 bg-transparent' placeholder='How can we help you' id='message' style={{minHeight: "140px", borderRadius: "8px", border: "1px solid #49E6FB"}} />
                                     </div>
                                 </Form.Item>
                                 {/* <textarea
-                                    className='form-control shadow-0'
+                                    className='form-control shadow-0 bg-transparent'
                                     rows='4'
                                     name='message'
                                     id='message'
@@ -228,8 +235,9 @@ function ContactForm({ gridWidth }) {
                             </div>
 
                             <div className='col-lg-12'>
-                                <Button className='btn btn-primary w-100 pb-2' type='submit' htmlType="submit">
-                                    <i className='las la-paper-plane me-2'></i>Send your message
+                                <Button className='btn-buynow w-100 pb-2' type='submit' htmlType="submit" style={{boxShadow: "0px 0px 10px 5px #4659CF77"}}>
+                                    {/* <i className='las la-paper-plane me-2'></i> */}
+                                    Send your message
                                 </Button>
                             </div>
                         </div>
