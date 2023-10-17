@@ -5254,7 +5254,7 @@ input[type=search]::-webkit-search-results-decoration {
    
 
     padding: 5px;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     border-radius: 15px;
 
 }
@@ -5567,28 +5567,110 @@ body{
     background: #202053; background: radial-gradient(at center bottom, #202053, #010135);
 }
 
-.bg-complete {
-    background-image: url('/images/complete-bg.png');
+/* .bg-complete .container-xxxl{
+    background-image: url('/images/complete-bg.webp');
     background-size: cover;
 }
 
-.bg-mint {
-    background-image: url('/images/bg-mint.jpg');
+.bg-mint .container-xxxl{
+    background-image: url('/images/bg-mint.webp');
     background-size: cover;
 }
 
-.bg-search {
-    background-image: url('/images/bg-search.jpg');
+.bg-search .container-xxxl{
+    background-image: url('/images/bg-search.webp');
     background-size: cover;
 }
+
+.bg-docs .container-xxxl{
+    background-image: url('/images/bg-docs.webp');
+    background-size: cover;
+}
+
+.bg-privacy-policy .container-xxxl{
+    background-image: url('/images/bg-privacy.webp');
+    background-size: cover;
+}
+
+.bg-term-of-service .container-xxxl{
+    background-image: url('/images/bg-termofservice.webp');
+    background-size: cover;
+}
+
+.bg-about .container-xxxl{
+    background-image: url('/images/bg-about.webp');
+    background-size: cover;
+} */
 
 @media screen and (min-width: 1800px) {
     .bg-complete {
         background-image: none;
     }
+    
+    .bg-mint {
+        background-image: none;
+    }
+    
+    .bg-search {
+        background-image: none;
+    }
 
+    .bg-docs {
+        background-image: none;
+    }
+
+    .bg-privacy-policy{
+        background-image: none;
+    }
+    
+    .bg-term-of-service{
+        background-image: none;
+    }
+    
+    .bg-about{
+        background-image: none;
+    }
+
+    .bg-complete .container-xxxl{
+        background-image: url('/images/complete-bg.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+
+    .bg-docs .container-xxxl{
+        background-image: url('/images/bg-docs.webp');
+        background-size: cover;
+    }
+
+    .bg-privacy-policy .container-xxxl{
+        background-image: url('/images/bg-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service .container-xxxl{
+        background-image: url('/images/bg-termofservice.webp');
+        background-size: cover;
+    }
+    
+    .bg-about .container-xxxl{
+        background-image: url('/images/bg-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-category.webp');
+        background-size: cover;
+    }
     /* .container-xxl {
-        background-image: url('/images/complete-bg.png');
+        background-image: url('/images/complete-bg.webp');
         background-size: cover;
     } */
 }
@@ -5690,10 +5772,11 @@ body{
 } */
 
 .some-css{
-    position: absolute;
+    /* position: absolute;
     height: 230% !important;
     bottom:-50% !important;
-    right: 10% !important;
+    right: 10% !important; */
+    /* margin-top: -5.5rem!important; */
 }
 
 .heading-col{
@@ -5967,13 +6050,42 @@ body{
         display: none;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 10%!important;
+        left: 10%!important; */
+        /* margin-top: -2.2rem!important; */
     }    
     .bg-complete {
-        background-image: url('/images/complete-bg-mobile.png');
+        background-image: url('/images/complete-bg-mobile.webp');
+        background-size: cover;
+    }
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    .bg-privacy-policy {
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }    
+    .bg-term-of-service {
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }    
+    .bg-about {
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
         background-size: cover;
     }
     .w-custom {
@@ -5984,6 +6096,9 @@ body{
     }
     .f-custom{
         font-size: 0.8rem;
+    }
+    .container-xxxl {
+        margin-top: 4.6rem;
     }
 }
 
@@ -5999,13 +6114,43 @@ body{
         display: none;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 25%!important;
+        left: 25%!important; */
+        /* margin-top: -2.5rem!important; */
+        width: 80%;
     }    
     .bg-complete {
-        background-image: url('/images/complete-bg-mobile.png');
+        background-image: url('/images/complete-bg-mobile.webp');
+        background-size: cover;
+    }
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    .bg-privacy-policy {
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }    
+    .bg-term-of-service {
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }    
+    .bg-about {
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
         background-size: cover;
     }
     .w-custom {
@@ -6016,6 +6161,9 @@ body{
     }
     .f-custom{
         font-size: 1rem;
+    }
+    .container-xxxl {
+        margin-top: 4.2rem;
     }
 }
 
@@ -6031,11 +6179,44 @@ body{
         font-size: 0.6rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        /* left: 25%!important; */
-        left: 25%!important;
+        left: 25%!important; */
+        /* margin-top: -2.5rem!important; */
+        width: 100%;
+    }
+    .bg-complete {
+        background-image: url('/images/complete-bg-mobile.webp');
+        background-size: cover;
+    }
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    .bg-privacy-policy {
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }    
+    .bg-term-of-service {
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }    
+    .bg-about {
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
+        background-size: cover;
     }
     .w-custom {
         width: 90%!important;
@@ -6045,6 +6226,9 @@ body{
     }
     .f-custom{
         font-size: 1rem;
+    }
+    .container-xxxl {
+        margin-top: 3.2rem;
     }
 }
 
@@ -6060,10 +6244,50 @@ body{
         font-size: 0.6rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 35%!important;
+        left: 35%!important; */
+        /* margin-top: -2.8rem!important; */
+        width: 70%;
+    }
+    .bg-complete {
+        background-image: url('/images/complete-bg-mobile.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }
+    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    
+    .bg-privacy-policy{
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service{
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }
+    
+    .bg-about{
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
+        background-size: cover;
     }
     .w-custom {
         width: 90%!important;
@@ -6073,6 +6297,9 @@ body{
     }
     .f-custom{
         font-size: 1.025rem;
+    }
+    .container-xxxl {
+        margin-top: 3.2rem;
     }
 }
 
@@ -6087,13 +6314,53 @@ body{
         font-size: 1rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 35%!important;
+        left: 35%!important; */
+        /* margin-top: -3.6rem!important; */
+        width: 85%;
     }
     .h-b-t-fs{
         font-size: 3rem;
+    }
+    .bg-complete .container-xxxl{
+        background-image: url('/images/complete-bg.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search .container-xxxl{
+        background-image: url('/images/bg-search.webp');
+        background-size: cover;
+    }
+    
+    .bg-docs .container-xxxl{
+        background-image: url('/images/bg-docs.webp');
+        background-size: cover;
+    }
+    
+    .bg-privacy-policy .container-xxxl{
+        background-image: url('/images/bg-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service .container-xxxl{
+        background-image: url('/images/bg-termofservice.webp');
+        background-size: cover;
+    }
+    
+    .bg-about .container-xxxl{
+        background-image: url('/images/bg-about.webp');
+        background-size: cover;
+    }
+    .bg-category .container-xxxl{
+        background-image: url('/images/bg-category.webp');
+        background-size: cover;
     }
     .w-custom {
         width: 80%!important;
@@ -6117,13 +6384,53 @@ body{
         font-size: 1rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 45%!important;
+        left: 45%!important; */
+        /* margin-top: -3.4rem!important; */
+        width: 55%;
     }
     .h-b-t-fs{
         font-size: 4.5rem;
+    }
+    .bg-complete .container-xxxl{
+        background-image: url('/images/complete-bg.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search .container-xxxl{
+        background-image: url('/images/bg-search.webp');
+        background-size: cover;
+    }
+    
+    .bg-docs .container-xxxl{
+        background-image: url('/images/bg-docs.webp');
+        background-size: cover;
+    }
+    
+    .bg-privacy-policy .container-xxxl{
+        background-image: url('/images/bg-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service .container-xxxl{
+        background-image: url('/images/bg-termofservice.webp');
+        background-size: cover;
+    }
+    
+    .bg-about .container-xxxl{
+        background-image: url('/images/bg-about.webp');
+        background-size: cover;
+    }
+    .bg-category .container-xxxl{
+        background-image: url('/images/bg-category.webp');
+        background-size: cover;
     }
     .w-custom {
         width: 75%!important;
@@ -6166,4 +6473,12 @@ body{
     border-radius: 25px!important;
     background: linear-gradient(0deg, #010135, #232386)!important;
     border: none!important;
+}
+
+.container-xxxl {
+    max-width: 1530px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
 }

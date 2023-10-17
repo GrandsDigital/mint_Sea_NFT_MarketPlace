@@ -79,8 +79,8 @@ function Home({ topSellers }) {
                                     MintSea is the most secure and user-friendly cryptocurrency buying, selling, and storing platform. <br/>Our industry-leading security systems will keep your NFTs protected.
                                 </p>
                             </div>
-                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
-                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
+                                <img className="some-css img-fluid mx-auto" src="/images/market.webp" alt="" />
                             </div>
                                 {/* </div>
                             </div> */}
@@ -148,8 +148,8 @@ function Home({ topSellers }) {
                                     You can choose an NFT from a variety of categories. Everyone will find something to their liking:
                                 </p>
                             </div>
-                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
-                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
+                                <img className="some-css img-fluid mx-auto" src="/images/browse.webp" alt="" />
                             </div>
                                 {/* </div>
                             </div> */}
@@ -191,10 +191,10 @@ function Home({ topSellers }) {
                                         to={`/categories/${el.value}`}
                                         >
                                             <div className="d-flex mb-0 justify-content-center align-items-center">
-                                                <img src={`/category-images/${el.value}.png`} className="img-fluid mt-2" alt=""/>
+                                                <img src={`/category-images/${el.value}.webp`} className="img-fluid mt-2" alt=""/>
 
                                                 <div className='position-absolute p-2' style={{top: "25px", right: "25px", maxWidth: "40px", background: "#1adfbb", clipPath: "polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%)"}}>
-                                                    <img src={`/category-images/${el.value}-icon.png`} className="img-fluid" alt=""/>
+                                                    <img src={`/category-images/${el.value}-icon.webp`} className="img-fluid" alt=""/>
                                                 </div>                                                
 
                                                 <div className="btn-buynow f-custom text-center mb-2 px-0 px-md-2 py-2 py-md-2 py-lg-2 py-xl-3 w-custom text-white position-absolute bottom-0 ms-auto me-auto mb-lg-3 mb-xl-5" style={{boxShadow: "0px 0px 10px 5px #4659CF77"}}>{el.label}</div>
@@ -231,8 +231,8 @@ function Home({ topSellers }) {
                                     Explore the fascinating new collection of NFTs every day.
                                 </p>
                             </div>
-                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
-                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
+                                <img className="some-css img-fluid mx-auto" src="/images/loot_boxes.webp" alt="" />
                             </div>
                                 {/* </div>
                             </div> */}
@@ -314,7 +314,7 @@ function Home({ topSellers }) {
                                 <div className='card-body py-lg-5 align-items-center position-relative'>
                                     <div className='mx-auto flex-shrink-0 position-absolute d-flex justify-content-end top-0 end-0'>
                                         {/* <i className='fs-2 las la-wallet'></i> */}
-                                        <img src="/images/connect.png" alt="icons" className='w-50 w-sm-75' style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}/>
+                                        <img src="/images/connect.webp" alt="icons" className='w-50 w-sm-75' style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}/>
                                     </div>
                                     <div className='px-2 pt-4'>
                                         <h5 className='mb-3'>Connect your wallet</h5>
@@ -331,7 +331,7 @@ function Home({ topSellers }) {
                                 <div className='card-body py-lg-5 align-items-center position-relative'>
                                     <div className='mx-auto flex-shrink-0 position-absolute d-flex justify-content-end top-0 end-0'>
                                         {/* <i className='fs-2 las la-rocket'></i> */}
-                                        <img src="/images/sell.png" alt="icons" className='w-50 w-sm-75' style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}/>
+                                        <img src="/images/sell.webp" alt="icons" className='w-50 w-sm-75' style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}/>
                                     </div>
                                     <div className='px-2 pt-4'>
                                         <h5 className='mb-3'>Mint & Buy and Sell NFTs</h5>
@@ -348,7 +348,7 @@ function Home({ topSellers }) {
                                 <div className='card-body py-lg-5 align-items-center position-relative'>
                                     <div className='mx-auto flex-shrink-0 position-absolute d-flex justify-content-end top-0 end-0'>
                                         {/* <i className='lab la-ethereum'></i> */}
-                                        <img src="/images/funds.png" alt="icons" className='w-50 w-sm-75' style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}/>
+                                        <img src="/images/funds.webp" alt="icons" className='w-50 w-sm-75' style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}/>
                                     </div>
                                     <div className='px-2 pt-4'>
                                         <h5 className='mb-3'>Collect your funds</h5>
@@ -383,8 +383,8 @@ function Home({ topSellers }) {
                                     These are the listed NFTs, open for sale:
                                 </p>
                             </div>
-                            <div className="col-5 h-100 position-div rounded-pill heading-right-part">
-                                <img className="some-css" src="/images/pngwing.png" alt="" />
+                            <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
+                                <img className="some-css img-fluid mx-auto" src="/images/NFT_sell.webp" alt="" />
                             </div>
                                 {/* </div>
                             </div> */}

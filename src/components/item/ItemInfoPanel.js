@@ -25,23 +25,23 @@ function ItemInfoPanel({ img, dateCreated, name, description, category, creator 
 
     return (
         <>
-            <p className='d-inline-block fw-normal text-primary bg-dark px-3 py-2 rounded-sm text-sm mb-0'>
+            {/* <p className='d-inline-block fw-normal text-primary bg-dark px-3 py-2 rounded-sm text-sm mb-0'>
                 <i className='las la-image me-2 mb-1 align-middle'></i>
                 {formatCategory(category)}
             </p>
 
-            <h1>{name}</h1>
+            <h1>{name}</h1> */}
 
-            <div className='row mb-4 mt-3'>
+            <div className='row mb-4'>
                 <div className='col-xl-12'>
-                    <div className='card shadow-sm rounded'>
+                    <div className='card' style={{background: "#070630", border: "1px solid #131DFF", boxShadow: "0 0 10px 5px #2c1cb5aa", borderRadius: "8px"}}>
                         <div className='card-body'>
                             <p className='mb-0 d-flex align-items-center'>
-                                <i className='text-primary las la-align-justify'></i>
-                                <span className='text-reset ms-2'>Description</span>
+                                <i className='text-white las la-align-justify' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                <span className='text-white ms-2 fs-5 fw-bold'>Description</span>
                             </p>
 
-                            <p className='text-muted mb-4 mt-2'>{creator.Description}</p>
+                            <p className='text-white my-4'>{creator.Description !== "" ? creator.Description : "Description not provided"}</p>
                         </div>
                     </div>
                 </div>
@@ -49,18 +49,18 @@ function ItemInfoPanel({ img, dateCreated, name, description, category, creator 
 
             <div className='row mb-4'>
                 <div className='col-xl-12'>
-                    <div className='card shadow-sm rounded'>
+                    <div className='card' style={{background: "#070630", border: "1px solid #131DFF", boxShadow: "0 0 10px 5px #2c1cb5aa", borderRadius: "8px"}}>
                         <div className='card-body p-4'>
-                            <ul className='list-unstyled text-sm text-muted mb-0'>
+                            <ul className='list-unstyled text-sm text-white mb-0'>
                                 <li className='d-flex align-items-center justify-content-between mb-2 pb-1'>
                                     <p className='mb-0 d-flex align-items-center'>
-                                        <i className='text-primary las la-user-circle'></i>
-                                        <span className='text-reset ms-2'>Item Artist</span>
+                                        <i className='text-white las la-user-circle' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                        <span className='ms-2 fs-6'>Item Artist</span>
                                     </p>
-                                    <p className='mb-0 text-reset'>
+                                    <p className='mb-0 text-white'>
                                         <a
                                            href={creator.Blockchain == "Binance" ? `https://testnet.bscscan.com/address/${creator.nftContract}` : creator.Blockchain == "Ethereum" ? `https://sepolia.etherscan.io/address/${creator.nftContract}` : `https://mumbai.polygonscan.com/address/${creator.nftContract}`}
-                                            className='text-reset'
+                                            className='text-white fs-6 text-decoration-none'
                                             target='_blank'
                                             rel='noopener noreferrer'
                                         >
@@ -70,24 +70,24 @@ function ItemInfoPanel({ img, dateCreated, name, description, category, creator 
                                 </li>
                                 <li className='d-flex align-items-center justify-content-between mb-2 pb-1'>
                                     <p className='mb-0 d-flex align-items-center'>
-                                        <i className='text-primary las la-clock'></i>
-                                        <span className='text-reset ms-2'>Created at</span>
+                                        <i className='text-white las la-clock' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                        <span className='ms-2 fs-6'>Created at</span>
                                     </p>
-                                    <p className='mb-0'>{new Date(dateCreated).toLocaleDateString('en-US')}</p>
+                                    <p className='mb-0 fs-6'>{new Date(dateCreated).toLocaleDateString('en-US')}</p>
                                 </li>
                                 <li className='d-flex align-items-center justify-content-between mb-2 pb-1'>
                                     <p className='mb-0 d-flex align-items-center'>
-                                        <i className='text-primary las la-crop-alt'></i>
-                                        <span className='text-reset ms-2'>Item Dimensions</span>
+                                        <i className='text-white las la-crop-alt' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                        <span className='ms-2 fs-6'>Item Dimensions</span>
                                     </p>
-                                    <p className='mb-0'>{imgSize}</p>
+                                    <p className='mb-0 fs-6'>{imgSize}</p>
                                 </li>
                                 <li className='d-flex align-items-center justify-content-between mb-2 pb-1'>
                                     <p className='mb-0 d-flex align-items-center'>
-                                        <i className='text-primary las la-photo-video'></i>
-                                        <span className='text-reset ms-2'>Category</span>
+                                        <i className='text-white las la-photo-video' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px"}}></i>
+                                        <span className='ms-2 fs-6'>Category</span>
                                     </p>
-                                    <p className='mb-0'>{formatCategory(category)}</p>
+                                    <p className='mb-0 fs-6'>{formatCategory(category)}</p>
                                 </li>
                             </ul>
                         </div>

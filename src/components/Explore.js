@@ -105,7 +105,7 @@ function Explore() {
                         </div>
 
                         <div className='col-lg-6 ms-auto d-none d-lg-block'>
-                            <img className='img-fluid mx-auto w-75' src="/images/explore.png" alt="explore" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
+                            <img className='img-fluid mx-auto w-75' src="/images/explore.webp" alt="explore" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
                         </div>
 
                     </div>

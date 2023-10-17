@@ -126,8 +126,8 @@ function TopSellers({ title, description, topSellers }) {
                                 {description}
                             </p>
                         </div>
-                        <div className="col-5 h-100 position-div rounded-pill heading-right-part">
-                            <img className="some-css" src="/images/pngwing.png" alt="" />
+                        <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
+                            <img className="some-css img-fluid mx-auto" src="/images/TOP-seller.webp" alt="" />
                         </div>
                             {/* </div>
                         </div> */}

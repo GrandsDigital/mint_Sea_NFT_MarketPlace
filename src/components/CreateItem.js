@@ -382,17 +382,17 @@ function CreateItem() {
                         </div>
 
                         <div className='col-lg-6 ms-auto d-none d-lg-block'>
-                            <img className='img-fluid mx-auto w-50' src="/images/mint.png" alt="explore" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
+                            <img className='img-fluid mx-auto w-50' src="/images/mint.webp" alt="mint" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <section className='py-5'>
-                <div className='container py-5'>
-                    <div className='row g-5'>
-                        <div className='col-lg-8 rounded'>
+            <section className='py-sm-5'>
+                <div className='container py-sm-5'>
+                    <div className='row'>
+                        <div className='col-lg-8 order-2 order-sm-1 rounded'>
                             {/* NFT INFORMATION */}
 
                             <form className='p-5' onSubmit={(e) => submissionHandler(e)} style={{height: "100%", borderRadius: "8px", background: "#070630", boxShadow: "0 0 10px 5px #2c1cb5aa"}}>
@@ -600,7 +600,7 @@ function CreateItem() {
                         </div>
 
                         {/* PREVIEW ITEM */}
-                        <div className='col-lg-4 px-4 pb-4 pt-5 mt-5'>
+                        <div className='col-lg-4 order-1 order-sm-2 px-4 pb-4 pt-5'>
                             <ItemPreview
                                 heading='Preview Item'
                                 preview={preview}

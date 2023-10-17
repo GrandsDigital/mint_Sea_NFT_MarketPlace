@@ -118,7 +118,7 @@ function ItemPreview({ heading, preview, title, category, author, filename }) {
 ItemPreview.defaultProps = {
     title: 'Crypto Funk',
     category: 'music',
-    preview: 'images/nft-placeholder.png',
+    preview: 'images/nft-placeholder.webp',
 };
 
 export default ItemPreview;

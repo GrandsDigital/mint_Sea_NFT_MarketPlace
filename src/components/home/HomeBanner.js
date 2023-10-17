@@ -105,7 +105,8 @@ function HomeBanner() {
                 <div className='row align-items-center mt-5'>
                     <div className='col-lg-6 ms-auto d-none d-lg-block'>
                         {/* <img className='img-fluid mx-auto' src=' images/illu-3.png' alt='..' /> */}
-                        <img className='img-fluid mx-auto' src="/images/hero.png" alt="hero"></img>
+                        {/* <img className='img-fluid mx-auto' src="/images/hero.png" alt="hero"></img> */}
+                        <img className='img-fluid mx-auto' src="/images/hero-animation.gif" alt="hero"></img>
                     </div>
 
                     <div className='col-lg-6'>
