@@ -60,7 +60,7 @@ function TopSellers({ title, description, topSellers }) {
       
             return (
                 <div className='col-xl-3 col-lg-3 col-md-6 mb-4' key={index}>
-                    <div className='card top-saller-Card position-relative'>
+                    <div className='card top-saller-Card card-hover-minimal position-relative'>
                         <div className='card-body p-1'>
                             <a
                                 className='text-reset text-decoration-none stretched-link'
@@ -126,8 +126,8 @@ function TopSellers({ title, description, topSellers }) {
                                 {description}
                             </p>
                         </div>
-                        <div className="col-5 h-100 position-div rounded-pill heading-right-part">
-                            <img className="some-css" src="/images/pngwing.png" alt="" />
+                        <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
+                            <img className="some-css img-fluid mx-auto" src="/images/TOP-seller.webp" alt="" />
                         </div>
                             {/* </div>
                         </div> */}

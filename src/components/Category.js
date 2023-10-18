@@ -46,6 +46,10 @@ function Category() {
     useEffect(() => {
         document.title = `${formatCategory(category)} | NFT Marketplace`;
 
+        document.getElementById("root").classList.add("bg-category");
+        return () => {
+            document.getElementById("root").classList.remove("bg-category");
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -83,7 +87,7 @@ function Category() {
     return (
         <>
             {/* {Spinner ? <FullScreenLoader heading='loading' /> : null} */}
-            <PageBanner heading={`${formatCategory(category)} NFTs`} />
+            <PageBanner heading={`${formatCategory(category)} NFTs`} category={category} />
             <section className='py-5'>
                 <div className='container py-5'>
                     {!Spinner ? (

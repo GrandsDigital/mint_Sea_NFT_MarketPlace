@@ -5,9 +5,9 @@ import MarketplaceContext from '../store/marketplace-context';
 import { formatPrice } from '../helpers/utils';
 import NftItem from './general/NftItem';
 
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import { particlesOptions } from '../helpers/constants';
+// import Particles from 'react-tsparticles';
+// import { loadFull } from 'tsparticles';
+// import { particlesOptions } from '../helpers/constants';
 import FullScreenLoader from './general/FullScreenLoader';
 import axios from 'axios';
 import usePagination from '../helpers/Pagination';
@@ -27,6 +27,13 @@ function Search() {
 
     useEffect(() => {
         document.title = 'Search Assets';
+
+        document.getElementById("root").classList.add("bg-search");
+        //document.getElementById("root").style.backgroundImage = "url('/images/bg-search.jpg')";
+      
+        return () => {
+            document.getElementById("root").classList.remove("bg-search");
+        };
     }, []);
 
     useEffect(() => {
@@ -37,7 +44,7 @@ function Search() {
 
                     setSpinner(true)
                     let res = await axios.get(`https://sanjhavehra.womenempowerment.online/searchNFT?name=${query}`)
-                    console.log("Search", res.data.data);
+                    //console.log("Search", res.data.data);
                     if (res.data.success == true) {
                         setSearchResultsLength(res.data.data)
                         setSpinner(false)
@@ -70,17 +77,17 @@ function Search() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [query]);
 
-    const particlesInit = useCallback(async engine => {
-        console.log(engine);
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(engine);
-    }, []);
+    // const particlesInit = useCallback(async engine => {
+    //     console.log(engine);
+    //     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    //     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    //     // starting from v2 you can add only the features you need reducing the bundle size
+    //     await loadFull(engine);
+    // }, []);
 
-    const particlesLoaded = useCallback(async container => {
-        await console.log(container);
-    }, []);
+    // const particlesLoaded = useCallback(async container => {
+    //     await console.log(container);
+    // }, []);
 
 
     const count = Math.ceil(searchResultsLength?.length / itemsPerPage);
@@ -95,20 +102,20 @@ function Search() {
     return (
         <>
             {Spinner == true ? <FullScreenLoader /> : null}
-            <section className='py-5 bg-dark position-relative'>
-                <Particles init={particlesInit}
-                    loaded={particlesLoaded} options={particlesOptions} style={{ zIndex: "-1" }} />
+            <section className='pt-5 position-relative'>
+                {/* <Particles init={particlesInit}
+                    loaded={particlesLoaded} options={particlesOptions} style={{ zIndex: "-1" }} /> */}
                 <div className='container py-5 mt-5 z-index-20'>
-                    <div className='row mb-5'>
+                    <div className='row'>
                         <div className='col-lg-6 text-center mx-auto'>
-                            <h1>Search Digital Assets</h1>
-                            <p className='text-muted mb-0'>
+                            <h2 className='text-white'>Search Digital Assets</h2>
+                            <p className='mb-0' style={{color: "#ececec"}}>
                                 Our extensive list of NFT categories will assist you in locating the one you seek:
                             </p>
                         </div>
                     </div>
 
-                    <nav aria-label='breadcrumb'>
+                    {/* <nav aria-label='breadcrumb'>
                         <ol className='breadcrumb justify-content-center'>
                             <li className='breadcrumb-item'>
                                 <Link className='text-decoration-none d-flex align-items-center' to='/'>
@@ -120,38 +127,57 @@ function Search() {
                                 Search digital assets
                             </li>
                         </ol>
-                    </nav>
+                    </nav> */}
 
-                    <div className='search-form-holder'>
-                        <div className='row'>
-                            <div className='col-lg-8 mx-auto'>
-                                <form onSubmit={(e) => e.preventDefault()}>
-                                    <div
-                                        className='bg-dark rounded p-1 shadow-sm'
-                                        style={{ border: '5px solid #1c212d' }}
-                                    >
-                                        <div className='input-icon'>
-                                            <div className='input-icon-text' style={{ top: '1.1rem' }}>
-                                                <i className='text-primary las la-search'></i>
-                                            </div>
-                                            <input
-                                                className='form-control bd-dark-lighter bg-none form-control-lg shadow-0 py-3 border-0 mysearch'
-                                                type='search'
-                                                autoComplete='off'
-                                                name='search'
-                                                placeholder='Search....'
-                                                onChange={(event) => setQuery(event.target.value)}
-                                            />
+                    {/* <div className='search-form-holder'> */}
+                    <div className='row py-5'>
+                        <div className='col-lg-8 mx-auto'>
+                            <form onSubmit={(e) => e.preventDefault()}>
+                                <div
+                                    className='bg-transparent p-1 rounded-pill'
+                                    style={{border: "1px solid #ffffff"}}
+                                >
+                                    <div className='input-icon'>
+                                        <div className='input-icon-text' style={{ top: '1.1rem', margin: "-5px" }}>
+                                            {/* <i className='text-primary las la-search'></i> */}
+                                            <img src="/images/icon_search.png" alt="search button" style={{height: "20px"}}></img>
                                         </div>
+                                        <input
+                                            className='form-control bd-dark-lighter bg-none form-control-lg shadow-0 border-0 mysearch py-0 ps-5'
+                                            type='search'
+                                            autoComplete='off'
+                                            name='search'
+                                            placeholder='Search....'
+                                            onChange={(event) => setQuery(event.target.value)}
+                                        />
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
+                    {/* </div> */}
+
+                    <div className='row pt-2'>
+                        <div className='col-lg-8 mx-auto'>
+                            <ul className='list-inline d-flex justify-content-center mb-0'>
+                                <li className='list-inline-item' style={{borderRight: "1px solid white"}}>
+                                    <Link className='text-muted me-2 fs-5' to='/' style={{textDecoration: "none"}}>
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className='list-inline-item'>
+                                    <Link className='text-white fs-5' to='/search' style={{textDecoration: "none"}}>
+                                        Search Digital Assets
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
-            <section className='py-5'>
+            <section className='pb-5'>
                 {searchResultsLength.length > 0 ? (
                     <p className='lead text-muted text-center mb-0'>
                         Found <strong className='fw-bold badge bg-primary mx-2'>{searchResultsLength.length}</strong> items
@@ -178,7 +204,7 @@ function Search() {
                     {query === '' ? (
                         <div className='row text-center'>
                             <div className='col-lg-6 mx-auto'>
-                                <i className='las la-keyboard mb-2' style={{ fontSize: '2.5rem' }}></i>
+                                <i className='las la-keyboard mb-2' style={{ fontSize: '2.5rem',background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px" }}></i>
                                 <h3 className='h3'>No search data entered!</h3>
                                 <p className='text-muted mb-0'>Wating for your search...</p>
                             </div>

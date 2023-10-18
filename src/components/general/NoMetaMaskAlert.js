@@ -18,17 +18,17 @@ const webExtension = [
     {
         name: 'Chrome',
         url: 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en',
-        image: 'images/chrome.png',
+        image: 'images/chrome.webp',
     },
     {
         name: 'Firefox',
         url: 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/',
-        image: 'images/firefox.png',
+        image: 'images/firefox.webp',
     },
     {
         name: 'Safari',
         url: 'https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202',
-        image: 'images/safari.png',
+        image: 'images/safari.webp',
     },
 ];
 

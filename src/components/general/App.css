@@ -25,7 +25,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-:root {
+ :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -2190,7 +2190,7 @@ progress {
     font-weight: 400;
     line-height: 1.5;
     color: #dee2e6;
-    background-color: #171c28;
+    /* background-color: #171c28; */
     background-clip: padding-box;
     border: 2px solid #1d2231;
     -webkit-appearance: none;
@@ -13094,11 +13094,13 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .react-dropdown-select {
     min-width: 10rem !important;
-    border: 2px solid #282f44 !important;
+    /* border: 2px solid #282f44 !important; */
     padding: 0.625rem 0.75rem !important;
     padding-left: 3rem !important;
     font-size: 0.9rem !important;
-    border-radius: 0.25rem !important;
+    /* border-radius: 0.25rem !important; */
+    border-radius: 8px!important;
+    border: 1px solid #49E6FB!important;
 }
 
 .react-dropdown-select-dropdown-handle {
@@ -13108,8 +13110,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 .react-dropdown-select-dropdown {
-    background: rgba(27, 33, 46, 0.9) !important;
-    border: 2px solid #1e2535 !important;
+    /* background: rgba(27, 33, 46, 0.9) !important; */
+    background: linear-gradient(0deg, #010135, #232386);
+    /* border: 2px solid #49E6FB !important; */
+    border-radius: 25px;
     top: calc(100% + 0.5rem) !important;
     width: 100% !important;
     z-index: 999 !important;
@@ -13117,12 +13121,14 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .react-dropdown-select-item {
     padding: 0.75rem !important;
-    border-bottom: 1px solid #1e2535 !important;
+    /* border-bottom: 1px solid #1e2535 !important; */
     transition: all 0.3s !important;
 }
 
 .react-dropdown-select-item:not(.react-dropdown-select-item-selected):hover {
-    background: #2ca0c4 !important;
+    /* background: #2ca0c4 !important; */
+    background: #131722!important;
+    border-radius: 25px;
 }
 
 .react-dropdown-select-item-selected {
@@ -13246,17 +13252,22 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .mixitup-control {
     padding: 0.5rem 1.5rem;
-    color: #838f9b;
+    /* color: #838f9b; */
+    color: white;
     border-radius: 0.25rem;
     background: #131722;
     font-size: 0.9rem;
     transition: all 0.3s;
     border: none;
+    font-weight: bold;
+    background-color: #4659CF;
+    box-shadow: 0 0 10px 5px #2c1cb5aa!important;
 }
 
 .mixitup-control-active {
-    background: #1a1f2d;
+    background: #1adfbb;
     color: #e9ecef;
+    box-shadow: #1adfbb 0px 0px 10px 5px!important;
 }
 
 .dropzone {
@@ -13285,10 +13296,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 .swiper-container .swiper-button-prev::after {
-    content: '\f060' !important;
+    content: '\f104' !important;
 }
 .swiper-container .swiper-button-next::after {
-    content: '\f061' !important;
+    content: '\f105' !important;
 }
 
 .swiper-container .swiper-button-prev::after,
@@ -13678,9 +13689,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .custom-file-upload + label {
     padding: 1rem;
-    border: 3px dashed #282f44;
+    border: 1px solid #49E6FB!important;
     display: block;
-    border-radius: 0.25rem;
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -13766,7 +13777,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .input-icon .form-control,
 input-icon .form-select {
-    padding-left: 3rem;
+    padding-left: 1rem;
 }
 
 .input-icon-text {
@@ -14083,19 +14094,28 @@ input-icon .form-select {
 .Blockchain{
     position: absolute;
 
-    top: 25px;
-    left: 25px;
+    /* top: 25px;
+    left: 25px; */
+
+    top: 50px;
+    /* left: 10px; */
+    right: 45px;
    
     text-align: center;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    background-color: rgba(159, 159, 159, 0.4);
+    /* background-color: rgba(159, 159, 159, 0.4); */
+    background-color: #1adfbb;
+    color: #292D32;
     backdrop-filter: blur(10px);
-    height: 32px;
-    width: 32px;
+    /* height: 32px;
+    width: 32px; */
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
+    clip-path: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14112,8 +14132,8 @@ input-icon .form-select {
     right: 25px; */
     /* top: 80px;
     right: 20px; */
-    top: 45px;
-    right: 35px;
+    top: 50px;
+    right: 10px;
    
     text-align: center;
     -webkit-box-align: center;
@@ -14155,7 +14175,7 @@ input-icon .form-select {
    
 
     padding: 5px;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     border-radius: 15px;
 
 }

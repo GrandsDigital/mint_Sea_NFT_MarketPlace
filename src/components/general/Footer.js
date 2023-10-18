@@ -514,9 +514,9 @@ function Footer() {
       </footer>
 
       <div className="footer-mask">
-        <div className="row py-4">
-          <div className="col-12 d-flex align-items-center justify-content-center">
-            <p className="text-white text-xs mb-0">
+        <div className="py-0">
+          <div className="col-12 d-flex align-items-center justify-content-center pt-4">
+            <p className="text-white text-center text-xs mb-0">
               © 2023 All rights reserved. Designed with
               <i className="las la-xs la-heart mx-1" style={{ color: "#1ADFBB" }}></i> by
               <span className="ms-1" style={{ color: "#1ADFBB" }}>Grands Digital</span>

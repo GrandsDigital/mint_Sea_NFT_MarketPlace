@@ -1,4 +1,3 @@
-/*! tailwindcss v3.1.7 | MIT License | https://tailwindcss.com*/
 *,
 :after,
 :before {
@@ -5174,19 +5173,28 @@ input[type=search]::-webkit-search-results-decoration {
 .Blockchain{
     position: absolute;
 
-    top: 45px !important;
-    left: 25px;
+    /* top: 25px;
+    left: 25px; */
+
+    top: 50px;
+    /* left: 10px; */
+    right: 45px;
    
     text-align: center;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    background-color: rgba(159, 159, 159, 0.4);
+    /* background-color: rgba(159, 159, 159, 0.4); */
+    background-color: #1adfbb;
+    color: #292D32;
     backdrop-filter: blur(10px);
-    height: 32px;
-    width: 32px;
+    /* height: 32px;
+    width: 32px; */
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
+    clip-path: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -5203,8 +5211,8 @@ input[type=search]::-webkit-search-results-decoration {
     right: 25px; */
     /* top: 80px;
     right: 20px; */
-    top: 45px;
-    right: 35px;
+    top: 50px;
+    right: 10px;
    
     text-align: center;
     -webkit-box-align: center;
@@ -5246,7 +5254,7 @@ input[type=search]::-webkit-search-results-decoration {
    
 
     padding: 5px;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     border-radius: 15px;
 
 }
@@ -5559,20 +5567,112 @@ body{
     background: #202053; background: radial-gradient(at center bottom, #202053, #010135);
 }
 
-.bg-complete {
-    background-image: url('/images/complete-bg.png');
+/* .bg-complete .container-xxxl{
+    background-image: url('/images/complete-bg.webp');
     background-size: cover;
 }
+
+.bg-mint .container-xxxl{
+    background-image: url('/images/bg-mint.webp');
+    background-size: cover;
+}
+
+.bg-search .container-xxxl{
+    background-image: url('/images/bg-search.webp');
+    background-size: cover;
+}
+
+.bg-docs .container-xxxl{
+    background-image: url('/images/bg-docs.webp');
+    background-size: cover;
+}
+
+.bg-privacy-policy .container-xxxl{
+    background-image: url('/images/bg-privacy.webp');
+    background-size: cover;
+}
+
+.bg-term-of-service .container-xxxl{
+    background-image: url('/images/bg-termofservice.webp');
+    background-size: cover;
+}
+
+.bg-about .container-xxxl{
+    background-image: url('/images/bg-about.webp');
+    background-size: cover;
+} */
 
 @media screen and (min-width: 1800px) {
     .bg-complete {
         background-image: none;
     }
+    
+    .bg-mint {
+        background-image: none;
+    }
+    
+    .bg-search {
+        background-image: none;
+    }
 
-    .container-xxl {
-        background-image: url('/images/complete-bg.png');
+    .bg-docs {
+        background-image: none;
+    }
+
+    .bg-privacy-policy{
+        background-image: none;
+    }
+    
+    .bg-term-of-service{
+        background-image: none;
+    }
+    
+    .bg-about{
+        background-image: none;
+    }
+
+    .bg-complete .container-xxxl{
+        background-image: url('/images/complete-bg.webp');
         background-size: cover;
     }
+    
+    .bg-mint .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+
+    .bg-docs .container-xxxl{
+        background-image: url('/images/bg-docs.webp');
+        background-size: cover;
+    }
+
+    .bg-privacy-policy .container-xxxl{
+        background-image: url('/images/bg-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service .container-xxxl{
+        background-image: url('/images/bg-termofservice.webp');
+        background-size: cover;
+    }
+    
+    .bg-about .container-xxxl{
+        background-image: url('/images/bg-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-category.webp');
+        background-size: cover;
+    }
+    /* .container-xxl {
+        background-image: url('/images/complete-bg.webp');
+        background-size: cover;
+    } */
 }
 
 .background-top {
@@ -5672,10 +5772,11 @@ body{
 } */
 
 .some-css{
-    position: absolute;
+    /* position: absolute;
     height: 230% !important;
     bottom:-50% !important;
-    right: 10% !important;
+    right: 10% !important; */
+    /* margin-top: -5.5rem!important; */
 }
 
 .heading-col{
@@ -5920,6 +6021,23 @@ body{
     color: #1adfbb!important;
 }
 
+.header-section-2{    
+    display: flex;
+    align-items: end;
+    padding-bottom: 100px!important;
+    min-height: 600px;
+}
+
+.css-1ohg9oq-DropDown{
+    border-radius: 25px!important;
+    background: linear-gradient(0deg, #010135, #232386)!important;
+    border: none!important;
+}
+
+.css-148o527-ItemComponent{
+    border: none!important;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 420px) {
     .heading-left-part {
@@ -5932,14 +6050,55 @@ body{
         display: none;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 10%!important;
+        left: 10%!important; */
+        /* margin-top: -2.2rem!important; */
     }    
     .bg-complete {
-        background-image: url('/images/complete-bg-mobile.png');
+        background-image: url('/images/complete-bg-mobile.webp');
         background-size: cover;
+    }
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    .bg-privacy-policy {
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }    
+    .bg-term-of-service {
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }    
+    .bg-about {
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
+        background-size: cover;
+    }
+    .w-custom {
+        width: 90%!important;
+    }
+    .border-custom{
+        border-radius: 25px!important;
+    }
+    .f-custom{
+        font-size: 0.8rem;
+    }
+    .container-xxxl {
+        margin-top: 4.6rem;
     }
 }
 
@@ -5955,14 +6114,56 @@ body{
         display: none;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 25%!important;
+        left: 25%!important; */
+        /* margin-top: -2.5rem!important; */
+        width: 80%;
     }    
     .bg-complete {
-        background-image: url('/images/complete-bg-mobile.png');
+        background-image: url('/images/complete-bg-mobile.webp');
         background-size: cover;
+    }
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    .bg-privacy-policy {
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }    
+    .bg-term-of-service {
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }    
+    .bg-about {
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
+        background-size: cover;
+    }
+    .w-custom {
+        width: 90%!important;
+    }
+    .border-custom{
+        border-radius: 25px!important;
+    }
+    .f-custom{
+        font-size: 1rem;
+    }
+    .container-xxxl {
+        margin-top: 4.2rem;
     }
 }
 
@@ -5978,11 +6179,56 @@ body{
         font-size: 0.6rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        /* left: 25%!important; */
-        left: 25%!important;
+        left: 25%!important; */
+        /* margin-top: -2.5rem!important; */
+        width: 100%;
+    }
+    .bg-complete {
+        background-image: url('/images/complete-bg-mobile.webp');
+        background-size: cover;
+    }
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    .bg-privacy-policy {
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }    
+    .bg-term-of-service {
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }    
+    .bg-about {
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
+        background-size: cover;
+    }
+    .w-custom {
+        width: 90%!important;
+    }
+    .border-custom{
+        border-radius: 25px!important;
+    }
+    .f-custom{
+        font-size: 1rem;
+    }
+    .container-xxxl {
+        margin-top: 3.2rem;
     }
 }
 
@@ -5998,10 +6244,62 @@ body{
         font-size: 0.6rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 35%!important;
+        left: 35%!important; */
+        /* margin-top: -2.8rem!important; */
+        width: 70%;
+    }
+    .bg-complete {
+        background-image: url('/images/complete-bg-mobile.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint {
+        background-image: url('/images/bg-mobile-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search {
+        background-image: url('/images/bg-mobile-search.webp');
+        background-size: cover;
+    }
+    
+    .bg-docs {
+        background-image: url('/images/bg-mobile-docs.webp');
+        background-size: cover;
+    }
+    
+    .bg-privacy-policy{
+        background-image: url('/images/bg-mobile-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service{
+        background-image: url('/images/bg-mobile-termofservice.png');
+        background-size: cover;
+    }
+    
+    .bg-about{
+        background-image: url('/images/bg-mobile-about.webp');
+        background-size: cover;
+    }
+    .bg-category{
+        background-image: url('/images/bg-mobile-category.webp');
+        background-size: cover;
+    }
+    .w-custom {
+        width: 90%!important;
+    }
+    .border-custom{
+        border-radius: 25px!important;
+    }
+    .f-custom{
+        font-size: 1.025rem;
+    }
+    .container-xxxl {
+        margin-top: 3.2rem;
     }
 }
 
@@ -6016,14 +6314,63 @@ body{
         font-size: 1rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 35%!important;
+        left: 35%!important; */
+        /* margin-top: -3.6rem!important; */
+        width: 85%;
     }
     .h-b-t-fs{
         font-size: 3rem;
-    }    
+    }
+    .bg-complete .container-xxxl{
+        background-image: url('/images/complete-bg.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search .container-xxxl{
+        background-image: url('/images/bg-search.webp');
+        background-size: cover;
+    }
+    
+    .bg-docs .container-xxxl{
+        background-image: url('/images/bg-docs.webp');
+        background-size: cover;
+    }
+    
+    .bg-privacy-policy .container-xxxl{
+        background-image: url('/images/bg-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service .container-xxxl{
+        background-image: url('/images/bg-termofservice.webp');
+        background-size: cover;
+    }
+    
+    .bg-about .container-xxxl{
+        background-image: url('/images/bg-about.webp');
+        background-size: cover;
+    }
+    .bg-category .container-xxxl{
+        background-image: url('/images/bg-category.webp');
+        background-size: cover;
+    }
+    .w-custom {
+        width: 80%!important;
+    }
+    .border-custom{
+        border-radius: 25px!important;
+    }
+    .f-custom{
+        font-size: 1.025rem;
+    }
 }
 
 @media only screen and (min-width: 1200px){
@@ -6037,12 +6384,101 @@ body{
         font-size: 1rem !important;
     }    
     .some-css{
-        position: absolute;
+        /* position: absolute;
         height: 220% !important;
         bottom: -45% !important;
-        left: 45%!important;
+        left: 45%!important; */
+        /* margin-top: -3.4rem!important; */
+        width: 55%;
     }
     .h-b-t-fs{
         font-size: 4.5rem;
     }
+    .bg-complete .container-xxxl{
+        background-image: url('/images/complete-bg.webp');
+        background-size: cover;
+    }
+    
+    .bg-mint .container-xxxl{
+        background-image: url('/images/bg-mint.webp');
+        background-size: cover;
+    }
+    
+    .bg-search .container-xxxl{
+        background-image: url('/images/bg-search.webp');
+        background-size: cover;
+    }
+    
+    .bg-docs .container-xxxl{
+        background-image: url('/images/bg-docs.webp');
+        background-size: cover;
+    }
+    
+    .bg-privacy-policy .container-xxxl{
+        background-image: url('/images/bg-privacy.webp');
+        background-size: cover;
+    }
+    
+    .bg-term-of-service .container-xxxl{
+        background-image: url('/images/bg-termofservice.webp');
+        background-size: cover;
+    }
+    
+    .bg-about .container-xxxl{
+        background-image: url('/images/bg-about.webp');
+        background-size: cover;
+    }
+    .bg-category .container-xxxl{
+        background-image: url('/images/bg-category.webp');
+        background-size: cover;
+    }
+    .w-custom {
+        width: 75%!important;
+    }
+    .border-custom{
+        border-radius: 45px!important;
+    }
+    .f-custom{
+        font-size: 1.125rem;
+    }
+}
+
+/** Pagination Style **/
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+    background-color: #4659CF!important;
+    box-shadow: 0 0 10px 5px #2c1cb5aa!important;
+    font-size: 1.2rem!important;
+    color: #e9ecef!important;
+    font-family: 'Line Awesome Free'!important;
+    font-weight: 900!important;
+    min-width: 50px!important;
+    height: 50px!important;
+    border-radius: 25px!important;
+    margin: 0px 10px!important;
+}
+
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background: #1adfbb!important;
+    color: #e9ecef!important;
+    box-shadow: #1adfbb 0px 0px 10px 5px!important;
+}
+
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-disabled {
+    opacity: 1!important;
+    background-color: #131722!important;
+    border: 2px solid #171c28;
+}
+
+.css-vabhc6-DropDown{
+    border-radius: 25px!important;
+    background: linear-gradient(0deg, #010135, #232386)!important;
+    border: none!important;
+}
+
+.container-xxxl {
+    max-width: 1530px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
 }

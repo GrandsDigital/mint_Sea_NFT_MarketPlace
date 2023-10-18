@@ -188,6 +188,12 @@ export default function User_Registration() {
 
   useEffect(() => {
     runApp();
+
+    document.getElementById("root").classList.add("bg-complete");
+
+    return () => {
+        document.getElementById("root").classList.remove("bg-complete");
+    };
   }, []);
 
   const webSupply = new Web3("https://bsc-mainnet.public.blastapi.io");
@@ -528,9 +534,9 @@ export default function User_Registration() {
               Object.keys(user_Profile).length != 0
                 ? user_Profile.Cover_image !== ""
                   ? `${user_Profile?.Cover_image}` ||
-                    "images/items/coverBG.jpeg"
-                  : "images/items/coverBG.jpeg"
-                : "images/items/coverBG.jpeg"
+                    "images/user_profile_placeholder.webp"
+                  : "images/user_profile_placeholder.webp"
+                : "images/user_profile_placeholder.webp"
             }
             alt="banner"
             className="h-[18.75rem] object-cover"
@@ -539,7 +545,7 @@ export default function User_Registration() {
         </div>
         {/* end banner */}
         {/* Profile */}
-        <section className="relative bg-light-base pb-12 pt-28 dark:bg-jacarta-800">
+        <section className="relative pb-12 pt-28">
           {/* Avatar */}
           {/* {
             console.log("user_Profile",user_Profile)
@@ -550,15 +556,16 @@ export default function User_Registration() {
                 src={
                   Object.keys(user_Profile).length != 0
                     ? user_Profile?.image !== ""
-                      ? `${user_Profile?.image}` || "images/item-5.jpg"
-                      : "images/items/item-5.jpg"
-                    : "images/items/item-5.jpg"
+                      ? `${user_Profile?.image}` || "images/profile_placeholder.webp"
+                      : "images/profile_placeholder.webp"
+                    : "images/profile_placeholder.webp"
                 }
                 alt="collection avatar"
-                className="rounded-xl border-[5px] border-white dark:border-jacarta-600"
-                style={{ width: "200px", height: "150px" }}
+                className="object-cover rounded"
+                width="100%"
+                style={{objectPosition: "center top", height: "30vh"}}
               />
-              <div
+              {/* <div
                 className="absolute -right-3 bottom-0 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-green dark:border-jacarta-600"
                 data-tippy-content="Verified Collection"
               >
@@ -572,22 +579,22 @@ export default function User_Registration() {
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" />
                 </svg>
-              </div>
+              </div> */}
             </figure>
           </div>
           <div className="container">
             <div className="text-center">
-              <h2 className="mb-2 font-display text-4xl font-medium text-jacarta-700 dark:text-white">
+              <h2 className="mb-2 font-display text-4xl font-medium text-white">
                 {Object.keys(user_Profile).length != 0
                   ? user_Profile?.username
                   : "UserName"}
               </h2>
-              <div className="mb-8 inline-flex items-center justify-center rounded-full border border-jacarta-100 bg-white py-1.5 px-4 dark:border-jacarta-600 dark:bg-jacarta-700">
+              <div className="mb-8 inline-flex items-center justify-center py-1.5 px-4" style={{background: "#030B3C", border: "1px solid #131DFF", borderRadius: "8px"}}>
                 <button
-                  className="js-copy-clipboard max-w-[10rem] select-none overflow-hidden text-ellipsis whitespace-nowrap dark:text-jacarta-200"
+                  className="js-copy-clipboard max-w-[10rem] select-none overflow-hidden text-ellipsis whitespace-nowrap"
                   data-tippy-content="Copy"
                 >
-                  <span className=" text-muted">
+                  <span className=" text-white">
                     <CopyToClipboard
                       text={user_Profile?.address}
                       onCopy={() => setcopied(true)}
@@ -603,7 +610,7 @@ export default function User_Registration() {
                   f
                 </button>
               </div>
-              <p className="mx-auto mb-2 max-w-xl text-lg text-muted text-sm ">
+              <p className="mx-auto mb-2 max-w-xl text-white text-md">
                 I make art with the simple goal of giving you something pleasing
                 to look at for a few seconds.
               </p>
@@ -621,38 +628,54 @@ export default function User_Registration() {
           </picture>
           <div className="container">
             <div>
-              <div className="innerdiv_chains">
-                <h5>Your NFT's on all chains</h5>
-                <div className="all_chain_icons">
+              <div className="innerdiv_chains mb-4">
+                <h5 className="mb-3 mb-md-0 d-flex text-white align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                  className="mr-3 transition-colors"
+                  style={{fill: "#ffffff"}}
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zm2 8H4v6h16v-6h-5v3H9v-3zm11-6H4v4h5V9h6v2h5V7zm-9 4v3h2v-3h-2zM9 3v2h6V3H9z" />
+                </svg>
+
+                  Your NFT's on all chains</h5>
+                <div className="all_chain_icons" >
                   <div
-                    className="chains_icons"
+                    className="chains_icons mx-2"
                     onClick={() => setselectChain("Ethereum")}
+                    style={{background: "#030B3C", border: "1px solid #131DFF", borderRadius: "8px"}}
                   >
                     <img
                       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzI1MjkyRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTQgMjhhMTQgMTQgMCAxIDAgMC0yOCAxNCAxNCAwIDAgMCAwIDI4WiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PHBhdGggZmlsbD0idXJsKCNhKSIgZmlsbC1vcGFjaXR5PSIuMyIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTQgMjhhMTQgMTQgMCAxIDAgMC0yOCAxNCAxNCAwIDAgMCAwIDI4WiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PHBhdGggZmlsbD0idXJsKCNiKSIgZD0iTTguMTkgMTQuNzcgMTQgMTguMjFsNS44LTMuNDQtNS44IDguMTktNS44MS04LjE5WiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Im0xNCAxNi45My01LjgxLTMuNDRMMTQgNC4zNGw1LjgxIDkuMTVMMTQgMTYuOTNaIi8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCIgeDI9IjE0IiB5MT0iMCIgeTI9IjI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIxNCIgeDI9IjE0IiB5MT0iMTQuNzciIHkyPSIyMi45NiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iLjkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4K"
                       alt=""
                     />
-                    <p>{ethereumchain}</p>
+                    <p className="text-white">{ethereumchain}</p>
                   </div>
                   <div
-                    className="chains_icons"
+                    className="chains_icons mx-2"
                     onClick={() => setselectChain("Binance")}
+                    style={{background: "#030B3C", border: "1px solid #131DFF", borderRadius: "8px"}}
                   >
                     <img
                       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjRjBCOTBCIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNCAwYzcuNzMzIDAgMTQgNi4yNjcgMTQgMTRzLTYuMjY3IDE0LTE0IDE0UzAgMjEuNzMzIDAgMTQgNi4yNjcgMCAxNCAwWiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTcuNjk0IDE0IC4wMSAzLjcwMiAzLjE0NiAxLjg1djIuMTY4bC00Ljk4Ni0yLjkyNHYtNS44NzhMNy42OTQgMTRabTAtMy43MDJ2Mi4xNTdsLTEuODMyLTEuMDgzVjkuMjE0bDEuODMyLTEuMDgzIDEuODQxIDEuMDgzLTEuODQgMS4wODRabTQuNDctMS4wODQgMS44MzItMS4wODMgMS44NCAxLjA4My0xLjg0IDEuMDg0LTEuODMyLTEuMDg0WiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05LjAxOCAxNi45MzV2LTIuMTY4bDEuODMyIDEuMDg0djIuMTU3bC0xLjgzMi0xLjA3M1ptMy4xNDYgMy4zOTQgMS44MzIgMS4wODQgMS44NC0xLjA4NHYyLjE1N2wtMS44NCAxLjA4NC0xLjgzMi0xLjA4NFYyMC4zM1ptNi4zLTExLjExNSAxLjgzMi0xLjA4MyAxLjg0IDEuMDgzdjIuMTU4bC0xLjg0IDEuMDgzdi0yLjE1N2wtMS44MzItMS4wODRabTEuODMyIDguNDg4LjAxLTMuNzAyIDEuODMxLTEuMDg0djUuODc5bC00Ljk4NiAyLjkyNHYtMi4xNjdsMy4xNDUtMS44NVoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJtMTguOTgyIDE2LjkzNS0xLjgzMiAxLjA3M3YtMi4xNTdsMS44MzItMS4wODR2Mi4xNjhaIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTE4Ljk4MiAxMS4wNjUuMDEgMi4xNjgtMy4xNTUgMS44NXYzLjcxMmwtMS44MzEgMS4wNzMtMS44MzItMS4wNzN2LTMuNzExbC0zLjE1NS0xLjg1MXYtMi4xNjhsMS44NC0xLjA4MyAzLjEzNSAxLjg2IDMuMTU1LTEuODYgMS44NCAxLjA4M2gtLjAwN1ptLTkuOTY0LTMuNyA0Ljk3Ny0yLjkzNSA0Ljk4NyAyLjkzNS0xLjgzMiAxLjA4My0zLjE1NC0xLjg2LTMuMTQ2IDEuODYtMS44MzItMS4wODNaIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgyOHYyOEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg=="
                       alt=""
                     />
-                    <p>{BNB}</p>
+                    <p className="text-white">{BNB}</p>
                   </div>
                   <div
-                    className="chains_icons"
+                    className="chains_icons mx-2"
                     onClick={() => setselectChain("Polygon")}
+                    style={{background: "#030B3C", border: "1px solid #131DFF", borderRadius: "8px"}}
                   >
                     <img
                       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iQSIgeDE9Ii0xOC4yNzUlIiB4Mj0iODQuOTU5JSIgeTE9IjguMjE5JSIgeTI9IjcxLjM5MyUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhMjI5YzUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3YjNmZTQiLz48L2xpbmVhckdyYWRpZW50PjxjaXJjbGUgaWQ9IkIiIGN4PSIxNCIgY3k9IjE0IiByPSIxNCIvPjwvZGVmcz48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxtYXNrIGlkPSJDIiBmaWxsPSIjZmZmIj48dXNlIHhsaW5rOmhyZWY9IiNCIi8+PC9tYXNrPjxnIGZpbGwtcnVsZT0ibm9uemVybyI+PHBhdGggZmlsbD0idXJsKCNBKSIgZD0iTS0xLjMyNi0xLjMyNmgzMC42NTF2MzAuNjUxSC0xLjMyNnoiIG1hc2s9InVybCgjQykiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTguMDQ5IDE3LjAyMWwzLjk2LTIuMjg3YS42ODEuNjgxIDAgMCAwIC4zNC0uNTg5VjkuNTcyYS42ODMuNjgzIDAgMCAwLS4zNC0uNTlsLTMuOTYtMi4yODZhLjY4Mi42ODIgMCAwIDAtLjY4IDBsLTMuOTYgMi4yODdhLjY4Mi42ODIgMCAwIDAtLjM0LjU4OXY4LjE3M0wxMC4yOSAxOS4zNWwtMi43NzctMS42MDR2LTMuMjA3bDIuNzc3LTEuNjA0IDEuODMyIDEuMDU4VjExLjg0bC0xLjQ5Mi0uODYxYS42ODEuNjgxIDAgMCAwLS42OCAwbC0zLjk2IDIuMjg3YS42ODEuNjgxIDAgMCAwLS4zNC41ODl2NC41NzNjMCAuMjQyLjEzLjQ2OC4zNC41OWwzLjk2IDIuMjg2YS42OC42OCAwIDAgMCAuNjggMGwzLjk2LTIuMjg2YS42ODIuNjgyIDAgMCAwIC4zNC0uNTg5di04LjE3NGwuMDUtLjAyOCAyLjcyOC0xLjU3NSAyLjc3NyAxLjYwM3YzLjIwOGwtMi43NzcgMS42MDMtMS44My0xLjA1NnYyLjE1MWwxLjQ5Ljg2YS42OC42OCAwIDAgMCAuNjggMHoiLz48L2c+PC9nPjwvc3ZnPg=="
                       alt=""
                     />
-                    <p>{polygonchain}</p>
+                    <p className="text-white">{polygonchain}</p>
                   </div>
                 </div>
               </div>
@@ -666,9 +689,8 @@ export default function User_Registration() {
                 aria-labelledby="on-sale-tab"
               >
                 {/* Filters */}
-                <div className="mb-8 flex flex-wrap items-center justify-between">
+                {/* <div className="mb-8 flex flex-wrap items-center justify-between">
                   <div className="flex flex-wrap items-center">
-                    {/* Collections */}
                     <div className="my-1 mr-2.5">
                       <button className=" group group flex h-9 items-center rounded-lg border border-jacarta-100 bg-white px-4 font-display text-sm font-semibold text-jacarta-700 transition-colors ">
                         <svg
@@ -689,7 +711,7 @@ export default function User_Registration() {
                       ></div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 {_DATA.currentData()?.length < 0 ? (
                   <>
@@ -713,10 +735,23 @@ export default function User_Registration() {
                                 key={index}
                               >
                                 <div
-                                  className={`card rounded shadow-sm card-hover-image`}
+                                  className={`card top-saller-Card card-hover-minimal`}
                                 >
-                                  <div className="card-body p-3 position-relative">
-                                    <div className="Blockchain">
+                                  <div className="card-body m-1 p-2 h-i-w-Card position-relative">
+                                    <div className="z-index-20 mb-2 d-flex align-items-center">
+                                      <Link
+                                        className="text-reset"
+                                        to={`/assets/${items.name}/${items.Block_chain}`}
+                                      >
+                                        <p
+                                          className="fw-bold mb-0 w-100 px-2 cursor-pointer text-white text-md"
+                                        >
+                                          {items.name.length > 25 ? (items.name.substr(0, 25)+ '...') : (items.name) }
+                                        </p>
+                                      </Link>
+                                    </div>
+
+                                    <div className="Blockchain" style={{right: "10px"}}>
                                       <div className="inner_blockchain">
                                         {items.Block_chain == "Binance" ? (
                                           <SiBinance className="fa-brands fa-ethereum" />
@@ -743,9 +778,10 @@ export default function User_Registration() {
                                           <></>
                                         )}
                                       </div>
-                                    </div>
-                                    <div className="position-relative mb-4 shadow">
-                                      <div className="author z-index-20">
+                                    </div>  
+
+                                    <div className="position-relative mb-2 shadow">
+                                      {/* <div className="author z-index-20">
                                         <div className="ms-3 rounded-circle bd-3 border-dark">
                                           {user_Profile != null ? (
                                             <>
@@ -766,7 +802,7 @@ export default function User_Registration() {
                                         <span className="icon bg-primary text-white me-1">
                                           <i className="las la-check-double"></i>
                                         </span>
-                                      </div>
+                                      </div> */}
                                       {/* <Link
                                         className="text-reset"
                                         to={`/assets/${items.name}/${items.Block_chain}`}
@@ -888,21 +924,21 @@ export default function User_Registration() {
                                       </div>
                                       {/* </Link> */}
                                     </div>
-                                    <p className="fw-bold mb-3">
+                                    {/* <p className="fw-bold mb-3">
                                       <Link
                                         className="text-reset"
                                         to={`/assets`}
                                       >
                                         {items?.name}
                                       </Link>
-                                    </p>
+                                    </p> */}
                                     <div className="d-flex justify-content-between">
-                                      <p className="fw-bold mb-3 text-reset">
+                                      <p className="fw-bold mb-3 text-white">
                                         Token ID
                                       </p>{" "}
                                       <p className="fw-bold mb-3">
                                         <Link
-                                          className="text-reset"
+                                          className="text-white text-decoration-none"
                                           to={`/assets`}
                                         >
                                           {items?.token_id}
@@ -911,7 +947,7 @@ export default function User_Registration() {
                                     </div>
 
                                     {/* <NftCategory category={category} /> */}
-                                    <p className="text-muted mb-2">
+                                    <p className="text-white mb-2" style={{ backgroundColor: "#090E2D", fontSize: "14px", fontWeight: "bold", padding: "7px 10px", borderRadius: "8px", border: "1px solid #0F1953", boxShadow: "0 0 10px 5px #2c1cb5"}}>
                                       This is your item, you can put it on sale
                                     </p>
                                     <div
@@ -926,6 +962,7 @@ export default function User_Registration() {
                                         onClick={() =>
                                           makeOffer(items?.token_id, items)
                                         }
+                                        style={{ background: "#1ADFBB", boxShadow: "0px 0px 10px 5px #4659CF77" }}
                                       >
                                         Offer
                                       </button>
@@ -944,20 +981,30 @@ export default function User_Registration() {
                                         onChange={(e) =>
                                           setgetOfferPrice(e.target.value)
                                         }
+                                        style={{border: "1px solid #131DFF", borderRadius: "8px", background: "#070630", color: "white"}}
                                         // ref={priceRefs.current[nftKey]}
                                       />
                                     </div>
 
-                                    <div className="my-3 pt-1 bg-body rounded-pill"></div>
-                                    <p className="text-muted fw-normal mb-0 text-sm d-flex align-items-center">
+                                    {/* <div className="mt-3 mb-2 pt-1 bg-body rounded-pill"></div> */}
+                                    <div className="mt-3 mb-2 pt-1 section-seprator"></div>
+                                    {/* <p className="text-muted fw-normal mb-0 text-sm d-flex align-items-center">
                                       <i className="la-sm text-primary las la-clock mx-1 mt-1 text-primary"></i>
                                       Created
                                       <span className="text-primary mx-2">
-                                        {/* {items.created_date} */}
                                         {formatDate(items.created_date)}
                                       </span>{" "}
                                       ago
+                                    </p> */}
+                                    
+                                    <p className="nft-text-mini d-flex align-items-center m-0">
+                                      <span className="nft-icons-mini">
+                                        <i className="las la-clock"></i>
+                                      </span>
+                                      <span className="ms-1 nft-text-mini">
+                                        Created {formatDate(items.created_date)}{" "} ago</span>
                                     </p>
+
                                   </div>
                                 </div>
                               </div>

@@ -1,88 +1,79 @@
 import React from 'react';
-import { Link} from "react-router-dom";
+//import { Link} from "react-router-dom";
 
 function ContactInfo(props) {
     return (
         <div className={props.gridWidth}>
-            <div className='card'>
-                <div className='card-body p-4 p-lg-5'>
+            <div className='card' style={{background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "8px"}}>
+                <div className='card-body px-2 py-4 px-lg-4 py-lg-5'>
                     <h5 className='mb-4'>We are here to help you!</h5>
                     <ul className='list-unstyled mb-4'>
-                        <li className='d-flex mb-4'>
-                            <div className='contact-icon bd-3 border-primary text-primary flex-shrink-0'>
+                        <li className='d-flex flex-column mb-4'>
+                            {/* <div className='contact-icon bd-3 border-primary text-primary flex-shrink-0'>
                                 <i className='las la-globe'></i>
-                            </div>
-                            <div className='ms-3'>
-                                <h6>Company Address</h6>
-                                <p className='text-sm text-muted mb-0'>62 Bridge Street, Kington, United Kingdom, HR5 3DJ
-                                    United Kingdom
-                                </p>
-                            </div>
+                            </div> */}
+                            {/* <div className='ms-3'> */}
+                            <h6>Company Address</h6>
+                            <p className='text-sm text-white mb-0 p-2' style={{borderRadius: "8px", border: "1px solid #49E6FB"}}>62 Bridge Street, Kington, United Kingdom, HR5 3DJ
+                                United Kingdom
+                            </p>
+                            {/* </div> */}
                         </li>
-                        <li className='d-flex mb-4'>
-                            <div className='contact-icon bd-3 border-primary text-primary flex-shrink-0'>
+                        <li className='d-flex flex-column mb-4'>
+                            {/* <div className='contact-icon bd-3 border-primary text-primary flex-shrink-0'>
                                 <i className='las la-phone'></i>
                             </div>
-                            <div className='ms-3'>
-                                <h6>Hot lines</h6>
-                                <ul className='list-unstyled'>
-                                    <li>
-                                        <a
-                                            className='text-decoration-none text-sm text-muted mb-1'
-                                            rel='noreferrer'
-                                            href='tel:447897060588'
-                                        >
-                                            +447897060588
-                                        </a>
-                                    </li>
-                                    {/* <li>
-                                        <a
-                                            className='text-decoration-none text-sm text-muted mb-0'
-                                            rel='noreferrer'
-                                            href='tel:tel:454759654'
-                                        >
-                                            +20 454 746 249
-                                        </a>
-                                    </li> */}
-                                </ul>
-                            </div>
+                            <div className='ms-3'> */}
+                            <h6>Hot lines</h6>
+                            <ul className='list-unstyled p-2' style={{borderRadius: "8px", border: "1px solid #49E6FB"}}>
+                                <li>
+                                    <a
+                                        className='text-decoration-none text-sm text-white mb-1'
+                                        rel='noreferrer'
+                                        href='tel:447897060588'
+                                    >
+                                        +447897060588
+                                    </a>
+                                </li>
+                            </ul>
+                            {/* </div> */}
                         </li>
-                        <li className='d-flex mb-3'>
-                            <div className='contact-icon bd-3 border-primary text-primary flex-shrink-0'>
+                        <li className='d-flex flex-column mb-4'>
+                            {/* <div className='contact-icon bd-3 border-primary text-primary flex-shrink-0'>
                                 <i className='las la-envelope'></i>
-                            </div>
-                            <div className='ms-3'>
-                                <h6>Email address</h6>
-                                <ul className='list-unstyled mb-0'>
-                                    <li>
-                                        <a
-                                            className='text-decoration-none text-sm text-muted mb-1'
-                                            rel='noreferrer'
-                                            href='mailto:info@mint-sea.com'
-                                        >
-                                            info@mint-sea.com
-                                            
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            className='text-decoration-none text-sm text-muted mb-1'
-                                            rel='noreferrer'
-                                            href='mailto:contact@mint-sea.com'
-                                        >
-                                          contact@mint-sea.com
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </div> */}
+                            {/* <div className='ms-3'> */}
+                            <h6>Email address</h6>
+                            <ul className='list-unstyled mb-0 p-2' style={{borderRadius: "8px", border: "1px solid #49E6FB"}}>
+                                <li>
+                                    <a
+                                        className='text-decoration-none text-sm text-white mb-1'
+                                        rel='noreferrer'
+                                        href='mailto:info@mint-sea.com'
+                                    >
+                                        info@mint-sea.com
+                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className='text-decoration-none text-sm text-white mb-1'
+                                        rel='noreferrer'
+                                        href='mailto:contact@mint-sea.com'
+                                    >
+                                        contact@mint-sea.com
+                                    </a>
+                                </li>
+                            </ul>
+                            {/* </div> */}
                         </li>
                     </ul>
 
                     <h2 className='h5 mb-1'>We are social</h2>
-                    <p className='small text-muted mb-3'>
+                    <p className='text-white mb-3 p-2' style={{fontSize:"0.9em", borderRadius: "8px", border: "1px solid #49E6FB"}}>
                         We are active on every social media network. Join our Network <br /> and start your NFT journey with Us.
                     </p>
-                    <ul className='list-inline mb-0'>
+                    <ul className='list-inline mb-0 d-flex justify-content-evenly'>
                         <li className='list-inline-item'>
                             <a className='social-link bg-hover-primary' rel='noreferrer' href={process.env.REACT_APP_SOCIAL_FACEBOOK}>
                                 <i className='lab la-facebook-f'></i>

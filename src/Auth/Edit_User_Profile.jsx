@@ -54,6 +54,14 @@ export default function Edit_User_Profile() {
 
   // console.log("getUserData", Object.keys(user_Profile).length );
 
+  useEffect(()=>{
+    document.getElementById("root").classList.add("bg-complete");
+      
+    return () => {
+        document.getElementById("root").classList.remove("bg-complete");
+    };
+  }, []);
+
   const PostData = async () => {
     try {
       if (Object.keys(user_Profile).length != 0) {
@@ -196,19 +204,21 @@ export default function Edit_User_Profile() {
               getUserFile.bg_Image == null && getUserFile.bg_Image == undefined
                 ? Object.keys(user_Profile).length != 0
                   ? user_Profile.Cover_image == ""
-                    ? "images/items/coverBG.jpeg"
+                    ? "images/user_profile_placeholder.webp"
                     : `${user_Profile?.Cover_image}` ||
-                      "images/items/coverBG.jpeg"
-                  : "images/items/coverBG.jpeg"
+                      "images/user_profile_placeholder.webp"
+                  : "images/user_profile_placeholder.webp"
                 : URL.createObjectURL(getUserFile.bg_Image) ||
-                  "images/items/coverBG.jpeg"
+                  "images/user_profile_placeholder.webp"
             }
             alt="banner"
-            className="h-[18.75rem] object-cover"
+            className="h-80 object-cover"
             width="100%"
+            style={{objectPosition: "center top"}}
           />
-          <div className="container relative -translate-y-4">
-            <div className="group absolute right-0 bottom-4 flex items-center rounded-lg bg-white py-2 px-4 font-display text-sm hover:bg-accent">
+          {/* , boxShadow: "0px 0px 50px 100px #131DFF22" */}
+          <div className="container" style={{position: "absolute", right: "0px", bottom: "20%"}}>
+            <div className="group absolute right-0 bottom-4 flex items-center rounded-lg py-2 px-4 font-display" style={{backgroundColor: "#070630"}}>
               <input
                 type="file"
                 accept="image/*"
@@ -221,42 +231,44 @@ export default function Edit_User_Profile() {
                 viewBox="0 0 24 24"
                 width={24}
                 height={24}
-                className="mr-1 h-4 w-4 fill-jacarta-400 group-hover:fill-white"
+                className="mr-3 h-5 w-5 fill-jacarta-400"
+                style={{fill: "white"}}
               >
                 <path fill="none" d="M0 0h24v24H0z" />
                 <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" />
               </svg>
-              <span className="mt-0.5 block text-muted text-sm ">
+              <span className="mt-0.5 block text-white text-md">
                 Edit cover photo
               </span>
             </div>
           </div>
         </div>
         {/* end banner */}
+
         {/* Edit Profile */}
-        <section className="relative py-16 dark:bg-jacarta-800">
-          <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
+        <section className="relative py-16">
+          <picture className="pointer-events-none absolute inset-0 -z-10">
             <img
               src="img/gradient_light.jpg"
               alt="gradient"
               className="h-full w-full"
             />
           </picture>
-          <div className="container">
-            <div className="mx-auto max-w-[48.125rem] md:flex">
+          <div className="container py-5">
+            <div className="row g-4">
               {/* Form */}
-              <div className="mb-12 md:w-1/2 md:pr-8">
+              <div className="col-md-8 p-5 order-2 order-md-1" style={{height: "100%", background: "#070630", border: "1px solid #131DFF", boxShadow: "0 0 10px 5px #2c1cb5aa", borderRadius: "8px"}}>
                 <div className="mb-6">
                   <label
                     htmlFor="profile-username"
-                    className="mb-1 block font-display text-sm text-jacarta-700 text-muted"
+                    className="mb-1 block font-display text-white"
                   >
-                    Username<span className="text-red">*</span>
+                    Username<span className="text-red ms-2">*</span>
                   </label>
                   <input
                     type="text"
                     id="profile-username"
-                    className="w-full rounded-lg border-jacarta-100 py-3 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 text-muted dark:placeholder:text-jacarta-300"
+                    className="w-full py-3 text-white"
                     placeholder="Enter username"
                     required=""
                     name="username"
@@ -266,18 +278,19 @@ export default function Edit_User_Profile() {
                         : ""
                     }
                     onChange={handleChange}
+                    style={{border: "1px solid #49E6FB", borderRadius: "8px", background: "#030B3C"}}
                   />
                 </div>
                 <div className="mb-6">
                   <label
                     htmlFor="profile-bio"
-                    className="mb-1 block font-display text-sm text-jacarta-700 text-muted"
+                    className="mb-1 block font-display text-white"
                   >
-                    Bio<span className="text-red">*</span>
+                    Bio<span className="text-red ms-2">*</span>
                   </label>
                   <textarea
                     id="profile-bio"
-                    className="w-full rounded-lg border-jacarta-100 py-3 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 text-muted dark:placeholder:text-jacarta-300"
+                    className="w-full py-3 text-white"
                     required=""
                     placeholder="Tell the world your story!"
                     name="bio"
@@ -287,19 +300,20 @@ export default function Edit_User_Profile() {
                         : ""
                     }
                     onChange={handleChange}
+                    style={{border: "1px solid #49E6FB", borderRadius: "8px", background: "#030B3C"}}
                   />
                 </div>
                 <div className="mb-6">
                   <label
                     htmlFor="profile-email"
-                    className="mb-1 block font-display text-sm text-jacarta-700 text-muted"
+                    className="mb-1 block font-display text-white"
                   >
-                    Email address<span className="text-red">*</span>
+                    Email address<span className="text-red ms-2">*</span>
                   </label>
                   <input
                     type="text"
                     id="profile-email"
-                    className="w-full rounded-lg border-jacarta-100 py-3 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 text-muted dark:placeholder:text-jacarta-300"
+                    className="w-full py-3 text-white"
                     placeholder="Enter email"
                     defaultValue={
                       Object.keys(user_Profile).length != 0
@@ -308,87 +322,93 @@ export default function Edit_User_Profile() {
                     }
                     name="email"
                     onChange={handleChange}
+                    style={{border: "1px solid #49E6FB", borderRadius: "8px", background: "#030B3C"}}
                   />
                 </div>
                 <div className="mb-6">
                   <label
                     htmlFor="profile-email"
-                    className="mb-1 block font-display text-sm text-jacarta-700 text-muted"
+                    className="mb-1 block font-display text-white"
                   >
-                    Wallet Address<span className="text-red">*</span>
+                    Wallet Address<span className="text-red ms-2">*</span>
                   </label>
                   <input
                     type="text"
                     id="profile-email"
-                    className="w-full rounded-lg border-jacarta-100 py-3 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 text-muted dark:placeholder:text-jacarta-300"
+                    className="w-full py-3 text-white"
                     value={address}
+                    style={{border: "1px solid #49E6FB", borderRadius: "8px", background: "#030B3C"}}
                   />
                 </div>
 
                 <button
-                  className="btn btn-gradient-primary"
+                  className="btn-buynow px-4"
                   onClick={() => PostData()}
+                  style={{boxShadow: "0px 0px 10px 5px #4659CF77"}}
                 >
                   Update Profile
                 </button>
               </div>
               {/* Avatar */}
-              <div className=" lg:flex  space-x-5 md:w-1/2 md:pl-8">
-                <form className="shrink-0">
-                  <figure className="relative inline-block">
-                    <img
-                      src={
-                        getUserFile.profile == null
-                          ? Object.keys(user_Profile).length != 0
-                            ? user_Profile.image == ""
-                              ? "images/items/item-5.jpg"
-                              : `${user_Profile?.image}`
-                            : "images/items/item-5.jpg"
-                          : URL.createObjectURL(getUserFile.profile)
-                      }
-                      // src="img/user/user_avatar.gif"
-                      alt="collection avatar"
-                      // width={getUserFile.profile == null ? "" : "5%"}
-                      style={{ width: "175px", height: "150px" }}
-                      className=" rounded-xl border-[5px] border-white dark:border-jacarta-600"
-                    />
-                    <div className="group absolute -right-3 -bottom-2 h-8 w-8 overflow-hidden rounded-full border border-jacarta-100 bg-white text-center hover:border-transparent hover:bg-accent">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        className="absolute top-0 left-0 w-full cursor-pointer opacity-0"
-                        name="profile"
-                        onChange={handleChangeFile}
+              <div className="col-md-4 order-1 order-md-2">
+                <div className="row pt-5 mx-sm-2">
+                  <form className="col-12 col-xl-6 shrink-0 text-center text-md-start">
+                    <figure className="relative inline-block">
+                      <img
+                        src={
+                          getUserFile.profile == null
+                            ? Object.keys(user_Profile).length != 0
+                              ? user_Profile.image == ""
+                                ? "images/profile_placeholder.webp"
+                                : `${user_Profile?.image}`
+                              : "images/profile_placeholder.webp"
+                            : URL.createObjectURL(getUserFile.profile)
+                        }
+                        // src="img/user/user_avatar.gif"
+                        alt="collection avatar"
+                        // width={getUserFile.profile == null ? "" : "5%"}
+                        className="rounded"
+                        style={{filter: "drop-shadow(0px 0px 15px #131DFF)"}}
                       />
-                      <div className="flex h-full items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width={24}
-                          height={24}
-                          className="h-4 w-4 fill-jacarta-400 group-hover:fill-white"
-                        >
-                          <path fill="none" d="M0 0h24v24H0z" />
-                          <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" />
-                        </svg>
+                      <div className="group absolute h-8 w-8 overflow-hidden rounded-full border bg-white text-center" style={{left: "89%", bottom: "1%"}}>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="absolute top-0 left-0 w-full cursor-pointer opacity-0"
+                          name="profile"
+                          onChange={handleChangeFile}
+                        />
+                        <div className="flex h-full items-center justify-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width={28}
+                            height={28}
+                            className="mx-1 my-1"
+                          >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  </figure>
-                </form>
-                <div className="mt-4">
-                  <span className="mb-3 block font-display text-sm text-jacarta-700 text-muted">
-                    Profile Image
-                  </span>
-                  <p className="text-sm leading-normal text-muted text-sm ">
-                    We recommend an image of at least 300x300. Gifs work too.
-                    Max 5mb.
-                  </p>
+                    </figure>
+                  </form>
+                  <div className="col-12 col-xl-6 mt-4">
+                    <span className="mb-3 block fw-bold text-white fs-5">
+                      Profile Image
+                    </span>
+                    <p className="leading-normal text-white text-md">
+                      We recommend an image of at least 300x300. Gifs work too.
+                      Max 5mb.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
         {/* end edit profile */}
+
       </main>
     </div>
   );

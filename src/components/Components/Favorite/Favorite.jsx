@@ -6,6 +6,7 @@ import { useAccount, useChainId } from "wagmi";
 import NftItem from "../../general/NftItem";
 import Loader from "../../general/Loader";
 import io from "socket.io-client";
+import { Link } from 'react-router-dom';
 
 const socket = io("https://sanjhavehra.womenempowerment.online/");
 
@@ -36,11 +37,47 @@ export default function Favorite() {
       Get_Favorite();
     });
     Get_Favorite();
+    
+    document.getElementById("root").classList.add("bg-complete");
+    //document.getElementById("root").style.backgroundImage = "url('/images/bg-mint.jpg')";
+    
+    return () => {
+        document.getElementById("root").classList.remove("bg-complete");
+    };
   }, []);
 
   return (
     <div>
-      <PageBanner heading={"Favorite NFTs"} />
+      {/* <PageBanner heading={"Favorite NFTs"} /> */}
+
+      <section className='py-5 position-relative'>
+          <div className='container z-index-10 position-relative'>
+              <div className='row align-items-center mt-5'>
+
+                  <div className='col-lg-6'>                        
+                      <h1 className="text-white h-b-t-fs">Favorite NFTs</h1>
+                      <ul className='list-inline'>
+                          <li className='list-inline-item' style={{borderRight: "1px solid white"}}>
+                              <Link className='text-muted me-2 fs-5' to='/' style={{textDecoration: "none"}}>
+                                  Home
+                              </Link>
+                          </li>
+                          <li className='list-inline-item'>
+                              <Link className='text-white fs-5' to='/Favorite' style={{textDecoration: "none"}}>
+                                  Favorite NFTs
+                              </Link>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div className='col-lg-6 ms-auto d-none d-lg-block'>
+                      <img className='img-fluid mx-auto w-75' src="/images/favorite.webp" alt="favorite" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+
       <section className="py-5">
         {/* FILTER CONTROLS */}
         <div className="container pt-5">

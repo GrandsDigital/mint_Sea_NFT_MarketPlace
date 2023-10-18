@@ -66,18 +66,56 @@ function Explore() {
         if (document.querySelector('.mixitUpContainer')) {
             mixitup('.mixitUpContainer');
         }
-        return () => console.log('clear...');
+
+        document.getElementById("root").classList.add("bg-complete");
+        return () => {
+            // console.log('clear...')
+            document.getElementById("root").classList.remove("bg-complete");
+        };
     }, []);
 
 
     return (
         <>
             {/* {marketplaceCtx.mktIsLoading ? <FullScreenLoader heading='loading' /> : null} */}
-            <PageBanner heading={'Explore our NFTs'} />
+            {/* <PageBanner heading={'Explore our NFTs'} /> */}
+
+            <section className='py-5 position-relative'>
+                <div className='container z-index-10 position-relative'>
+                    <div className='row align-items-center mt-5'>
+
+                        <div className='col-lg-6'>                        
+                            <h1 className="text-white h-b-t-fs">Explore Our NFTs</h1>
+                            {/* <h2 className='text-white ms-5 ps-3 mb-5' >                            
+                                Our NFTs
+                            </h2> */}
+                            {/* style={{fontSize: "2.8rem", fontWeight: "500"}} */}
+                            <ul className='list-inline'>
+                                <li className='list-inline-item' style={{borderRight: "1px solid white"}}>
+                                    <Link className='text-muted me-2 fs-5' to='/' style={{textDecoration: "none"}}>
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className='list-inline-item'>
+                                    <Link className='text-white fs-5' to='/explore' style={{textDecoration: "none"}}>
+                                        Explore Our NFTS
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className='col-lg-6 ms-auto d-none d-lg-block'>
+                            <img className='img-fluid mx-auto w-75' src="/images/explore.webp" alt="explore" style={{filter: "drop-shadow(0px 0px 20px #141dec)"}}></img>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
             <section className='py-5'>
                 {/* FILTER CONTROLS */}
                 <div className='container pt-5'>
-                    <div className='controls d-flex flex-column flex-md-row mb-4 p-1 bg-dark bd-3 rounded'>
+                    <div className='controls d-flex flex-column flex-md-row mb-5 p-1'>
                         <button className={`mixitup-control flex-fill m-1 ${Category == "All" ? "mixitup-control-active" : ""} `} type='button' onClick={() => (dispatch(setCategory("All")), dispatch(getLoarem("All")))} >
                             All
                         </button>
