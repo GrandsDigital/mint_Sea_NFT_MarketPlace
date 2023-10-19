@@ -38,41 +38,46 @@ function Search() {
 
     useEffect(() => {
 
-        const search_api = async () => {
-            try {
-                if (query != "") {
+        if(query.trim().length >= 3){
+            const search_api = async () => {
+                try {
+                    if (query != "") {
 
-                    setSpinner(true)
-                    let res = await axios.get(`https://sanjhavehra.womenempowerment.online/searchNFT?name=${query}`)
-                    //console.log("Search", res.data.data);
-                    if (res.data.success == true) {
-                        setSearchResultsLength(res.data.data)
-                        setSpinner(false)
+                        setSpinner(true)
+                        let res = await axios.get(`https://sanjhavehra.womenempowerment.online/searchNFT?name=${query}`)
+                        //console.log("Search", res.data.data);
+                        if (res.data.success == true) {
+                            setSearchResultsLength(res.data.data)
+                            setSpinner(false)
+                        } else {
+                            setIsdata(true)
+                            setSpinner(false)
+
+                        }
                     } else {
-                        setIsdata(true)
-                        setSpinner(false)
-
+                        setSearchResultsLength([])
                     }
-                } else {
-                    setSearchResultsLength([])
+
+                } catch (error) {
+                    console.log(error);
                 }
-
-            } catch (error) {
-                console.log(error);
             }
+
+            search_api()
+
+
+            // setSearchResultsLength(
+            //     collectionCtx.collection.filter((nft) => {
+            //         if (nft.title.toLowerCase().includes(query.toLowerCase().trim())) {
+            //             return nft;
+            //         }
+            //         return false;
+            //     }).length
+            // );
         }
-
-        search_api()
-
-
-        // setSearchResultsLength(
-        //     collectionCtx.collection.filter((nft) => {
-        //         if (nft.title.toLowerCase().includes(query.toLowerCase().trim())) {
-        //             return nft;
-        //         }
-        //         return false;
-        //     }).length
-        // );
+        else {
+            setSearchResultsLength([])
+        }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [query]);
@@ -179,7 +184,7 @@ function Search() {
 
             <section className='pb-5'>
                 {searchResultsLength.length > 0 ? (
-                    <p className='lead text-muted text-center mb-0'>
+                    <p className='lead text-white text-center mb-0 fs-5'>
                         Found <strong className='fw-bold badge bg-primary mx-2'>{searchResultsLength.length}</strong> items
                         match your search
                     </p>
@@ -203,20 +208,20 @@ function Search() {
 
                     {query === '' ? (
                         <div className='row text-center'>
-                            <div className='col-lg-6 mx-auto'>
+                            <div className='col-lg-6 mx-auto text-white'>
                                 <i className='las la-keyboard mb-2' style={{ fontSize: '2.5rem',background: "linear-gradient(0deg, #131DFF, #131dffa6)", filter: "drop-shadow(0px 0px 15px #131DFF)", borderRadius: "5px", padding: "5px 10px" }}></i>
                                 <h3 className='h3'>No search data entered!</h3>
-                                <p className='text-muted mb-0'>Wating for your search...</p>
+                                <p className='mb-0 fs-6'>Wating for your search...</p>
                             </div>
                         </div>
                     ) : null}
 
                     {Isdata ? (
                         <div className='row text-center'>
-                            <div className='col-lg-6 mx-auto'>
+                            <div className='col-lg-6 mx-auto text-white'>
                                 <i className='las la-exclamation mb-2' style={{ fontSize: '3rem' }}></i>
                                 <h3 className='h3'>Cannot find any assets that match your search</h3>
-                                <p className='text-muted mb-0'>You can search for another term...</p>
+                                <p className='mb-0 fs-6'>You can search for another term...</p>
                             </div>
                         </div>
                     ) : null}

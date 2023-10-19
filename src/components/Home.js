@@ -384,7 +384,7 @@ function Home({ topSellers }) {
                                 </p>
                             </div>
                             <div className="col-5 h-100 position-div rounded-pill heading-right-part d-flex align-items-center">
-                                <img className="some-css img-fluid mx-auto" src="/images/NFT_sell.webp" alt="" />
+                                <img className="some-css img-fluid mx-auto" src="/images/nft_sell.webp" alt="" />
                             </div>
                                 {/* </div>
                             </div> */}

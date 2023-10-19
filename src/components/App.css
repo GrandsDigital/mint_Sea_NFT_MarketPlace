@@ -13712,7 +13712,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 .miniloader {
     color: #ffffff;
-    font-size: 10px;
+    /* font-size: 10px; */
+    font-size: 1rem;
     margin: 20px 0;
     position: relative;
     text-indent: -9999em;
@@ -13726,7 +13727,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .miniloader.miniloader-lg {
     transform: scale(0.7);
-    color: #2ca0c4;
+    /* color: #2ca0c4; */
+    color: #1adfbb;
+    box-shadow: rgba(70, 89, 207, 0.467) 0px 0px 30px 10px;
 }
 .miniloader:before,
 .miniloader:after {

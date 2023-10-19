@@ -31,7 +31,7 @@ function FullScreenLoader({ heading }) {
 
             <div className='row w-100 text-center'>
                 <div className='col-lg-6 mx-auto'>
-                    <p className='h2 text-uppercase mb-0'>{heading}</p>
+                    <p className='h2 text-uppercase mb-0 text-white'>{heading}</p>
                     <Loader />
                 </div>
             </div>
